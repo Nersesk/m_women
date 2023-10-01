@@ -1,0 +1,254 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-09-30 22:38+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\core\admin.py:22
+#, fuzzy
+#| msgid "Title in English"
+msgid "Fields in English"
+msgstr "Վերնագիրը անգլերեն"
+
+#: .\core\admin.py:29
+#, fuzzy
+#| msgid "Title in Armenian"
+msgid "Fields in Armenian"
+msgstr "Վերնագիրը հայերեն"
+
+#: .\core\admin.py:36
+msgid "General Fields"
+msgstr "Ընդհանուր դաշտեր"
+
+#: .\core\models.py:17 .\core\models.py:32 .\core\models.py:143
+#: .\core\models.py:159 .\core\models.py:197
+msgid "Name in English"
+msgstr "Անունը անգլերեն"
+
+#: .\core\models.py:18 .\core\models.py:33 .\core\models.py:144
+#: .\core\models.py:160 .\core\models.py:198
+msgid "Name in Armenian"
+msgstr "Անունը հայերեն"
+
+#: .\core\models.py:19
+msgid "Position in English"
+msgstr "Հաստիքը անգլերեն"
+
+#: .\core\models.py:20
+msgid "Position in Armenian"
+msgstr "Հաստիքը հայերեն"
+
+#: .\core\models.py:21 .\core\models.py:34 .\core\models.py:49
+#: .\core\models.py:161 .\core\models.py:174 .\core\models.py:186
+msgid "Image"
+msgstr "Նկար"
+
+#: .\core\models.py:27 .\core\models.py:28
+msgid "Staff"
+msgstr "Անձնակազմ"
+
+#: .\core\models.py:35
+msgid "Duration"
+msgstr "Տևողություն"
+
+#: .\core\models.py:36
+msgid "Count of projects"
+msgstr "Պրոեկտների քանակը"
+
+#: .\core\models.py:42
+msgid "Business Partner"
+msgstr "Գործընկեր"
+
+#: .\core\models.py:43
+msgid "Business Partners"
+msgstr "Գործընկերներ"
+
+#: .\core\models.py:47
+msgid "Job name in English"
+msgstr "Աշխատանքի անվանումը անգլերեն"
+
+#: .\core\models.py:48
+msgid "Job name in Armenian"
+msgstr "Աշխատանքի անվանումը հայերեն"
+
+#: .\core\models.py:53
+msgid "Job description in English"
+msgstr "Աշխատանքի նկարագիրը անգլերեն"
+
+#: .\core\models.py:58
+msgid "Job description in Armenian"
+msgstr "Աշխատանքի նկարագիրը հայերեն"
+
+#: .\core\models.py:63
+msgid "Company name in English"
+msgstr "Ընկերության անվանումը անգլերեն"
+
+#: .\core\models.py:68
+msgid "Company name in Armenian"
+msgstr "Ընկերության անվանումը հայերեն"
+
+#: .\core\models.py:74
+msgid "Job duration in English"
+msgstr "Աշխատանքի տևողությունը անգլերեն"
+
+#: .\core\models.py:81
+msgid "Job duration in Armenian"
+msgstr "Աշխատանքի տևողությունը հայերեն"
+
+#: .\core\models.py:86
+msgid "Assessment Service Description in English"
+msgstr "Գնահատման ծառայության նկարագրությունը անգլերեն"
+
+#: .\core\models.py:91
+msgid "Assessment Service Description in Armenian"
+msgstr "Գնահատման ծառայության նկարագրությունը հայերեն"
+
+#: .\core\models.py:97
+msgid "Requirements to the appraiser in English"
+msgstr "Պահանջներ գնահատողին անգլերեն"
+
+#: .\core\models.py:102
+msgid "Requirements to the appraiser in Armenian"
+msgstr "Պահանջներ գնահատողին հայերեն"
+
+#: .\core\models.py:107
+msgid "Application Procedure in English"
+msgstr "Դիմելու կարգը անգլերեն"
+
+#: .\core\models.py:113
+msgid "Application Procedure in Armenian"
+msgstr "Դիմելու կարգը հայերեն"
+
+#: .\core\models.py:118
+msgid "About the company in English"
+msgstr "Ընկերության մասին անգլերեն"
+
+#: .\core\models.py:123
+msgid "About the company in Armenian"
+msgstr "Ընկերության մասին հայերեն"
+
+#: .\core\models.py:128
+msgid "Contacts"
+msgstr "Կոնտակտներ"
+
+#: .\core\models.py:130
+msgid "Created"
+msgstr "Ստեղծվել է"
+
+#: .\core\models.py:131
+msgid "Updated"
+msgstr "Թարմացվել է"
+
+#: .\core\models.py:132
+msgid "Is Active?"
+msgstr "Ակտիվ է՞"
+
+#: .\core\models.py:138
+msgid "Job Announcement"
+msgstr "Աշխատանքի Հայտարարություն"
+
+#: .\core\models.py:139
+msgid "Job Announcements"
+msgstr "Աշխատանքի Հայտարարություններ"
+
+#: .\core\models.py:145
+msgid "Title in English"
+msgstr "Վերնագիրը անգլերեն"
+
+#: .\core\models.py:146
+msgid "Title in Armenian"
+msgstr "Վերնագիրը հայերեն"
+
+#: .\core\models.py:147
+msgid "Article in English"
+msgstr "Հոդվածը անգլերեն"
+
+#: .\core\models.py:148
+msgid "Article in Armenian"
+msgstr "հոդվածը հայերեն"
+
+#: .\core\models.py:154
+msgid "Program"
+msgstr "Ծրագիր"
+
+#: .\core\models.py:155
+msgid "Programs"
+msgstr "Ծրագրեր"
+
+#: .\core\models.py:162 .\core\models.py:211
+msgid "File"
+msgstr "Ֆայլ"
+
+#: .\core\models.py:168
+msgid "Report"
+msgstr "Հաշվետվություն"
+
+#: .\core\models.py:169
+msgid "Reports"
+msgstr "Հաշվետվություններ"
+
+#: .\core\models.py:180
+msgid "Programs Photo"
+msgstr "Ծրագրի նկար"
+
+#: .\core\models.py:181
+msgid "Programs Photos"
+msgstr "Ծրագրի նկարներ"
+
+#: .\core\models.py:192
+#, fuzzy
+msgid "Program File"
+msgstr "Ծրագրի ֆայլ"
+
+#: .\core\models.py:193
+msgid "Program Files"
+msgstr "Ծրագրի ֆայլեր"
+
+#: .\core\models.py:199
+msgid "Description in English"
+msgstr "Բացատրությունն անգլերեն"
+
+#: .\core\models.py:200
+msgid "Description in Armenian"
+msgstr "Բացատրությունն հայերեն"
+
+#: .\core\models.py:206
+msgid "Product"
+msgstr "Արտադրանք"
+
+#: .\core\models.py:207
+msgid "Products"
+msgstr "Արտադրանքներ"
+
+#: .\core\models.py:215
+#, fuzzy
+#| msgid "Report File"
+msgid "Product File"
+msgstr "Արտադրանքի ֆայլ"
+
+#: .\core\models.py:216
+msgid "Product Files"
+msgstr "Արտադրանքի ֆայլեր"
+
+msgid "My actions"
+msgstr "Իմ գործողությունները"
+
+msgid "Recent actions"
+msgstr "Վերջին գործողությունները"
+
+msgid "None available"
+msgstr "Ոչինչ հասանելի չէ"
