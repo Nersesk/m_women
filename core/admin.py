@@ -15,9 +15,9 @@ from image_uploader_widget.admin import ImageUploaderInline
 
 
 
-admin.site.site_title =_('Martunis women ')
-admin.site.index_title = _('Martunis women')
-
+admin.site.site_title =_('M women ')
+admin.site.index_title = _('M women')
+admin.site.site_header =_('M women')
 class StaffAdmin(admin.ModelAdmin):
     list_display = ('id', 'name_eng', 'position_eng')
     list_display_links = ('id', 'name_eng', 'position_eng')
