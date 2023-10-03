@@ -1,4 +1,4 @@
-from django import forms
+from django.forms import ModelForm, PasswordInput
 from django.utils.translation import gettext_lazy as _
 from .models import (Staff,
                      JobAnnouncement,
@@ -9,15 +9,17 @@ from .models import (Staff,
                      Product,
                      ProductFiles,
                      Report,
+                     User
                      )
 from django.contrib import admin
 from image_uploader_widget.admin import ImageUploaderInline
+from django.contrib.auth.models import Group
 
-
-
-admin.site.site_title =_('M women ')
+admin.site.site_title = _('M women ')
 admin.site.index_title = _('M women')
-admin.site.site_header =_('M women')
+admin.site.site_header = _('M women')
+
+
 class StaffAdmin(admin.ModelAdmin):
     list_display = ('id', 'name_eng', 'position_eng')
     list_display_links = ('id', 'name_eng', 'position_eng')
@@ -192,9 +194,36 @@ class ReportAdmin(admin.ModelAdmin):
     ]
 
 
+class UserForm(ModelForm):
+    class Meta:
+        model = User
+        fields = '__all__'
+        widgets = {
+            'password': PasswordInput(),
+        }
+
+
+class UserAdmin(admin.ModelAdmin):
+    search_fields = ('email', 'name')
+    form = UserForm
+    fieldsets = [
+
+        (
+            None,
+            {
+                "fields": ["name", "email", "password", "groups", "user_permissions"],
+                "classes": ["wide", "extrapretty"],
+            },
+        ),
+
+    ]
+
+
 admin.site.register(Product, ProductModelAdmin)
 admin.site.register(Programs, ProgramModelAdmin)
 admin.site.register(JobAnnouncement, JobAnnouncementAdmin)
 admin.site.register(BusinessPartners, BusinessPartnersAdmin)
 admin.site.register(Staff, StaffAdmin)
 admin.site.register(Report, ReportAdmin)
+admin.site.unregister(Group)
+admin.site.register(User, UserAdmin)
