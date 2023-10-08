@@ -9,15 +9,14 @@ from .models import (Staff,
                      Product,
                      ProductFiles,
                      Report,
-                     User
                      )
 from django.contrib import admin
 from image_uploader_widget.admin import ImageUploaderInline
 from django.contrib.auth.models import Group
 
-admin.site.site_title = _('M women ')
-admin.site.index_title = _('M women')
-admin.site.site_header = _('M women')
+admin.site.site_title = _("Martuni Women's Community Council Administration")
+admin.site.index_title = _("Martuni Women's Community Council Administration")
+admin.site.site_header = _('Site Administration')
 
 
 class StaffAdmin(admin.ModelAdmin):
@@ -194,29 +193,29 @@ class ReportAdmin(admin.ModelAdmin):
     ]
 
 
-class UserForm(ModelForm):
-    class Meta:
-        model = User
-        fields = '__all__'
-        widgets = {
-            'password': PasswordInput(),
-        }
-
-
-class UserAdmin(admin.ModelAdmin):
-    search_fields = ('email', 'name')
-    form = UserForm
-    fieldsets = [
-
-        (
-            None,
-            {
-                "fields": ["name", "email", "password", "groups", "user_permissions"],
-                "classes": ["wide", "extrapretty"],
-            },
-        ),
-
-    ]
+# class UserForm(ModelForm):
+#     class Meta:
+#         model = User
+#         fields = '__all__'
+#         widgets = {
+#             'password': PasswordInput(),
+#         }
+#
+#
+# class UserAdmin(admin.ModelAdmin):
+#     search_fields = ('email', 'name')
+#     form = UserForm
+#     fieldsets = [
+#
+#         (
+#             None,
+#             {
+#                 "fields": ["name", "email", "password"],
+#                 "classes": ["wide", "extrapretty"],
+#             },
+#         ),
+#
+#     ]
 
 
 admin.site.register(Product, ProductModelAdmin)
@@ -226,4 +225,4 @@ admin.site.register(BusinessPartners, BusinessPartnersAdmin)
 admin.site.register(Staff, StaffAdmin)
 admin.site.register(Report, ReportAdmin)
 admin.site.unregister(Group)
-admin.site.register(User, UserAdmin)
+# admin.site.register(User, UserAdmin)

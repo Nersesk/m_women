@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-30 22:38+0300\n"
+"POT-Creation-Date: 2023-10-07 20:28+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,19 +18,26 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\core\admin.py:22
-#, fuzzy
-#| msgid "Title in English"
+#: .\core\admin.py:18 .\core\admin.py:19
+msgid "Martuni Women's Community Council Administration"
+msgstr "Մարտունու Կանանց Համայնքային Խորհուրդի Ադմինիստրացիա"
+
+#: .\core\admin.py:20
+msgid "Site Administration"
+msgstr "Կայքի Ադմինիստրացիա"
+
+#: .\core\admin.py:31 .\core\admin.py:62 .\core\admin.py:99 .\core\admin.py:142
+#: .\core\admin.py:172
 msgid "Fields in English"
-msgstr "Վերնագիրը անգլերեն"
+msgstr "Անգլերեն դաշտեր"
 
-#: .\core\admin.py:29
-#, fuzzy
-#| msgid "Title in Armenian"
+#: .\core\admin.py:38 .\core\admin.py:71 .\core\admin.py:106
+#: .\core\admin.py:149 .\core\admin.py:179
 msgid "Fields in Armenian"
-msgstr "Վերնագիրը հայերեն"
+msgstr "Հայերեն դաշտեր"
 
-#: .\core\admin.py:36
+#: .\core\admin.py:45 .\core\admin.py:80 .\core\admin.py:113
+#: .\core\admin.py:186
 msgid "General Fields"
 msgstr "Ընդհանուր դաշտեր"
 
@@ -244,11 +251,42 @@ msgstr "Արտադրանքի ֆայլ"
 msgid "Product Files"
 msgstr "Արտադրանքի ֆայլեր"
 
+#: .\core\models.py:245
+msgid "email"
+msgstr "էլ․ հասցե"
+
+#: .\core\models.py:246
+msgid "name"
+msgstr "անուն"
+
+#: .\templates\admin\base_site.html:3
+msgid "Django site admin"
+msgstr ""
+
+#: .\templates\admin\base_site.html:6
+#, fuzzy
+#| msgid "Site Administration"
+msgid "Django administration"
+msgstr "Կայքի Ադմինիստրացիա"
+
 msgid "My actions"
 msgstr "Իմ գործողությունները"
+
+msgid "Core"
+msgstr "Բաժիններ"
 
 msgid "Recent actions"
 msgstr "Վերջին գործողությունները"
 
 msgid "None available"
 msgstr "Ոչինչ հասանելի չէ"
+
+msgid "User"
+msgstr "Օգտագործող"
+
+msgid "Users"
+msgstr "Օգտագործողներ"
+
+
+msgid "Please correct the errors below."
+msgstr "Լրացրեք բոլոր պարտադիր լրացվող դաշտերը"

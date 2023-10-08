@@ -24,7 +24,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('i18n/', set_language, name='set_language'),
     path('ckeditor/', include('ckeditor_uploader.urls')),
-
+    path('', include('core.urls'))
 
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

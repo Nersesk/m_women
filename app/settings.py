@@ -11,7 +11,9 @@ SECRET_KEY = 'django-insecure-__d&oskfb55nbztu_@k=@df)vo(^mtx(jt)fahw%d4q(2pt409
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
+
+CSRF_TRUSTED_ORIGINS = ['https://45dd-194-61-88-140.ngrok-free.app', ]
 
 
 # Application definition
@@ -170,4 +172,10 @@ CKEDITOR_CONFIGS = {
 }
 CKEDITOR_UPLOAD_PATH = 'content/ckeditor/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-AUTH_USER_MODEL = "core.User"
+
+
+
+#translations path
+LOCALE_PATHS = [
+    os.path.join(BASE_DIR, 'core', 'locale'),  # Adjust the path based on your app structure
+]
