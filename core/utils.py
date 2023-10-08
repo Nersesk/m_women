@@ -1,6 +1,6 @@
 from django.db.models import QuerySet
 
-from core.models import JobAnnouncement, Staff
+from core.models import JobAnnouncement, Staff, BusinessPartners
 from typing import Dict, Union, Optional
 
 
@@ -39,4 +39,23 @@ def get_dict_for_staff_members(staff: Staff, lang: str) -> Dict[str, Union[int, 
         'name': name,
         'position': position,
         'image': staff.image.url
+    }
+
+
+def get_partners_qs() -> QuerySet[BusinessPartners]:
+    queryset = BusinessPartners.objects.order_by('-id')
+    return queryset
+
+def get_dict_for_partners(partner: BusinessPartners, lang: str) -> Dict[str, Union[int, str]]:
+    if lang == 'arm':
+        name = partner.name_arm,
+    else:
+        name = partner.name_eng,
+
+    return {
+        'id': partner.id,
+        'name': name,
+        'duration': partner.duration,
+        'projects_count': partner.projects_count
+        'image': partner.image.url
     }
