@@ -128,15 +128,19 @@ class JobAnnouncement(models.Model):
 
 
 class Programs(models.Model):
-    name_eng = models.CharField(max_length=255, null=False, blank=False, verbose_name=_('Name (English)'))
-    name_arm = models.CharField(max_length=255, null=False, blank=False, verbose_name=_('Name (Armenian)'))
     title_eng = models.CharField(max_length=255, null=False, blank=False, verbose_name=_('Title (English)'))
     title_arm = models.CharField(max_length=255, null=False, blank=False, verbose_name=_('Title (Armenian)'))
+    prologue_eng = RichTextField(null=False, blank=False, verbose_name=_('Prologue (English)'))
+    prologue_arm = RichTextField(null=False, blank=False, verbose_name=_('Prologue (Armenian)'))
+    requirements_eng = RichTextField(null=False, blank=False,
+                                     verbose_name=_('Requirements to the participant (English)'))
+    requirements_arm = RichTextField(null=False, blank=False,
+                                     verbose_name=_('Requirements to the participant(Armenian)'))
     article_eng = RichTextField(blank=False, null=False, verbose_name=_("Article (English)"))
     article_arm = RichTextField(blank=False, null=False, verbose_name=_("Article (Armenian)"))
 
     def __str__(self):
-        return f"{_(self.name_eng)}"
+        return f"{_(self.title_eng)}"
 
     class Meta:
         verbose_name = _('Program')
@@ -171,7 +175,7 @@ class ProgramsPhoto(models.Model):
 
 class ProgramFiles(models.Model):
     main_model = models.ForeignKey(Programs, on_delete=models.CASCADE)
-    file = models.FileField(upload_to='program_files/', verbose_name=_('Image'))
+    file = models.FileField(upload_to='program_files/', verbose_name=_('File'))
 
     def __str__(self):
         return f"Photo {self.id}"

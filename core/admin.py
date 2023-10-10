@@ -10,7 +10,7 @@ from .models import (Staff,
                      ProductFiles,
                      Report,
                      ProductVideos,
-                     ProductImages
+                     ProductImages,
                      )
 from django.contrib import admin
 from image_uploader_widget.admin import ImageUploaderInline
@@ -62,13 +62,13 @@ class StaffAdmin(admin.ModelAdmin):
 class JobAnnouncementAdmin(admin.ModelAdmin):
     list_display = ('id', 'name_eng',)
     list_display_links = ('id', 'name_eng',)
-    search_fields = ('name_eng', 'name_arm', 'company_name_eng', 'company_name_arm')
+    search_fields = ('name_eng', 'name_arm', )
     fieldsets = [
 
         (
             _('Fields in English'),
             {
-                "fields": ["name_eng", "description_eng", "company_name_eng", 'duration_eng',
+                "fields": ["name_eng", "description_eng", 'duration_eng',
                            'assessment_desc_eng', 'appraiser_requirements_eng', 'application_procedure_eng',
                            'about_company_eng', ],
                 "classes": ["wide", "extrapretty"],
@@ -77,7 +77,7 @@ class JobAnnouncementAdmin(admin.ModelAdmin):
         (
             _("Fields in Armenian"),
             {
-                "fields": ["name_arm", "description_arm", "company_name_arm", 'duration_arm',
+                "fields": ["name_arm", "description_arm", 'duration_arm',
                            'assessment_desc_arm', 'appraiser_requirements_arm', 'application_procedure_arm',
                            'about_company_arm', ],
                 "classes": ["wide", "extrapretty"],
@@ -144,9 +144,9 @@ class FileInline(admin.TabularInline):
 
 
 class ProgramModelAdmin(admin.ModelAdmin):
-    list_display = ('id', 'name_eng',)
-    list_display_links = ('id', 'name_eng',)
-    search_fields = ('name_eng', 'name_arm',)
+    list_display = ('id', 'title_eng',)
+    list_display_links = ('id', 'title_eng',)
+    search_fields = ('title_eng', 'title_arm',)
     view_on_site = False
     inlines = [PhotoInline, FileInline]
     fieldsets = [
@@ -154,14 +154,14 @@ class ProgramModelAdmin(admin.ModelAdmin):
         (
             _('Fields in English'),
             {
-                "fields": ["name_eng", "title_eng", "article_eng"],
+                "fields": ["title_eng", "prologue_eng", "requirements_eng", "article_eng"],
                 "classes": ["wide", "extrapretty"],
             },
         ),
         (
             _("Fields in Armenian"),
             {
-                "fields": ["name_arm", "title_arm", "article_arm"],
+                "fields": ["title_arm", "prologue_arm", "requirements_arm", "article_arm"],
                 "classes": ["wide", "extrapretty"],
             },
         ),
@@ -235,31 +235,6 @@ class ReportAdmin(admin.ModelAdmin):
         ),
 
     ]
-
-
-# class UserForm(ModelForm):
-#     class Meta:
-#         model = User
-#         fields = '__all__'
-#         widgets = {
-#             'password': PasswordInput(),
-#         }
-#
-#
-# class UserAdmin(admin.ModelAdmin):
-#     search_fields = ('email', 'name')
-#     form = UserForm
-#     fieldsets = [
-#
-#         (
-#             None,
-#             {
-#                 "fields": ["name", "email", "password"],
-#                 "classes": ["wide", "extrapretty"],
-#             },
-#         ),
-#
-#     ]
 
 
 admin.site.register(Product, ProductModelAdmin)

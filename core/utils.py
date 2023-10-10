@@ -1,6 +1,10 @@
 from django.db.models import QuerySet
 
-from core.models import JobAnnouncement, Staff, BusinessPartners
+from core.models import (
+                         JobAnnouncement,
+                         Staff,
+                         BusinessPartners,
+                         Programs)
 from typing import Dict, Union, Optional
 
 
@@ -59,3 +63,14 @@ def get_dict_for_partners(partner: BusinessPartners, lang: str) -> Dict[str, Uni
         'projects_count': partner.projects_count,
         'image': partner.image.url
     }
+
+
+def get_program_qs() -> QuerySet[Programs]:
+    return Programs.objects.all()
+
+def get_program_list_dict(program: Programs,  lang: str)-> Dict[str, Union[int, str]]:
+    if lang == 'arm':
+        name, position = program.name_arm, program.title_arm
+    else:
+        name, position = program.name_eng, program.title_eng
+
