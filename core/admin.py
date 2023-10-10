@@ -1,4 +1,4 @@
-from django.forms import ModelForm, PasswordInput
+from django.utils.safestring import mark_safe
 from django.utils.translation import gettext_lazy as _
 from .models import (Staff,
                      JobAnnouncement,
@@ -9,6 +9,8 @@ from .models import (Staff,
                      Product,
                      ProductFiles,
                      Report,
+                     ProductVideos,
+                     ProductImages
                      )
 from django.contrib import admin
 from image_uploader_widget.admin import ImageUploaderInline
@@ -20,7 +22,7 @@ admin.site.site_header = _('Site Administration')
 
 
 class StaffAdmin(admin.ModelAdmin):
-    list_display = ('id', 'name_eng', 'position_eng')
+    list_display = ('id', 'name_eng', 'position_eng', 'admin_image')
     list_display_links = ('id', 'name_eng', 'position_eng')
     search_fields = ('name_eng', 'name_arm', 'position_eng', 'position_arm')
     view_on_site = False
@@ -49,6 +51,12 @@ class StaffAdmin(admin.ModelAdmin):
 
         ),
     ]
+
+    def admin_image(self, other):
+        if other.image:
+            return mark_safe(f"<img src='{other.image.url} 'width='100'")
+        else:
+            return None
 
 
 class JobAnnouncementAdmin(admin.ModelAdmin):
@@ -88,7 +96,7 @@ class JobAnnouncementAdmin(admin.ModelAdmin):
 
 
 class BusinessPartnersAdmin(admin.ModelAdmin):
-    list_display = ('id', 'name_eng',)
+    list_display = ('id', 'name_eng','admin_image')
     list_display_links = ('id', 'name_eng',)
     search_fields = ('name_eng', 'name_arm',)
     view_on_site = False
@@ -118,10 +126,16 @@ class BusinessPartnersAdmin(admin.ModelAdmin):
         ),
     ]
 
+    def admin_image(self, other):
+        if other.image:
+            return mark_safe(f"<img src='{other.image.url} 'width='100'")
+        else:
+            return None
+
 
 class PhotoInline(ImageUploaderInline):
     model = ProgramsPhoto
-    add_image_text = "add_image_text"
+    add_image_text = _("add_image_text")
 
 
 class FileInline(admin.TabularInline):
@@ -155,15 +169,45 @@ class ProgramModelAdmin(admin.ModelAdmin):
     ]
 
 
+class PhotoProductInline(ImageUploaderInline):
+    model = ProductImages
+    add_image_text = _("add_image_text")
+
+
 class ProductFilesInline(admin.StackedInline):
     model = ProductFiles
 
 
+class ProductVideosAdmin(admin.StackedInline):
+    model = ProductVideos
+
+
 class ProductModelAdmin(admin.ModelAdmin):
-    inlines = [ProductFilesInline]
+    search_fields = ('name_eng', 'name_arm')
+    list_display = ('id', 'name_eng',)
+    fieldsets = [
+
+        (
+            _('Fields in English'),
+            {
+                "fields": ["name_eng", "description_eng"],
+                "classes": ["wide", "extrapretty"],
+            },
+        ),
+        (
+            _("Fields in Armenian"),
+            {
+                "fields": ["name_arm", "description_arm"],
+                "classes": ["wide", "extrapretty"],
+            },
+        ),
+
+    ]
+    inlines = [ProductFilesInline, PhotoProductInline, ProductVideosAdmin]
 
 
 class ReportAdmin(admin.ModelAdmin):
+    list_display = ('id', 'name_eng',)
     search_fields = ('name_eng', 'name_arm')
     fieldsets = [
 

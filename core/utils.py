@@ -56,6 +56,6 @@ def get_dict_for_partners(partner: BusinessPartners, lang: str) -> Dict[str, Uni
         'id': partner.id,
         'name': name,
         'duration': partner.duration,
-        'projects_count': partner.projects_count
+        'projects_count': partner.projects_count,
         'image': partner.image.url
     }

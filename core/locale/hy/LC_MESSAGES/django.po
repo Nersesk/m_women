@@ -44,20 +44,20 @@ msgstr "Ընդհանուր դաշտեր"
 #: .\core\models.py:17 .\core\models.py:32 .\core\models.py:143
 #: .\core\models.py:159 .\core\models.py:197
 msgid "Name in English"
-msgstr "Անունը անգլերեն"
+msgstr "Անունը (անգլերեն)"
 
 #: .\core\models.py:18 .\core\models.py:33 .\core\models.py:144
 #: .\core\models.py:160 .\core\models.py:198
 msgid "Name in Armenian"
-msgstr "Անունը հայերեն"
+msgstr "Անունը (հայերեն)"
 
 #: .\core\models.py:19
 msgid "Position in English"
-msgstr "Հաստիքը անգլերեն"
+msgstr "Հաստիքը (անգլերեն)"
 
 #: .\core\models.py:20
 msgid "Position in Armenian"
-msgstr "Հաստիքը հայերեն"
+msgstr "Հաստիքը (հայերեն)"
 
 #: .\core\models.py:21 .\core\models.py:34 .\core\models.py:49
 #: .\core\models.py:161 .\core\models.py:174 .\core\models.py:186
@@ -86,67 +86,67 @@ msgstr "Գործընկերներ"
 
 #: .\core\models.py:47
 msgid "Job name in English"
-msgstr "Աշխատանքի անվանումը անգլերեն"
+msgstr "Աշխատանքի անվանումը (անգլերեն)"
 
 #: .\core\models.py:48
 msgid "Job name in Armenian"
-msgstr "Աշխատանքի անվանումը հայերեն"
+msgstr "Աշխատանքի անվանումը (հայերեն)"
 
 #: .\core\models.py:53
 msgid "Job description in English"
-msgstr "Աշխատանքի նկարագիրը անգլերեն"
+msgstr "Աշխատանքի նկարագիրը (անգլերեն)"
 
 #: .\core\models.py:58
 msgid "Job description in Armenian"
-msgstr "Աշխատանքի նկարագիրը հայերեն"
+msgstr "Աշխատանքի նկարագիրը (հայերեն)"
 
 #: .\core\models.py:63
 msgid "Company name in English"
-msgstr "Ընկերության անվանումը անգլերեն"
+msgstr "Ընկերության անվանումը (անգլերեն)"
 
 #: .\core\models.py:68
 msgid "Company name in Armenian"
-msgstr "Ընկերության անվանումը հայերեն"
+msgstr "Ընկերության անվանումը (հայերեն)"
 
 #: .\core\models.py:74
 msgid "Job duration in English"
-msgstr "Աշխատանքի տևողությունը անգլերեն"
+msgstr "Աշխատանքի տևողությունը (անգլերեն)"
 
 #: .\core\models.py:81
 msgid "Job duration in Armenian"
-msgstr "Աշխատանքի տևողությունը հայերեն"
+msgstr "Աշխատանքի տևողությունը (հայերեն)"
 
 #: .\core\models.py:86
 msgid "Assessment Service Description in English"
-msgstr "Գնահատման ծառայության նկարագրությունը անգլերեն"
+msgstr "Գնահատման ծառայության նկարագրությունը (անգլերեն)"
 
 #: .\core\models.py:91
 msgid "Assessment Service Description in Armenian"
-msgstr "Գնահատման ծառայության նկարագրությունը հայերեն"
+msgstr "Գնահատման ծառայության նկարագրությունը (հայերեն)"
 
 #: .\core\models.py:97
 msgid "Requirements to the appraiser in English"
-msgstr "Պահանջներ գնահատողին անգլերեն"
+msgstr "Պահանջներ գնահատողին (անգլերեն)"
 
 #: .\core\models.py:102
 msgid "Requirements to the appraiser in Armenian"
-msgstr "Պահանջներ գնահատողին հայերեն"
+msgstr "Պահանջներ գնահատողին (հայերեն)"
 
 #: .\core\models.py:107
 msgid "Application Procedure in English"
-msgstr "Դիմելու կարգը անգլերեն"
+msgstr "Դիմելու կարգը (անգլերեն)"
 
 #: .\core\models.py:113
 msgid "Application Procedure in Armenian"
-msgstr "Դիմելու կարգը հայերեն"
+msgstr "Դիմելու կարգը (հայերեն)"
 
 #: .\core\models.py:118
 msgid "About the company in English"
-msgstr "Ընկերության մասին անգլերեն"
+msgstr "Ընկերության մասին (անգլերեն)"
 
 #: .\core\models.py:123
 msgid "About the company in Armenian"
-msgstr "Ընկերության մասին հայերեն"
+msgstr "Ընկերության մասին (հայերեն)"
 
 #: .\core\models.py:128
 msgid "Contacts"
@@ -174,19 +174,19 @@ msgstr "Աշխատանքի Հայտարարություններ"
 
 #: .\core\models.py:145
 msgid "Title in English"
-msgstr "Վերնագիրը անգլերեն"
+msgstr "Վերնագիրը (անգլերեն)"
 
 #: .\core\models.py:146
 msgid "Title in Armenian"
-msgstr "Վերնագիրը հայերեն"
+msgstr "Վերնագիրը (հայերեն)"
 
 #: .\core\models.py:147
 msgid "Article in English"
-msgstr "Հոդվածը անգլերեն"
+msgstr "Հոդվածը (անգլերեն)"
 
 #: .\core\models.py:148
 msgid "Article in Armenian"
-msgstr "հոդվածը հայերեն"
+msgstr "հոդվածը (հայերեն)"
 
 #: .\core\models.py:154
 msgid "Program"
@@ -227,11 +227,11 @@ msgstr "Ծրագրի ֆայլեր"
 
 #: .\core\models.py:199
 msgid "Description in English"
-msgstr "Բացատրությունն անգլերեն"
+msgstr "Բացատրությունն (անգլերեն)"
 
 #: .\core\models.py:200
 msgid "Description in Armenian"
-msgstr "Բացատրությունն հայերեն"
+msgstr "Բացատրությունն (հայերեն)"
 
 #: .\core\models.py:206
 msgid "Product"
