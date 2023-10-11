@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-11 00:23+0300\n"
+"POT-Creation-Date: 2023-10-11 21:51+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -68,14 +68,10 @@ msgid "Position (Armenian)"
 msgstr "Հաստիքը (հայերեն)"
 
 #: .\core\models.py:19 .\core\models.py:32 .\core\models.py:47
-#: .\core\models.py:153 .\core\models.py:166 .\core\models.py:178
-#: .\core\models.py:213
+#: .\core\models.py:153 .\core\models.py:166 .\core\models.py:213
 msgid "Image"
 msgstr "Նկար"
 
-#: .\core\models.py:25 .\core\models.py:26
-msgid "Staff"
-msgstr "Աշխատողներ"
 
 #: .\core\models.py:33
 msgid "Duration"
@@ -135,11 +131,11 @@ msgstr "Պահանջներ գնահատողին (հայերեն)"
 
 #: .\core\models.py:95
 msgid "Application Procedure (English)"
-msgstr "Դիմելու կարգը (անգլերեն)"
+msgstr "Հայտերը ներկայացնելու կարգը (անգլերեն)"
 
 #: .\core\models.py:101
 msgid "Application Procedure (Armenian)"
-msgstr "Դիմելու կարգը (հայերեն)"
+msgstr "Հայտերը ներկայացնելու կարգը (հայերեն)"
 
 #: .\core\models.py:106
 msgid "About the company (English)"
@@ -181,6 +177,22 @@ msgstr "Վերնագիրը (անգլերեն)"
 msgid "Title (Armenian)"
 msgstr "Վերնագիրը (հայերեն)"
 
+#: .\core\models.py:133
+msgid "Prologue (English)"
+msgstr "Նախաբան (անգլերեն)"
+
+#: .\core\models.py:134
+msgid "Prologue (Armenian)"
+msgstr "Նախաբան (հայերեն)"
+
+#: .\core\models.py:136
+msgid "Requirements to the participant (English)"
+msgstr "Պահանջներ մասնակցին (անգլերեն)"
+
+#: .\core\models.py:138
+msgid "Requirements to the participant(Armenian)"
+msgstr "Պահանջներ մասնակցին (հայերեն)"
+
 #: .\core\models.py:139
 msgid "Article (English)"
 msgstr "Հոդվածը (անգլերեն)"
@@ -197,7 +209,7 @@ msgstr "Ծրագիր"
 msgid "Programs"
 msgstr "Ծրագրեր"
 
-#: .\core\models.py:154 .\core\models.py:203
+#: .\core\models.py:154 .\core\models.py:178 .\core\models.py:203
 msgid "File"
 msgstr "Ֆայլ"
 
@@ -281,25 +293,10 @@ msgstr "Արտադրանքի Տեսահոլովակներ"
 msgid "Django site admin"
 msgstr ""
 
-
-msgid "Prologue (English)"
-msgstr "Նախաբան (անգլերեն)"
-
-msgid "Prologue (Armenian)"
-msgstr "Նախաբան (հայերեն)"
-
-
-msgid "Requirements to the participant (English)"
-msgstr "Պահանջներ մասնակցին (անգլերեն)"
-
-msgid "Requirements to the participant(Armenian)"
-msgstr "Պահանջներ մասնակցին (հայերեն)"
-
-
-
 #: .\templates\admin\base_site.html:6
 msgid "Django administration"
 msgstr "Կայքի Ադմինիստրացիա"
+
 
 msgid "Section"
 msgstr "Բաժին"
@@ -339,3 +336,10 @@ msgstr "Այո, վստահ եմ"
 
 msgid "Please correct the errors below."
 msgstr "Խնդրում ենք ուղղել նշված սխալները"
+
+
+msgid "Staff"
+msgstr "Աշխատակից"
+
+msgid "Staff members"
+msgstr "Աշխատակիցներ"

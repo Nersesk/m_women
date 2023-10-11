@@ -7,7 +7,6 @@ from django.contrib.auth.models import (
     PermissionsMixin
 )
 from django.utils.translation import gettext_lazy as _
-
 from ckeditor.fields import RichTextField
 
 
@@ -23,7 +22,7 @@ class Staff(models.Model):
 
     class Meta:
         verbose_name = _('Staff')
-        verbose_name_plural = _('Staff')
+        verbose_name_plural = _('Staff members')
 
 
 class BusinessPartners(models.Model):
