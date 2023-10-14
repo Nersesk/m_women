@@ -3,14 +3,16 @@ from django.utils.translation import gettext_lazy as _
 from .models import (Staff,
                      JobAnnouncement,
                      BusinessPartners,
-                     Programs,
+                     Program,
                      ProgramsPhoto,
-                     ProgramFiles,
+                     OpenCompetitionFiles,
+                     OpenCompetition,
                      Product,
                      ProductFiles,
                      Report,
                      ProductVideos,
                      ProductImages,
+                     ArchiveProgram
                      )
 from django.contrib import admin
 from image_uploader_widget.admin import ImageUploaderInline
@@ -62,7 +64,7 @@ class StaffAdmin(admin.ModelAdmin):
 class JobAnnouncementAdmin(admin.ModelAdmin):
     list_display = ('id', 'name_eng',)
     list_display_links = ('id', 'name_eng',)
-    search_fields = ('name_eng', 'name_arm', )
+    search_fields = ('name_eng', 'name_arm',)
     fieldsets = [
 
         (
@@ -96,7 +98,7 @@ class JobAnnouncementAdmin(admin.ModelAdmin):
 
 
 class BusinessPartnersAdmin(admin.ModelAdmin):
-    list_display = ('id', 'name_eng','admin_image')
+    list_display = ('id', 'name_eng', 'admin_image')
     list_display_links = ('id', 'name_eng',)
     search_fields = ('name_eng', 'name_arm',)
     view_on_site = False
@@ -139,31 +141,75 @@ class PhotoInline(ImageUploaderInline):
 
 
 class FileInline(admin.TabularInline):
-    model = ProgramFiles
+    model = OpenCompetitionFiles
     max_num = 10
 
 
 class ProgramModelAdmin(admin.ModelAdmin):
-    list_display = ('id', 'title_eng',)
-    list_display_links = ('id', 'title_eng',)
-    search_fields = ('title_eng', 'title_arm',)
-    view_on_site = False
-    inlines = [PhotoInline, FileInline]
+    list_display = ('id', 'name_eng',)
+    list_display_links = ('id', 'name_eng',)
+    search_fields = ('title_eng', 'title_arm', 'name_eng', 'name_arm')
+    view_on_site = True
+    inlines = [PhotoInline]
+    readonly_fields = ('created', 'updated')
     fieldsets = [
 
         (
             _('Fields in English'),
             {
-                "fields": ["title_eng", "prologue_eng", "requirements_eng", "article_eng"],
+                "fields": ["title_eng", "name_eng", "article_eng"],
                 "classes": ["wide", "extrapretty"],
             },
         ),
         (
             _("Fields in Armenian"),
             {
-                "fields": ["title_arm", "prologue_arm", "requirements_arm", "article_arm"],
+                "fields": ["name_arm", "title_arm", "article_arm"],
                 "classes": ["wide", "extrapretty"],
             },
+        ),
+        (
+            _('General Fields'),
+            {
+                "fields": ["image", 'created', 'updated'],
+                "classes": ["wide", "extrapretty"],
+            }
+
+        ),
+
+    ]
+
+
+class OpenCompetitionAdmin(admin.ModelAdmin):
+    list_display = ('id', 'name_eng',)
+    list_display_links = ('id', 'name_eng',)
+    search_fields = ('name_eng', 'name_arm',)
+    view_on_site = False
+    inlines = [FileInline]
+    readonly_fields = ('created', 'updated')
+    fieldsets = [
+
+        (
+            _('Fields in English'),
+            {
+                "fields": ["name_eng", "description_eng", "requirements_eng", "article_eng"],
+                "classes": ["wide", "extrapretty"],
+            },
+        ),
+        (
+            _("Fields in Armenian"),
+            {
+                "fields": ["name_arm", "description_arm", "requirements_arm", "article_arm"],
+                "classes": ["wide", "extrapretty"],
+            },
+        ),
+        (
+            _('General Fields'),
+            {
+                "fields": ["image", 'created', 'updated','is_active'],
+                "classes": ["wide", "extrapretty"],
+            }
+
         ),
 
     ]
@@ -184,7 +230,9 @@ class ProductVideosAdmin(admin.StackedInline):
 
 class ProductModelAdmin(admin.ModelAdmin):
     search_fields = ('name_eng', 'name_arm')
-    list_display = ('id', 'name_eng',)
+    list_display = ('id', 'name_eng')
+    readonly_fields = ('created', 'updated')
+
     fieldsets = [
 
         (
@@ -201,6 +249,14 @@ class ProductModelAdmin(admin.ModelAdmin):
                 "classes": ["wide", "extrapretty"],
             },
         ),
+        (
+            _('General Fields'),
+            {
+                "fields": ["created", 'updated', ],
+                "classes": ["wide", "extrapretty"],
+            }
+
+        ),
 
     ]
     inlines = [ProductFilesInline, PhotoProductInline, ProductVideosAdmin]
@@ -209,6 +265,7 @@ class ProductModelAdmin(admin.ModelAdmin):
 class ReportAdmin(admin.ModelAdmin):
     list_display = ('id', 'name_eng',)
     search_fields = ('name_eng', 'name_arm')
+    readonly_fields = ('created', 'updated')
     fieldsets = [
 
         (
@@ -228,7 +285,7 @@ class ReportAdmin(admin.ModelAdmin):
         (
             _('General Fields'),
             {
-                "fields": ["image", 'report_file', ],
+                "fields": ["image", 'report_file','created', 'updated' ],
                 "classes": ["wide", "extrapretty"],
             }
 
@@ -237,11 +294,17 @@ class ReportAdmin(admin.ModelAdmin):
     ]
 
 
+class ArchiveProgramAdmin(ProgramModelAdmin):
+    """Archive Programs"""
+
+
 admin.site.register(Product, ProductModelAdmin)
-admin.site.register(Programs, ProgramModelAdmin)
+admin.site.register(Program, ProgramModelAdmin)
+admin.site.register(OpenCompetition, OpenCompetitionAdmin)
 admin.site.register(JobAnnouncement, JobAnnouncementAdmin)
 admin.site.register(BusinessPartners, BusinessPartnersAdmin)
 admin.site.register(Staff, StaffAdmin)
 admin.site.register(Report, ReportAdmin)
+admin.site.register(ArchiveProgram, ArchiveProgramAdmin)
 admin.site.unregister(Group)
 # admin.site.register(User, UserAdmin)
