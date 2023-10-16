@@ -23,11 +23,72 @@ admin.site.index_title = _("Martuni Women's Community Council Administration")
 admin.site.site_header = _('Site Administration')
 
 
+def custom_list_display(instance, request):
+    lang = request.LANGUAGE_CODE
+    list_display = ['id', ]
+    if lang == 'en':
+        list_display.append('name_eng')
+    elif lang == 'hy':
+        list_display.append('name_arm')
+
+    list_display.append('admin_image')
+    return list_display
+
+
+def custom_list_display_links(instance, request, list_display):
+    lang = request.LANGUAGE_CODE
+    list_display_links = ['id']
+    if lang == 'en':
+        list_display_links.append('name_eng')
+        list_display_links.append('position_eng')
+    elif lang == 'hy':
+        list_display_links.append('name_arm')
+        list_display_links.append('position_arm')
+    list_display_links.append('admin_image')
+
+    return list_display_links
+
+
+def admin_image(instance, other):
+    if other.image:
+        return mark_safe(f"<img src='{other.image.url} 'width='100'")
+    else:
+        return None
+
+
 class StaffAdmin(admin.ModelAdmin):
-    list_display = ('id', 'name_eng', 'position_eng', 'admin_image')
-    list_display_links = ('id', 'name_eng', 'position_eng')
     search_fields = ('name_eng', 'name_arm', 'position_eng', 'position_arm')
     view_on_site = False
+
+    admin_image = admin_image
+    admin_image.short_description = _('Image')
+
+    def get_list_display(self, request):
+        lang = request.LANGUAGE_CODE  # Adjust this based on how you store the language
+        list_display = ['id', ]
+        if lang == 'en':
+            list_display.append('name_eng')
+            list_display.append('position_eng')
+        elif lang == 'hy':
+            list_display.append('name_arm')
+            list_display.append('position_arm')
+
+        list_display.append('admin_image')
+        return list_display
+
+    def get_list_display_links(self, request, list_display):
+        lang = request.LANGUAGE_CODE
+        list_display_links = ['id']
+        if lang == 'en':
+            list_display_links.append('name_eng')
+            list_display_links.append('position_eng')
+        elif lang == 'hy':
+            list_display_links.append('name_arm')
+            list_display_links.append('position_arm')
+        list_display_links.append('admin_image')
+
+        return list_display_links
+
     fieldsets = [
 
         (
@@ -54,17 +115,15 @@ class StaffAdmin(admin.ModelAdmin):
         ),
     ]
 
-    def admin_image(self, other):
-        if other.image:
-            return mark_safe(f"<img src='{other.image.url} 'width='100'")
-        else:
-            return None
-
 
 class JobAnnouncementAdmin(admin.ModelAdmin):
-    list_display = ('id', 'name_eng',)
-    list_display_links = ('id', 'name_eng',)
     search_fields = ('name_eng', 'name_arm',)
+
+    get_list_display = custom_list_display
+    get_list_display_links = custom_list_display_links
+
+    admin_image = admin_image
+    admin_image.short_description = _('Image')
     fieldsets = [
 
         (
@@ -98,10 +157,15 @@ class JobAnnouncementAdmin(admin.ModelAdmin):
 
 
 class BusinessPartnersAdmin(admin.ModelAdmin):
-    list_display = ('id', 'name_eng', 'admin_image')
-    list_display_links = ('id', 'name_eng',)
     search_fields = ('name_eng', 'name_arm',)
     view_on_site = False
+
+    get_list_display = custom_list_display
+    get_list_display_links = custom_list_display_links
+
+    admin_image = admin_image
+    admin_image.short_description = _('Image')
+
     fieldsets = [
 
         (
@@ -128,12 +192,6 @@ class BusinessPartnersAdmin(admin.ModelAdmin):
         ),
     ]
 
-    def admin_image(self, other):
-        if other.image:
-            return mark_safe(f"<img src='{other.image.url} 'width='100'")
-        else:
-            return None
-
 
 class PhotoInline(ImageUploaderInline):
     model = ProgramsPhoto
@@ -146,8 +204,11 @@ class FileInline(admin.TabularInline):
 
 
 class ProgramModelAdmin(admin.ModelAdmin):
-    list_display = ('id', 'name_eng',)
-    list_display_links = ('id', 'name_eng',)
+    get_list_display = custom_list_display
+    get_list_display_links = custom_list_display_links
+
+    admin_image = admin_image
+    admin_image.short_description = _('Image')
     search_fields = ('title_eng', 'title_arm', 'name_eng', 'name_arm')
     view_on_site = True
     inlines = [PhotoInline]
@@ -181,8 +242,11 @@ class ProgramModelAdmin(admin.ModelAdmin):
 
 
 class OpenCompetitionAdmin(admin.ModelAdmin):
-    list_display = ('id', 'name_eng',)
-    list_display_links = ('id', 'name_eng',)
+    get_list_display = custom_list_display
+    get_list_display_links = custom_list_display_links
+
+    admin_image = admin_image
+    admin_image.short_description = _('Image')
     search_fields = ('name_eng', 'name_arm',)
     view_on_site = False
     inlines = [FileInline]
@@ -206,7 +270,7 @@ class OpenCompetitionAdmin(admin.ModelAdmin):
         (
             _('General Fields'),
             {
-                "fields": ["image", 'created', 'updated','is_active'],
+                "fields": ["image", 'created', 'updated', 'active'],
                 "classes": ["wide", "extrapretty"],
             }
 
@@ -229,9 +293,25 @@ class ProductVideosAdmin(admin.StackedInline):
 
 
 class ProductModelAdmin(admin.ModelAdmin):
-    search_fields = ('name_eng', 'name_arm')
-    list_display = ('id', 'name_eng')
     readonly_fields = ('created', 'updated')
+
+    def get_list_display(self, request):
+        lang = request.LANGUAGE_CODE
+        list_display = ['id', ]
+        if lang == 'en':
+            list_display.append('name_eng')
+        elif lang == 'hy':
+            list_display.append('name_arm')
+        return list_display
+
+    def get_list_display_links(self, request, list_display):
+        lang = request.LANGUAGE_CODE
+        list_display_links = ['id']
+        if lang == 'en':
+            list_display_links.append('name_eng')
+        elif lang == 'hy':
+            list_display_links.append('name_arm')
+        return list_display_links
 
     fieldsets = [
 
@@ -263,9 +343,13 @@ class ProductModelAdmin(admin.ModelAdmin):
 
 
 class ReportAdmin(admin.ModelAdmin):
-    list_display = ('id', 'name_eng',)
     search_fields = ('name_eng', 'name_arm')
     readonly_fields = ('created', 'updated')
+    get_list_display = custom_list_display
+    get_list_display_links = custom_list_display_links
+
+    admin_image = admin_image
+    admin_image.short_description = _('Image')
     fieldsets = [
 
         (
@@ -285,7 +369,7 @@ class ReportAdmin(admin.ModelAdmin):
         (
             _('General Fields'),
             {
-                "fields": ["image", 'report_file','created', 'updated' ],
+                "fields": ["image", 'report_file', 'created', 'updated'],
                 "classes": ["wide", "extrapretty"],
             }
 

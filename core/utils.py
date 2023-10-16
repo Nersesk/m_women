@@ -1,13 +1,18 @@
+import smtplib
+from itertools import chain
+from typing import Dict, Union, Iterator
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+
+from django.conf import settings
 from django.db.models import QuerySet
 from django.urls import reverse
 from core.models import JobAnnouncement, Staff, BusinessPartners, Program, OpenCompetition, ArchiveProgram, Product, \
     Report
-from typing import Dict, Union, Iterator
-from itertools import chain
 
 
 def get_announcements_qs() -> list:
-    combined_queryset = list(chain(OpenCompetition.objects.filter(is_active=True).order_by('-created'),
+    combined_queryset = list(chain(OpenCompetition.objects.filter(active=True).order_by('-created'),
                                    JobAnnouncement.objects.filter(active=True).order_by('-created')))
     combined_queryset.sort(key=lambda x: x.created, reverse=True)
 
@@ -147,7 +152,6 @@ def get_partners_qs() -> QuerySet[BusinessPartners]:
 def get_dict_for_partners(
         partner: BusinessPartners, lang: str
 ) -> Dict[str, Union[int, str]]:
-
     name = partner.name_arm if lang == 'arm' else partner.name_eng
     return {
         'id': partner.id,
@@ -285,3 +289,36 @@ def get_report_dict(report: Report, lang: str) -> Dict[str, Union[int, str]]:
         'file': report.report_file.url,
         'image': report.image.url
     }
+
+def get_mail_client() -> smtplib.SMTP:
+    mail_server = smtplib.SMTP(settings.SMTP_SERVER, settings.SMTP_PORT)
+    mail_server.ehlo()
+    mail_server.starttls()
+    mail_server.ehlo()
+    mail_server.login(settings.SMTP_USERNAME, settings.SMTP_PASSWORD)
+
+    return mail_server
+
+
+def construct_mail_body(from_email: str, phone_number: str, message_text: str) -> str:
+    body_template = body = f"""<html><body><div><p><strong>From:</strong> {from_email}</p>
+    </div><div><p><strong>Phone Number:</strong> {phone_number}</p></div><div><p>
+    <strong>Email Text:</strong></p><p>{message_text}</p></div></body></html>"""
+    return body_template
+
+
+def send_email(from_email: str, phone_number: str, message_text: str) -> bool:
+    mail_client = get_mail_client()
+    mail_body = construct_mail_body(from_email, phone_number, message_text)
+    mail_from = settings.MAIL_FROM
+    msg = MIMEMultipart()
+    msg['From'] = mail_from
+    msg['To'] = settings.MAIL_TO
+    msg['Subject'] = f"Message from {from_email}"
+    msg.attach(MIMEText(mail_body, 'html'))
+    try:
+        mail_client.sendmail(mail_from, settings.MAIL_TO, msg.as_bytes())
+    except Exception as e:
+        return False
+    else:
+        return True

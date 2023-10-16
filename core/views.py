@@ -1,9 +1,11 @@
 import os
 import json
 
+from django.core.handlers.wsgi import WSGIRequest
 from django.shortcuts import render
-from django.http import HttpResponse, HttpRequest
+from django.http import HttpResponse, HttpRequest, HttpResponseNotAllowed
 from django.core.exceptions import ObjectDoesNotExist
+from django.http import JsonResponse
 
 from core.utils import (
     get_announcements_qs,
@@ -21,61 +23,65 @@ from core.utils import (
     get_open_competition_detail_dict,
     get_archive_programs_qs,
     get_product_qs,
-    get_product_dict, get_product_detail_dict, get_report_qs, get_report_dict
+    get_product_dict,
+    get_product_detail_dict,
+    get_report_qs,
+    get_report_dict,
+    send_email
 )
 
 
-def get_announcement_list(request: HttpRequest, lang: str, page: int) -> HttpResponse:
+def get_announcement_list(request: WSGIRequest, lang: str, page: int) -> JsonResponse:
     lst = []
     announcements = get_announcements_qs()
     page_announcements = announcements[(page - 1) * 12: page * 12]
     for announcement in page_announcements:
         program_dict = get_dict_for_announcement_list(announcement, lang)
         lst.append(program_dict)
+    dct = {'announcements': lst}
+    return JsonResponse(dct)
 
-    return HttpResponse(json.dumps(lst), content_type='application/json')
 
-
-def get_announcements_page_count(request: HttpRequest) -> HttpResponse:
+def get_announcements_page_count(request: WSGIRequest) -> JsonResponse:
     announcements = get_announcements_qs()
     pages_count = int(1 + (len(announcements) / 12))
-    return HttpResponse(
-        json.dumps({'pages_count': pages_count}),
-        content_type='application/json',
+    return JsonResponse(
+        {'pages_count': pages_count}
     )
 
 
-def get_last_three_announcements(request: HttpRequest, lang: str) -> HttpResponse:
+def get_last_three_announcements(request: WSGIRequest, lang: str) -> HttpResponse:
     lst = []
     announcements = get_announcements_qs()
     queryset = announcements[:3]
     for i in queryset:
         announcement_dict = get_dict_for_announcement_list(i, lang)
         lst.append(announcement_dict)
-    return HttpResponse(json.dumps(lst), content_type='application/json')
+    dct = {'announcements': lst}
+    return JsonResponse(dct)
 
 
-def get_announcement(request: HttpRequest, lang: str, id: int) -> HttpResponse:
+def get_announcement(request: WSGIRequest, lang: str, id: int) -> HttpResponse:
     try:
         announcement = get_job_announcement_qs().get(id=id)
     except ObjectDoesNotExist:
         return HttpResponse(json.dumps({'msg': "Job Announcement does not exists"}), content_type='application/json')
 
     job_announcement_dict = get_job_announcement_detail_dict(announcement, lang)
-    return HttpResponse(json.dumps(job_announcement_dict), content_type='application/json')
+    return JsonResponse(job_announcement_dict)
 
 
-def get_open_competition(request: HttpRequest, lang: str, id: int) -> HttpResponse:
+def get_open_competition(request: WSGIRequest, lang: str, id: int) -> HttpResponse:
     try:
         open_competition = get_open_competition_qs().get(id=id)
     except ObjectDoesNotExist:
-        return HttpResponse(json.dumps({'msg': "Open competition does not exists"}), content_type='application/json')
+        return JsonResponse({'msg': "Open competition does not exists"})
 
     open_competition_dict = get_open_competition_detail_dict(open_competition, lang)
-    return HttpResponse(json.dumps(open_competition_dict), content_type='application/json')
+    return JsonResponse(open_competition_dict)
 
 
-def get_staff(request: HttpRequest, lang: str, page=1) -> HttpResponse:
+def get_staff(request: WSGIRequest, lang: str, page=1) -> HttpResponse:
     staff_members = []
     page_elems = 9
     queryset = get_staff_members_queryset()
@@ -85,10 +91,10 @@ def get_staff(request: HttpRequest, lang: str, page=1) -> HttpResponse:
         staff_dict = get_dict_for_staff_members(i, lang)
         staff_members.append(staff_dict)
     dct = {'staff_members': staff_members, 'next_page': has_other_page}
-    return HttpResponse(json.dumps(dct), content_type='application/json')
+    return JsonResponse(dct)
 
 
-def get_partners(request: HttpRequest, lang: str, page=1) -> HttpResponse:
+def get_partners(request: WSGIRequest, lang: str, page=1) -> HttpResponse:
     business_partners = []
     page_elems = 9
     queryset = get_partners_qs()
@@ -98,19 +104,16 @@ def get_partners(request: HttpRequest, lang: str, page=1) -> HttpResponse:
         staff_dict = get_dict_for_partners(i, lang)
         business_partners.append(staff_dict)
     dct = {'business_partners': business_partners, 'next_page': has_other_page}
-    return HttpResponse(json.dumps(dct), content_type='application/json')
+    return JsonResponse(dct)
 
 
-def get_program_pages_count(request: HttpRequest) -> HttpResponse:
+def get_program_pages_count(request: WSGIRequest) -> HttpResponse:
     programs = get_program_qs()
     pages_count = int(1 + (programs.count() / 12))
-    return HttpResponse(
-        json.dumps({'pages_count': pages_count}),
-        content_type='application/json',
-    )
+    return JsonResponse({'pages_count': pages_count})
 
 
-def get_programs(request: HttpRequest, lang: str, page=1) -> HttpResponse:
+def get_programs(request: WSGIRequest, lang: str, page=1) -> HttpResponse:
     lst = []
     programs = get_program_qs()
     page_programs = programs[(page - 1) * 12: page * 12]
@@ -118,30 +121,30 @@ def get_programs(request: HttpRequest, lang: str, page=1) -> HttpResponse:
         program_dict = get_program_list_dict(program, lang, 'program_detail')
         lst.append(program_dict)
 
-    return HttpResponse(json.dumps(lst), content_type='application/json')
+    return JsonResponse({'programs': lst})
 
 
-def get_program(request: HttpRequest, lang: str, id: int) -> HttpResponse:
+def get_program(request: WSGIRequest, lang: str, id: int) -> HttpResponse:
     try:
         program = get_program_qs().get(id=id)
     except ObjectDoesNotExist:
         return HttpResponse(json.dumps({'msg': "Program does not exists"}), content_type='application/json')
 
     program_dict = get_program_detail_dict(program, lang)
-    return HttpResponse(json.dumps(program_dict), content_type='application/json')
+    return JsonResponse(program_dict)
 
 
-def get_archive_program(request: HttpRequest, lang: str, id) -> HttpResponse:
+def get_archive_program(request: WSGIRequest, lang: str, id) -> HttpResponse:
     try:
         program = get_archive_programs_qs().get(id=id)
     except ObjectDoesNotExist:
         return HttpResponse(json.dumps({'msg': "Program does not exists"}), content_type='application/json')
 
     program_dict = get_program_detail_dict(program, lang)
-    return HttpResponse(json.dumps(program_dict), content_type='application/json')
+    return JsonResponse(program_dict)
 
 
-def get_archive_programs(request: HttpRequest, lang: str, page=1) -> HttpResponse:
+def get_archive_programs(request: WSGIRequest, lang: str, page=1) -> HttpResponse:
     lst = []
     programs = get_archive_programs_qs()
     page_programs = programs[(page - 1) * 12: page * 12]
@@ -149,19 +152,16 @@ def get_archive_programs(request: HttpRequest, lang: str, page=1) -> HttpRespons
         program_dict = get_program_list_dict(program, lang, 'archive_program_detail')
         lst.append(program_dict)
 
-    return HttpResponse(json.dumps(lst), content_type='application/json')
+    return JsonResponse({'archive_programs': lst})
 
 
-def get_archive_pages_count(request: HttpRequest) -> HttpResponse:
+def get_archive_pages_count(request: WSGIRequest) -> HttpResponse:
     programs = get_archive_programs_qs()
     pages_count = int(1 + (programs.count() / 12))
-    return HttpResponse(
-        json.dumps({'pages_count': pages_count}),
-        content_type='application/json',
-    )
+    return JsonResponse({'pages_count': pages_count})
 
 
-def get_product_list(request: HttpRequest, lang: str, page: int) -> HttpResponse:
+def get_product_list(request: WSGIRequest, lang: str, page: int) -> HttpResponse:
     lst = []
     queryset = get_product_qs()
     page_elems = 9
@@ -171,23 +171,21 @@ def get_product_list(request: HttpRequest, lang: str, page: int) -> HttpResponse
         product_dict = get_product_dict(product, lang)
         lst.append(product_dict)
 
-    return HttpResponse(json.dumps({'product_list': lst,
-                                    'next_page': has_other_page}),
-                        content_type='application/json'
-                        )
+    return JsonResponse({'product_list': lst,
+                         'next_page': has_other_page})
 
 
-def get_product_detail(request: HttpRequest, lang: str, id: int) -> HttpResponse:
+def get_product_detail(request: WSGIRequest, lang: str, id: int) -> HttpResponse:
     try:
         product = get_product_qs().get(id=id)
     except ObjectDoesNotExist:
-        return HttpResponse(json.dumps({'msg': "Program does not exists"}), content_type='application/json')
+        return JsonResponse({'msg': "Program does not exists"})
 
     product_dict = get_product_detail_dict(product, lang)
-    return HttpResponse(json.dumps(product_dict), content_type='application/json')
+    return JsonResponse(product_dict)
 
 
-def get_report_list(request: HttpRequest, lang: str, page: int) -> HttpResponse:
+def get_report_list(request: WSGIRequest, lang: str, page: int) -> HttpResponse:
     lst = []
     queryset = get_report_qs()
     page_elems = 9
@@ -197,7 +195,18 @@ def get_report_list(request: HttpRequest, lang: str, page: int) -> HttpResponse:
         product_dict = get_report_dict(report, lang)
         lst.append(product_dict)
 
-    return HttpResponse(json.dumps({'product_list': lst,
-                                    'next_page': has_other_page}),
-                        content_type='application/json'
-                        )
+    return JsonResponse({'product_list': lst, 'next_page': has_other_page})
+
+
+def send_message(request: WSGIRequest) -> HttpResponse:
+    if request.method == "GET":
+        return HttpResponseNotAllowed('GET')
+    from_email = request.POST.get('from_email')
+    phone_number = request.POST.get('phone_number')
+    message_text = request.POST.get('message_text')
+    status = send_email(from_email, phone_number, message_text)
+    return JsonResponse({'status': status})
+
+
+def search_announcement():
+    pass

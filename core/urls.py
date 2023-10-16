@@ -15,7 +15,8 @@ from core.views import (
     get_archive_programs,
     get_product_list,
     get_product_detail,
-    get_report_list
+    get_report_list,
+    send_email
 )
 
 urlpatterns = [
@@ -34,5 +35,6 @@ urlpatterns = [
     path('get_archive_program_pages_count/', get_archive_pages_count, name="program_pages"),
     path('product_list/<str:lang>/<int:page>', get_product_list, name="product_list"),
     path('product_detail/<str:lang>/<int:id>', get_product_detail, name="product_detail"),
-    path('get_reports/<str:lang>/<int:page>', get_report_list, name='report_list')
+    path('get_reports/<str:lang>/<int:page>', get_report_list, name='report_list'),
+    path('send_email', send_email, name='send_email')
 ]

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-14 21:54+0300\n"
+"POT-Creation-Date: 2023-10-16 14:19+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -52,260 +52,254 @@ msgstr "Ավելացնել նկար"
 msgid "Sections"
 msgstr "Բաժիններ"
 
-#: .\core\models.py:14 .\core\models.py:29 .\core\models.py:154
-#: .\core\models.py:176 .\core\models.py:206 .\core\models.py:217
-#: .\core\models.py:235
+#: .\core\models.py:15 .\core\models.py:30 .\core\models.py:157
+#: .\core\models.py:182 .\core\models.py:212 .\core\models.py:224
+#: .\core\models.py:242
 msgid "Name (English)"
 msgstr "Անունը (անգլերեն)"
 
-#: .\core\models.py:15 .\core\models.py:30 .\core\models.py:155
-#: .\core\models.py:177 .\core\models.py:207 .\core\models.py:218
-#: .\core\models.py:236
+#: .\core\models.py:16 .\core\models.py:31 .\core\models.py:158
+#: .\core\models.py:183 .\core\models.py:213 .\core\models.py:225
+#: .\core\models.py:243
 msgid "Name (Armenian)"
 msgstr "Անունը (հայերեն)"
 
-#: .\core\models.py:16
+#: .\core\models.py:17
 msgid "Position (English)"
 msgstr "Հաստիքը (անգլերեն)"
 
-#: .\core\models.py:17
+#: .\core\models.py:18
 msgid "Position (Armenian)"
 msgstr "Հաստիքը (հայերեն)"
 
-#: .\core\models.py:18 .\core\models.py:31 .\core\models.py:46
-#: .\core\models.py:140 .\core\models.py:178 .\core\models.py:193
-#: .\core\models.py:245
-msgid "Image"
-msgstr "Նկար"
-
-#: .\core\models.py:24
+#: .\core\models.py:25
 msgid "Staff"
 msgstr "Աշխատակից"
 
-#: .\core\models.py:25
+#: .\core\models.py:26
 msgid "Staff members"
 msgstr "Աշխատակիցներ"
 
-#: .\core\models.py:32
+#: .\core\models.py:33
 msgid "Duration"
 msgstr "Տևողություն"
 
-#: .\core\models.py:33
+#: .\core\models.py:35
 msgid "Count of projects"
 msgstr "Պրոեկտների քանակը"
 
-#: .\core\models.py:39
+#: .\core\models.py:42
 msgid "Business Partner"
 msgstr "Գործընկեր"
 
-#: .\core\models.py:40
+#: .\core\models.py:43
 msgid "Business Partners"
 msgstr "Գործընկերներ"
 
-#: .\core\models.py:44
+#: .\core\models.py:47
 msgid "Job name (English)"
 msgstr "Աշխատանքի անվանումը (անգլերեն)"
 
-#: .\core\models.py:45
+#: .\core\models.py:48
 msgid "Job name (Armenian)"
 msgstr "Աշխատանքի անվանումը (հայերեն)"
 
-#: .\core\models.py:50
+#: .\core\models.py:53
 msgid "Job description (English)"
-msgstr "Աշխատանքի անվանումը (հայերեն)"
-
-#: .\core\models.py:55
-msgid "Job description (Armenian)"
 msgstr "Աշխատանքի նկարագիրը (անգլերեն)"
 
-#: .\core\models.py:61
+#: .\core\models.py:58
+msgid "Job description (Armenian)"
+msgstr "Աշխատանքի նկարագիրը (հայերեն)"
+
+#: .\core\models.py:64
 msgid "Job duration (English)"
 msgstr "Աշխատանքի տևողությունը (անգլերեն)"
 
-#: .\core\models.py:68
+#: .\core\models.py:71
 msgid "Job duration in (Armenian)"
 msgstr "Աշխատանքի տևողությունը (հայերեն)"
 
-#: .\core\models.py:73
+#: .\core\models.py:76
 msgid "Assessment Service Description (English)"
 msgstr "Գնահատման ծառայության նկարագրությունը (անգլերեն)"
 
-#: .\core\models.py:78
+#: .\core\models.py:81
 msgid "Assessment Service Description (Armenian)"
 msgstr "Գնահատման ծառայության նկարագրությունը (հայերեն)"
 
-#: .\core\models.py:84
+#: .\core\models.py:87
 msgid "Requirements to the appraiser in (English)"
 msgstr "Պահանջներ գնահատողին (անգլերեն)"
 
-#: .\core\models.py:89
+#: .\core\models.py:92
 msgid "Requirements to the appraiser (Armenian)"
 msgstr "Պահանջներ գնահատողին (հայերեն)"
 
-#: .\core\models.py:94
+#: .\core\models.py:97
 msgid "Application Procedure (English)"
 msgstr "Հայտերը ներկայացնելու կարգը (անգլերեն)"
 
-#: .\core\models.py:100
+#: .\core\models.py:103
 msgid "Application Procedure (Armenian)"
 msgstr "Հայտերը ներկայացնելու կարգը (հայերեն)"
 
-#: .\core\models.py:105
+#: .\core\models.py:108
 msgid "About the company (English)"
 msgstr "Ընկերության մասին (անգլերեն)"
 
-#: .\core\models.py:110
+#: .\core\models.py:113
 msgid "About the company (Armenian)"
 msgstr "Ընկերության մասին (հայերեն)"
 
-#: .\core\models.py:115
+#: .\core\models.py:118
 msgid "Contacts"
 msgstr "Կոնտակտներ"
 
-#: .\core\models.py:117 .\core\models.py:141 .\core\models.py:161
-#: .\core\models.py:180 .\core\models.py:221
+#: .\core\models.py:120 .\core\models.py:144 .\core\models.py:164
+#: .\core\models.py:186 .\core\models.py:228
 msgid "Created"
 msgstr "Ստեղծվել է"
 
-#: .\core\models.py:118 .\core\models.py:142 .\core\models.py:162
-#: .\core\models.py:181 .\core\models.py:222
+#: .\core\models.py:121 .\core\models.py:145 .\core\models.py:165
+#: .\core\models.py:187 .\core\models.py:229
 msgid "Updated"
 msgstr "Թարմացվել է"
 
-#: .\core\models.py:119
+#: .\core\models.py:122
 msgid "Is Active?"
 msgstr "Ակտիվ է՞"
 
-#: .\core\models.py:125
+#: .\core\models.py:128
 msgid "Job Announcement"
 msgstr "Աշխատանքի Հայտարարություն"
 
-#: .\core\models.py:126
+#: .\core\models.py:129
 msgid "Job Announcements"
 msgstr "Աշխատանքի Հայտարարություններ"
 
-#: .\core\models.py:130 .\core\models.py:156
+#: .\core\models.py:133 .\core\models.py:159
 msgid "Title (English)"
 msgstr "Վերնագիրը (անգլերեն)"
 
-#: .\core\models.py:131 .\core\models.py:157
+#: .\core\models.py:134 .\core\models.py:160
 msgid "Title (Armenian)"
 msgstr "Վերնագիրը (հայերեն)"
 
-#: .\core\models.py:132 .\core\models.py:219
+#: .\core\models.py:135 .\core\models.py:226
 msgid "Description (English)"
 msgstr "Բացատրությունն (անգլերեն)"
 
-#: .\core\models.py:133 .\core\models.py:220
+#: .\core\models.py:136 .\core\models.py:227
 msgid "Description (Armenian)"
 msgstr "Բացատրությունն (հայերեն)"
 
-#: .\core\models.py:135
+#: .\core\models.py:138
 msgid "Requirements to the participant (English)"
 msgstr "Պահանջներ մասնակցին (անգլերեն)"
 
-#: .\core\models.py:137
+#: .\core\models.py:140
 msgid "Requirements to the participant(Armenian)"
 msgstr "Պահանջներ մասնակցին (հայերեն)"
 
-#: .\core\models.py:138 .\core\models.py:158
+#: .\core\models.py:141 .\core\models.py:161
 msgid "Article (English)"
 msgstr "Հոդվածը (անգլերեն)"
 
-#: .\core\models.py:139 .\core\models.py:159
+#: .\core\models.py:142 .\core\models.py:162
 msgid "Article (Armenian)"
 msgstr "Հոդվածը (հայերեն)"
 
-#: .\core\models.py:149
+#: .\core\models.py:152
 msgid "Open Competition"
 msgstr "Բաց մրցույթ"
 
-#: .\core\models.py:150
+#: .\core\models.py:153
 msgid "Open Competitions"
 msgstr "Բաց Մրցույթներ"
 
-#: .\core\models.py:160
+#: .\core\models.py:163
 msgid "Main image"
 msgstr "Գլխանկար"
 
-#: .\core\models.py:165
+#: .\core\models.py:168
 msgid "Program"
 msgstr "Ծրագիր"
 
-#: .\core\models.py:166
+#: .\core\models.py:169
 msgid "Programs"
 msgstr "Ծրագրեր"
 
 
-#: .\core\models.py:179 .\core\models.py:205 .\core\models.py:233
+#: .\core\models.py:185 .\core\models.py:211 .\core\models.py:240
 msgid "File"
 msgstr "Ֆայլ"
 
-#: .\core\models.py:187
+#: .\core\models.py:193
 msgid "Report"
 msgstr "Հաշվետվություն"
 
-#: .\core\models.py:188
+#: .\core\models.py:194
 msgid "Reports"
 msgstr "Հաշվետվություններ"
 
-#: .\core\models.py:199
+#: .\core\models.py:205
 msgid "Programs Photo"
 msgstr "Ծրագրի նկար"
 
-#: .\core\models.py:200
+#: .\core\models.py:206
 msgid "Programs Photos"
 msgstr "Ծրագրի նկարներ"
 
-#: .\core\models.py:212
+#: .\core\models.py:219
 msgid "Open Competition File"
 msgstr "Բաց մրցույթի ֆայլ"
 
-#: .\core\models.py:213
+#: .\core\models.py:220
 msgid "Open Competition Files"
 msgstr "Բաց մրցույթի ֆայլեր"
 
-#: .\core\models.py:228
+#: .\core\models.py:235
 msgid "Product"
 msgstr "Արտադրանք"
 
-#: .\core\models.py:229
+#: .\core\models.py:236
 msgid "Products"
 msgstr "Արտադրանքներ"
 
-#: .\core\models.py:239
+#: .\core\models.py:246
 msgid "Product File"
 msgstr "Արտադրանքի ֆայլ"
 
-#: .\core\models.py:240
+#: .\core\models.py:247
 msgid "Product Files"
 msgstr "Արտադրանքի ֆայլեր"
 
-#: .\core\models.py:248
+#: .\core\models.py:258
 msgid "Product Image"
 msgstr "Արտադրանքի նկար"
 
-#: .\core\models.py:249
+#: .\core\models.py:259
 msgid "Product Images"
 msgstr "Արտադրանքի նկարներ"
 
-#: .\core\models.py:255
+#: .\core\models.py:268
 msgid "Video description (English)"
 msgstr "Տեսահոլովակի մասին (անգլերեն)"
 
-#: .\core\models.py:256
+#: .\core\models.py:269
 msgid "Video description (Armenian)"
 msgstr "Տեսահոլովակի մասին(հայերեն)"
 
-#: .\core\models.py:257
+#: .\core\models.py:270
 msgid "Video Url"
 msgstr "Տեսահոլովակի հղումը"
 
-#: .\core\models.py:260
+#: .\core\models.py:273
 msgid "Product Video"
 msgstr "Արտադրանքի Տեսահոլովակ"
 
-#: .\core\models.py:261
+#: .\core\models.py:274
 msgid "Product Videos"
 msgstr "Արտադրանքի Տեսահոլովակներ"
 
@@ -366,11 +360,29 @@ msgstr "Իմ գործողությունները"
 msgid "Yes, I’m sure"
 msgstr "Այո, վստահ եմ"
 
-msgid "Please correct the errors below."
-msgstr "Խնդրում ենք ուղղել նշված սխալները"
+msgid "Please correct the error below."
+msgid_plural "Please correct the errors below."
+msgstr[0] "Խնդրում ենք ուղղել նշված սխալները."
+msgstr[1] "Խնդրում ենք ուղղել նշված սխալները."
 
 msgid "Archive Program"
 msgstr "Արխիվային Ծրագիր"
 
 msgid "Archive Programs"
 msgstr "Արխիվային Ծրագրեր"
+
+msgid "Ensure this value is greater than or equal to %(limit_value)s."
+msgstr "Համոզվեք, որ այս արժեքը մեծ կամ հավասար Է 1-ից"
+
+
+msgid "Delete selected %(verbose_name_plural)s"
+msgstr "Հեռացնել նշված %(verbose_name_plural)sին"
+
+msgid ""
+"Are you sure you want to delete the selected %(objects_name)s? All of the "
+"following objects and their related items will be deleted:"
+""
+msgstr "Համոզված ե՞ք, որ ուզում եք հեռացնել նշված  %(objects_name)sին։ Այս բոլոր օբյեկտները, ինչպես նաև նրանց հետ կապված օբյեկտները կհեռացվեն․"
+
+msgid "Image"
+msgstr "Նկար"

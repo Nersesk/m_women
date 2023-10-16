@@ -7,6 +7,7 @@ from django.contrib.auth.models import (
     PermissionsMixin
 )
 from django.utils.translation import gettext_lazy as _
+from django.core.validators import MinValueValidator
 from ckeditor.fields import RichTextField
 
 
@@ -29,8 +30,10 @@ class BusinessPartners(models.Model):
     name_eng = models.CharField(max_length=255, blank=False, null=False, verbose_name=_('Name (English)'))
     name_arm = models.CharField(max_length=255, blank=False, null=False, verbose_name=_('Name (Armenian)'))
     image = models.ImageField(upload_to='business_partners/%Y/%m', null=False, blank=False, verbose_name=_('Image'))
-    duration = models.IntegerField(blank=False, null=False, verbose_name=_('Duration'))
-    projects_count = models.IntegerField(blank=False, null=False, verbose_name=_('Count of projects'))
+    duration = models.IntegerField(blank=False, null=False, verbose_name=_('Duration'),
+                                   validators=[MinValueValidator(1)])
+    projects_count = models.IntegerField(blank=False, null=False, verbose_name=_('Count of projects'),
+                                         validators=[MinValueValidator(1)])
 
     def __str__(self):
         return f"{_(self.name_eng)}"
@@ -140,7 +143,7 @@ class OpenCompetition(models.Model):
     image = models.ImageField(upload_to='open_competitions/%Y/%m', blank=False, null=False, verbose_name=_('Image'))
     created = models.DateTimeField(auto_now=True, verbose_name=_('Created'))
     updated = models.DateTimeField(auto_now_add=True, verbose_name=_('Updated'))
-    is_active = models.BooleanField(default=True, null=True)
+    active = models.BooleanField(default=True, verbose_name=_('Is Active?'))
 
     def __str__(self):
         return f"{_(self.name_eng)}"
@@ -164,6 +167,9 @@ class Program(models.Model):
     class Meta:
         verbose_name = _('Program')
         verbose_name_plural = _('Programs')
+
+    def __str__(self):
+        return f'{self.name_eng}'
 
 
 class ArchiveProgram(Program):
@@ -205,8 +211,9 @@ class OpenCompetitionFiles(models.Model):
     file = models.FileField(upload_to='open_competition_files/%Y/%m', verbose_name=_('File'))
     name_eng = models.CharField(max_length=255, null=True, blank=False, verbose_name=_('Name (English)'))
     name_arm = models.CharField(max_length=255, null=True, blank=False, verbose_name=_('Name (Armenian)'))
+
     def __str__(self):
-        return f"Photo {self.id}"
+        return f"{_('Open Competition File')} {self.id}"
 
     class Meta:
         verbose_name = _('Open Competition File')
@@ -239,6 +246,9 @@ class ProductFiles(models.Model):
         verbose_name = _('Product File')
         verbose_name_plural = _('Product Files')
 
+    def __str__(self):
+        return f"{self.name_eng}"
+
 
 class ProductImages(models.Model):
     main_model = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='product_images')
@@ -247,6 +257,9 @@ class ProductImages(models.Model):
     class Meta:
         verbose_name = _('Product Image')
         verbose_name_plural = _('Product Images')
+
+    def __str__(self):
+        return f"{_('Image')} {self.id}"
 
 
 class ProductVideos(models.Model):
@@ -259,3 +272,6 @@ class ProductVideos(models.Model):
     class Meta:
         verbose_name = _('Product Video')
         verbose_name_plural = _('Product Videos')
+
+    def __str__(self):
+        return f"{_('Video')} {self.id}"

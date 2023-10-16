@@ -11,11 +11,16 @@ SECRET_KEY = 'django-insecure-__d&oskfb55nbztu_@k=@df)vo(^mtx(jt)fahw%d4q(2pt409
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["xn--29ae4dgic.xn--y9a3aq", "127.0.0.1"]
 
-CSRF_TRUSTED_ORIGINS = ['https://45dd-194-61-88-140.ngrok-free.app', ]
+CSRF_TRUSTED_ORIGINS = ['https://xn--29ae4dgic.xn--y9a3aq/', ]
 
-
+SMTP_SERVER = os.environ.get('SMTP_SERVER')
+SMTP_PORT = os.environ.get('SMTP_PORT')
+SMTP_USERNAME = os.environ.get('SMTP_USERNAME')
+SMTP_PASSWORD = os.environ.get('SMTP_PASSWORD')
+MAIL_FROM = os.environ.get('MAIL_FROM_ADDRESS')
+MAIL_TO = os.environ.get('MAIL_TO')
 # Application definition
 
 INSTALLED_APPS = [
@@ -28,6 +33,7 @@ INSTALLED_APPS = [
     'core.apps.CoreConfig',
     'ckeditor',
     'image_uploader_widget',
+    'corsheaders'
 
 ]
 
@@ -35,6 +41,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.locale.LocaleMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -64,28 +71,28 @@ TEMPLATES = [
 WSGI_APPLICATION = 'app.wsgi.application'
 
 
+# DATABASES = {
+#
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': os.environ.get('DB_NAME'),
+#         'USER': os.environ.get('DB_USERNAME'),
+#         'PASSWORD': os.environ.get('DB_PASSWORD'),
+#         'HOST': os.environ.get('DB_HOST'),
+#         'PORT': os.environ.get('DB_PORT'),
+#
+#     }
+#
+# }
+
+# local set
 DATABASES = {
-
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.environ.get('DB_NAME'),
-        'USER': os.environ.get('DB_USERNAME'),
-        'PASSWORD': os.environ.get('DB_PASSWORD'),
-        'HOST': os.environ.get('DB_HOST'),
-        'PORT': os.environ.get('DB_PORT'),
-
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
-
 }
 
-#local set
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-#
 
 
 # Password validation
@@ -117,7 +124,7 @@ LANGUAGES = [
     ('hy', 'Armenian'),
     ('en', 'English'),  # Example: English
 ]
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Yerevan'
 
 USE_I18N = True
 
@@ -130,6 +137,11 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATIC_ROOT=os.path.join(BASE_DIR, 'static')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# prod
+# STATIC_ROOT='home5/knersesk/public_html/static'
+# MEDIA_ROOT = 'home5/knersesk/public_html/media'
+
 MEDIA_URL = '/media/'
 
 # Default primary key field type
