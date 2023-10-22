@@ -1,6 +1,10 @@
 """
 Database models
 """
+import os
+import uuid
+import unidecode
+
 from django.db import models
 from django.contrib.auth.models import (
     AbstractBaseUser,
@@ -11,12 +15,22 @@ from django.core.validators import MinValueValidator
 from ckeditor.fields import RichTextField
 
 
+def generate_staff_image(instance, filename):
+    unique_filename = unidecode.unidecode(filename)
+    return os.path.join('staff/', unique_filename)
+
+
+def generate_job_announcement_image(instance, filename):
+    unique_filename = unidecode.unidecode(filename)
+    return os.path.join('business_partners/', unique_filename)
+
+
 class Staff(models.Model):
     name_eng = models.CharField(max_length=255, blank=False, null=False, verbose_name=_('Name (English)'))
     name_arm = models.CharField(max_length=255, blank=False, null=False, verbose_name=_('Name (Armenian)'))
     position_eng = models.CharField(max_length=255, blank=False, null=False, verbose_name=_('Position (English)'))
     position_arm = models.CharField(max_length=255, blank=False, null=False, verbose_name=_('Position (Armenian)'))
-    image = models.ImageField(upload_to='staff/%Y/%m', null=False, blank=False, verbose_name=_('Image'))
+    image = models.ImageField(upload_to=generate_staff_image, null=False, blank=False, verbose_name=_('Image'))
 
     def __str__(self):
         return f"{_(self.name_eng)}"
@@ -26,10 +40,56 @@ class Staff(models.Model):
         verbose_name_plural = _('Staff members')
 
 
+def generate_business_partner_image(instance, filename):
+    unique_filename = unidecode.unidecode(filename)
+    return os.path.join('business_partners/', unique_filename)
+
+
+def generate_open_competitions_image(instance, filename):
+    unique_filename = unidecode.unidecode(filename)
+    return os.path.join('open_competitions/', unique_filename)
+
+
+def generate_program_image(instance, filename):
+    unique_filename = unidecode.unidecode(filename)
+    return os.path.join('program/', unique_filename)
+
+
+def generate_report_file(instance, filename):
+    unique_filename = unidecode.unidecode(filename)
+    return os.path.join('report_file/', unique_filename)
+
+
+def generate_report_image(instance, filename):
+    unique_filename = unidecode.unidecode(filename)
+    return os.path.join('report_image/', unique_filename)
+
+
+def generate_program_photos(instance, filename):
+    unique_filename = unidecode.unidecode(filename)
+    return os.path.join('program_photos/', unique_filename)
+
+
+def generate_product_images(instance, filename):
+    unique_filename = unidecode.unidecode(filename)
+    return os.path.join('product_images/', unique_filename)
+
+
+def generate_product_files(instance, filename):
+    unique_filename = unidecode.unidecode(filename)
+    return os.path.join('product_files/', unique_filename)
+
+
+def generate_open_competition_files(instance, filename):
+    unique_filename = unidecode.unidecode(filename)
+    return os.path.join('open_competition_files/', unique_filename)
+
+
 class BusinessPartners(models.Model):
     name_eng = models.CharField(max_length=255, blank=False, null=False, verbose_name=_('Name (English)'))
     name_arm = models.CharField(max_length=255, blank=False, null=False, verbose_name=_('Name (Armenian)'))
-    image = models.ImageField(upload_to='business_partners/%Y/%m', null=False, blank=False, verbose_name=_('Image'))
+    image = models.ImageField(upload_to=generate_business_partner_image, null=False, blank=False,
+                              verbose_name=_('Image'))
     duration = models.IntegerField(blank=False, null=False, verbose_name=_('Duration'),
                                    validators=[MinValueValidator(1)])
     projects_count = models.IntegerField(blank=False, null=False, verbose_name=_('Count of projects'),
@@ -46,7 +106,8 @@ class BusinessPartners(models.Model):
 class JobAnnouncement(models.Model):
     name_eng = models.CharField(max_length=255, blank=False, null=False, verbose_name=_('Job name (English)'))
     name_arm = models.CharField(max_length=255, blank=False, null=False, verbose_name=_('Job name (Armenian)'))
-    image = models.ImageField(upload_to='Job_announcements/%Y/%m', blank=False, null=False, verbose_name=_('Image'))
+    image = models.ImageField(upload_to=generate_job_announcement_image, blank=False, null=False,
+                              verbose_name=_('Image'))
     description_eng = RichTextField(
         blank=False,
         null=False,
@@ -140,7 +201,8 @@ class OpenCompetition(models.Model):
                                      verbose_name=_('Requirements to the participant(Armenian)'))
     article_eng = RichTextField(blank=False, null=False, verbose_name=_("Article (English)"))
     article_arm = RichTextField(blank=False, null=False, verbose_name=_("Article (Armenian)"))
-    image = models.ImageField(upload_to='open_competitions/%Y/%m', blank=False, null=False, verbose_name=_('Image'))
+    image = models.ImageField(upload_to=generate_open_competitions_image, blank=False, null=False,
+                              verbose_name=_('Image'))
     created = models.DateTimeField(auto_now=True, verbose_name=_('Created'))
     updated = models.DateTimeField(auto_now_add=True, verbose_name=_('Updated'))
     active = models.BooleanField(default=True, verbose_name=_('Is Active?'))
@@ -182,7 +244,7 @@ class Report(models.Model):
     name_eng = models.CharField(max_length=255, null=False, blank=False, verbose_name=_('Name (English)'))
     name_arm = models.CharField(max_length=255, null=False, blank=False, verbose_name=_('Name (Armenian)'))
     image = models.ImageField(null=False, blank=False, upload_to='report/%Y/%m', verbose_name=_('Image'))
-    report_file = models.FileField(null=False, blank=False, upload_to='report_file/', verbose_name=_('File'))
+    report_file = models.FileField(null=False, blank=False, upload_to=generate_report_file, verbose_name=_('File'))
     created = models.DateTimeField(auto_now=True, verbose_name=_('Created'))
     updated = models.DateTimeField(auto_now_add=True, verbose_name=_('Updated'))
 
@@ -196,7 +258,7 @@ class Report(models.Model):
 
 class ProgramsPhoto(models.Model):
     main_model = models.ForeignKey(Program, on_delete=models.CASCADE, related_name='program_images')
-    image = models.ImageField(upload_to='program_photos/%Y/%m/%d', verbose_name=_('Image'))
+    image = models.ImageField(upload_to=generate_program_photos, verbose_name=_('Image'))
 
     def __str__(self):
         return f"Photo {self.id}"
@@ -208,7 +270,7 @@ class ProgramsPhoto(models.Model):
 
 class OpenCompetitionFiles(models.Model):
     main_model = models.ForeignKey(OpenCompetition, on_delete=models.CASCADE, related_name='required_files')
-    file = models.FileField(upload_to='open_competition_files/%Y/%m', verbose_name=_('File'))
+    file = models.FileField(upload_to=generate_open_competition_files, verbose_name=_('File'))
     name_eng = models.CharField(max_length=255, null=True, blank=False, verbose_name=_('Name (English)'))
     name_arm = models.CharField(max_length=255, null=True, blank=False, verbose_name=_('Name (Armenian)'))
 
@@ -237,7 +299,7 @@ class Product(models.Model):
 
 
 class ProductFiles(models.Model):
-    file = models.FileField(null=False, blank=False, upload_to='product_files/%Y/%m', verbose_name=_('File'))
+    file = models.FileField(null=False, blank=False, upload_to=generate_product_files, verbose_name=_('File'))
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='product_files')
     name_eng = models.CharField(max_length=255, blank=False, verbose_name=_('Name (English)'))
     name_arm = models.CharField(max_length=255, blank=False, verbose_name=_('Name (Armenian)'))
@@ -252,7 +314,7 @@ class ProductFiles(models.Model):
 
 class ProductImages(models.Model):
     main_model = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='product_images')
-    image = models.ImageField(upload_to='product_images/%Y/%m', verbose_name=_('Image'))
+    image = models.ImageField(upload_to=generate_product_images, verbose_name=_('Image'))
 
     class Meta:
         verbose_name = _('Product Image')
@@ -264,9 +326,6 @@ class ProductImages(models.Model):
 
 class ProductVideos(models.Model):
     main_model = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='product_videos')
-
-    video_description_eng = models.TextField(verbose_name=_('Video description (English)'))
-    video_description_arm = models.TextField(verbose_name=_('Video description (Armenian)'))
     video_url = models.URLField(verbose_name=_("Video Url"))
 
     class Meta:

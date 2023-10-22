@@ -2,10 +2,11 @@ import os
 import json
 
 from django.core.handlers.wsgi import WSGIRequest
-from django.shortcuts import render
-from django.http import HttpResponse, HttpRequest, HttpResponseNotAllowed
+from django.shortcuts import render, redirect
+from django.http import HttpResponse, HttpResponseBadRequest, HttpResponseNotAllowed
 from django.core.exceptions import ObjectDoesNotExist
 from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
 
 from core.utils import (
     get_announcements_qs,
@@ -27,7 +28,7 @@ from core.utils import (
     get_product_detail_dict,
     get_report_qs,
     get_report_dict,
-    send_email
+    send_email, filter_announcement_qs, filter_programs_qs
 )
 
 
@@ -198,15 +199,51 @@ def get_report_list(request: WSGIRequest, lang: str, page: int) -> HttpResponse:
     return JsonResponse({'product_list': lst, 'next_page': has_other_page})
 
 
+@csrf_exempt
 def send_message(request: WSGIRequest) -> HttpResponse:
     if request.method == "GET":
         return HttpResponseNotAllowed('GET')
     from_email = request.POST.get('from_email')
     phone_number = request.POST.get('phone_number')
     message_text = request.POST.get('message_text')
+    if (
+            not from_email or
+            not phone_number or
+            not message_text):
+        return HttpResponseBadRequest()
     status = send_email(from_email, phone_number, message_text)
     return JsonResponse({'status': status})
 
 
-def search_announcement():
-    pass
+@csrf_exempt
+def search_announcements(request: WSGIRequest, lang: str) -> HttpResponse:
+    if request.method == "GET":
+        return HttpResponseNotAllowed('GET')
+    lst = []
+    pattern = request.POST.get('search_pattern')
+    if not pattern:
+        announcements = get_announcements_qs()
+    else:
+        announcements = filter_announcement_qs(lang, pattern)
+    for announcement in announcements:
+        program_dict = get_dict_for_announcement_list(announcement, lang)
+        lst.append(program_dict)
+    dct = {'announcements': lst}
+    return JsonResponse(dct)
+
+
+@csrf_exempt
+def search_programs(request: WSGIRequest, lang: str) -> HttpResponse:
+    if request.method == "GET":
+        return HttpResponseNotAllowed('GET')
+    lst = []
+    pattern = request.POST.get('search_pattern')
+    if not pattern:
+        programs = get_program_qs()
+    else:
+        programs = filter_programs_qs(lang, pattern)
+
+    for program in programs:
+        lst.append(get_program_list_dict(program, lang, 'program_detail'))
+    dct = {'programs': lst}
+    return JsonResponse(dct)

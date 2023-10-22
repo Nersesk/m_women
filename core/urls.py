@@ -16,7 +16,9 @@ from core.views import (
     get_product_list,
     get_product_detail,
     get_report_list,
-    send_email
+    search_announcements,
+    send_message,
+    search_programs,
 )
 
 urlpatterns = [
@@ -36,5 +38,7 @@ urlpatterns = [
     path('product_list/<str:lang>/<int:page>', get_product_list, name="product_list"),
     path('product_detail/<str:lang>/<int:id>', get_product_detail, name="product_detail"),
     path('get_reports/<str:lang>/<int:page>', get_report_list, name='report_list'),
-    path('send_email', send_email, name='send_email')
+    path('send_email', send_message, name='send_email'),
+    path('search_announcments/<str:lang>', search_announcements, name='search_announcements'),
+    path('search_programs/<str:lang>', search_programs, name='search_program')
 ]

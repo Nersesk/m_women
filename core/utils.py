@@ -5,7 +5,7 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
 from django.conf import settings
-from django.db.models import QuerySet
+from django.db.models import QuerySet, Q
 from django.urls import reverse
 from core.models import JobAnnouncement, Staff, BusinessPartners, Program, OpenCompetition, ArchiveProgram, Product, \
     Report
@@ -115,7 +115,6 @@ def get_dict_for_announcement_list(announcement: Union[JobAnnouncement, OpenComp
     else:
         url = reverse('open_competition_detail', kwargs={'lang': lang, 'id': announcement.id})
     return {
-        'id': announcement.id,
         'name': name,
         'description': description,
         'image': announcement.image.url,
@@ -290,6 +289,7 @@ def get_report_dict(report: Report, lang: str) -> Dict[str, Union[int, str]]:
         'image': report.image.url
     }
 
+
 def get_mail_client() -> smtplib.SMTP:
     mail_server = smtplib.SMTP(settings.SMTP_SERVER, settings.SMTP_PORT)
     mail_server.ehlo()
@@ -322,3 +322,34 @@ def send_email(from_email: str, phone_number: str, message_text: str) -> bool:
         return False
     else:
         return True
+
+
+def filter_announcement_qs(lang: str, pattern: str) -> list:
+    if lang == 'eng':
+        op_search_query = (Q(name_eng__icontains=pattern) | Q(description_eng__icontains=pattern) |
+                           Q(requirements_eng__icontains=pattern) | Q(article_eng__icontains=pattern))
+        ja_search_query = (Q(name_eng__icontains=pattern) | Q(description_eng__icontains=pattern) |
+                           Q(assessment_desc_eng__icontains=pattern) | Q(appraiser_requirements_eng__icontains=pattern))
+    else:
+        op_search_query = (Q(name_arm__icontains=pattern) | Q(description_arm__icontains=pattern) |
+                           Q(requirements_arm__icontains=pattern) | Q(article_arm__icontains=pattern))
+        ja_search_query = (Q(name_arm__icontains=pattern) | Q(description_arm__icontains=pattern) |
+                           Q(assessment_desc_arm__icontains=pattern) | Q(appraiser_requirements_arm__icontains=pattern))
+    open_competitions = get_open_competition_qs().filter(op_search_query)
+    job_announcements = get_job_announcement_qs().filter(ja_search_query)
+    combined_queryset = list(chain(open_competitions.filter(active=True).order_by('-created'),
+                                   job_announcements.order_by('-created')))
+    combined_queryset.sort(key=lambda x: x.created, reverse=True)
+    return combined_queryset
+
+
+def filter_programs_qs(lang: str, pattern: str) -> QuerySet[Program]:
+    if lang == 'eng':
+        search_query = (Q(name_eng__icontains=pattern) | Q(title_eng__icontains=pattern) | Q(
+            article_eng__icontains=pattern))
+    else:
+        search_query = (Q(name_arm__icontains=pattern) | Q(title_arm__icontains=pattern) | Q(
+            article_arm__icontains=pattern))
+    programs = get_program_qs().filter(search_query).order_by('-created')
+    return programs
+
