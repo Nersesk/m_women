@@ -1,0 +1,50 @@
+.activ {
+    left: 765px;
+}
+.activ_2 {
+    left: 685px !important;
+}
+@media screen and (max-width: 1140px) {
+    .activ {
+        left: 610px;
+    }
+    .activ_2 {
+        left: 545px !important;
+    }
+}
+@media screen and (max-width: 950px) {
+    .activ {
+        left: 405px;
+    }
+    .announcements {
+        margin-top: 10px;
+    }
+    .activ_2 {
+        left: 350px !important;
+    }
+}
+@media screen and (max-width: 670px) {
+    main {
+        margin-top: 0px !important;
+    }
+    .gradient_count {
+        padding: 30px 0 30px 0 !important;
+    }
+}
+main {
+    margin-top: 90px;
+    margin-bottom: 90px;
+}
+.gradient_count {
+    padding: 70px 0 30px 0;
+}
+.announcements {
+    margin: 0;
+}
+.anounceinfo,
+.programmcardrow {
+    margin-top: 0 !important;
+}
+.back{
+    overflow: hidden;
+}

@@ -1,0 +1,2414 @@
+#submenu {
+    width: 100% !important;
+}
+.programmcol {
+    margin-bottom: 20px;
+}
+@media screen and (max-width: 430px) {
+    .fbpages {
+        width: 80%;
+        margin: 0 auto;
+    }
+    .fbpages > ul > li {
+        width: 100%;
+    }
+  
+    .fbpages > ul > li > a {
+        word-break: break-all !important;
+        width: 100% !important;
+        font-size: 16px;
+    }
+}
+@media screen and (max-width: 1140px) {
+    .partnerrow {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+    .navbar a {
+        font-size: 12px;
+    }
+    .navbar > ul > li {
+        padding: 0 26px;
+    }
+    .programmrow_img {
+        width: 100%;
+        height: 100%;
+    }
+    .programmcol {
+        width: 100%;
+    }
+    .dotli:nth-child(1):hover ~ .activCir {
+        left: 53px;
+        top: 100%;
+    }
+    .dotli:nth-child(2):hover ~ .activCir {
+        left: 180px;
+        top: 100%;
+    }
+    .dotli:nth-child(3):hover ~ .activCir {
+        left: 300px;
+        top: 100%;
+    }
+    .dotli:nth-child(4):hover ~ .activCir {
+        left: 455px;
+        top: 100%;
+    }
+    .dotli:nth-child(5):hover ~ .activCir {
+        left: 610px;
+        top: 100%;
+    }
+    .dotli:nth-child(6):hover ~ .activCir {
+        left: 700px;
+        top: 100%;
+    }
+
+    .dotli:nth-child(1):hover ~ .activ_2 {
+        left: 40px !important;
+        top: 100%;
+    }
+    .dotli:nth-child(2):hover ~ .activ_2 {
+        left: 145px !important;
+        top: 100%;
+    }
+    .dotli:nth-child(3):hover ~ .activ_2 {
+        left: 260px !important;
+        top: 100%;
+    }
+    .dotli:nth-child(4):hover ~ .activ_2 {
+        left: 405px !important;
+        top: 100%;
+    }
+    .dotli:nth-child(5):hover ~ .activ_2 {
+        left: 545px !important;
+        top: 100%;
+    }
+    .dotli:nth-child(6):hover ~ .activ_2 {
+        left: 650px !important;
+        top: 100%;
+    }
+}
+@media screen and (max-width: 950px) {
+    .navbar a {
+        font-size: 10px;
+    }
+    .programminfo {
+        width: 90%;
+    }
+    .navbar > ul > li {
+        padding: 0 10px;
+    }
+    .programmrow_img > img {
+        width: 303px;
+        height: 304px;
+    }
+    .navbar start-home,
+    .dotli:nth-child(1):hover ~ .activCir {
+        left: 30px;
+        top: 100%;
+    }
+    .dotli:nth-child(2):hover ~ .activCir {
+        left: 115px;
+        top: 100%;
+    }
+    .dotli:nth-child(3):hover ~ .activCir {
+        left: 190px;
+        top: 100%;
+    }
+    .dotli:nth-child(4):hover ~ .activCir {
+        left: 300px;
+        top: 100%;
+    }
+    .dotli:nth-child(5):hover ~ .activCir {
+        left: 405px;
+        top: 100%;
+    }
+    .dotli:nth-child(6):hover ~ .activCir {
+        left: 455px;
+        top: 100%;
+    }
+
+    .dotli:nth-child(1):hover ~ .activ_2 {
+        left: 20px !important;
+        top: 100%;
+    }
+    .dotli:nth-child(2):hover ~ .activ_2 {
+        left: 85px !important;
+        top: 100%;
+    }
+    .dotli:nth-child(3):hover ~ .activ_2 {
+        left: 160px !important;
+        top: 100%;
+    }
+    .dotli:nth-child(4):hover ~ .activ_2 {
+        left: 260px !important;
+        top: 100%;
+    }
+    .dotli:nth-child(5):hover ~ .activ_2 {
+        left: 350px !important;
+        top: 100%;
+    }
+    .dotli:nth-child(6):hover ~ .activ_2 {
+        left: 420px !important;
+        top: 100%;
+    }
+}
+@media screen and (max-width: 670px) {
+    #menu_1 {
+        display: none;
+    }
+    .anounceinfosmalltext > div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .anounceinfosmalltext_img .programmrow_img > img {
+        width: calc(100% - 10%);
+        height: calc(100% - 10%);
+    }
+    #anounceinfosmalltext_img {
+        width: calc(100% - 10%);
+        height: calc(100% - 10%);
+    }
+    .programmrow_img {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #programmrow_img {
+        margin-right: 0;
+    }
+    #menu_2 {
+        display: flex;
+    }
+    .programmcardrow {
+        margin-top: 10px;
+    }
+    .programminfo {
+        margin-top: 10px;
+    }
+    .gradient_count {
+        margin-top: 0 !important;
+    }
+    .test_mes {
+        left: 0 !important;
+        bottom: 0 !important;
+        right: unset !important;
+    }
+    .q8c6tt-1 > a {
+        flex-shrink: 0;
+        opacity: 1;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: block;
+        order: 2;
+        padding: 5px;
+        box-sizing: border-box;
+        cursor: pointer;
+        overflow: hidden;
+        transition: all 0.5s ease 0s;
+        position: relative;
+        z-index: 200;
+        text-decoration: none !important;
+        background-color: transparent !important;
+        box-shadow: none !important;
+    }
+    .v2p3h2-0 span,
+    .v2p3h2-0 svg {
+        display: none !important;
+    }
+    .sc-1s18q3d-0 > .q8c6tt-3 {
+        background-color: #b5cb86 !important;
+    }
+    .sc-1s18q3d-2,
+    .sc-8eqc3y-1,
+    .vwygh {
+        display: none !important;
+    }
+
+    .contactaddresses > div {
+        display: flex;
+        flex-direction: column;
+        margin-left: 50px;
+        margin-right: 60px;
+    }
+    .home-slider {
+        margin-top: 0;
+    }
+    .home-slider img {
+        margin-top: 0 !important;
+    }
+    .gradient > h1 {
+        font-size: 42px;
+    }
+    footer {
+        margin-bottom: 50px;
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    .home-slider img {
+        width: 100%;
+        height: 100%;
+
+        object-fit: contain;
+    }
+}
+
+@media screen and (max-width: 1295px) {
+    .box .box-img,
+    .boxtwo .box-imgtwo {
+        width: 300px;
+        height: 300px;
+    }
+    .ouradress li {
+        font-size: 22px;
+        margin-left: 0px;
+        margin-top: -85px;
+    }
+    .anounces .container {
+        grid-template-columns: auto auto;
+        grid-row-gap: 30px;
+    }
+    .anounces {
+        margin-top: -40px;
+    }
+    .ouradress {
+        margin-left: 35px;
+    }
+    .smallabouttext {
+        margin-top: 600px;
+    }
+    .ourimages {
+        margin-left: 40px;
+    }
+    .gallery-item img {
+        width: 220px !important;
+        height: 187px !important;
+    }
+    .programminfo h2 {
+        font-size: 35px;
+    }
+    #modalwindow,
+    #modalreels,
+    #modalimages,
+    #modalfiles {
+        width: 1074px;
+        margin: -10px 0 0 15px;
+    }
+    .home-slider img {
+        width: 100%;
+        height: 100%;
+
+        object-fit: contain;
+    }
+    .box-content {
+        width: 300px;
+        height: 300px;
+    }
+    .box-content p {
+        font-size: 14.5px;
+        width: 290px;
+        line-height: 27px;
+    }
+    #researches {
+        grid-column-gap: 50px;
+    }
+}
+@media screen and (max-width: 1265px) {
+    .contact li,
+    .contact p,
+    .fbpages li a {
+        font-size: 18px;
+        line-height: 34.22px;
+    }
+    .ouradress li {
+        color: rgba(102, 102, 102, 1);
+        font-size: 18px;
+        line-height: 36px;
+    }
+    .ouradress {
+        margin-left: 75px;
+    }
+}
+
+@media screen and (max-width: 1226px) {
+    .smallabouttext p {
+        width: 85%;
+    }
+
+    .programmcol p,
+    .programmcoltwo p {
+        font-size: 14px;
+        line-height: 40px;
+    }
+
+    .programmcol h3 {
+        font-size: 18px;
+    }
+
+    .announcecol img {
+        width: 300px;
+        height: 300px;
+    }
+    .announcerow p {
+        font-size: 14px;
+    }
+
+    .announcerow button {
+        width: 170px;
+        height: 45px;
+
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 1215px) {
+    #modalwindow,
+    #modalreels,
+    #modalimages,
+    #modalfiles {
+        width: 1074px;
+        margin: -10px 0 0 -5px;
+    }
+    .ouradress li {
+        color: rgba(102, 102, 102, 1);
+        font-size: 16px;
+    }
+    .ouradress {
+        margin-top: -100px;
+    }
+    .programmcardrow {
+        display: grid;
+
+        grid-template-columns: auto auto;
+        justify-content: center;
+        grid-column-gap: 30px;
+        grid-row-gap: 45px;
+    }
+    .smallabouttext {
+        margin-top: 570px;
+    }
+
+    .programminfo h2 {
+        font-size: 30px;
+    }
+    .smallabouttext h1 {
+        font-size: 42px;
+    }
+    .contact li,
+    .contact p,
+    .fbpages li a {
+        font-size: 16px;
+        line-height: 32.22px;
+    }
+    .othericons {
+        margin: 10px 0 0 22px;
+    }
+
+    .othericons i,
+    .fbpages i {
+        color: rgba(255, 255, 255, 1);
+        font-size: 22px;
+    }
+    .iconcontact,
+    .fbpages .fbicon {
+        width: 45px;
+        height: 45px;
+    }
+}
+
+@media screen and (max-width: 1165px) {
+    #modalwindow,
+    #modalreels,
+    #modalimages,
+    #modalfiles {
+        margin: -10px 0 0 -30px;
+    }
+   
+    .advantages {
+        margin-top: 10px;
+    }
+    .smallabouttext {
+        margin-top: 550px;
+    }
+    .smallabouttext h1 {
+        line-height: 110px;
+    }
+    .orimages {
+        margin-left: 0;
+    }
+    .gallery-item img {
+        width: 280px !important;
+        height: 207px;
+    }
+    .gallery-container {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-column-gap: 20px;
+        grid-row-gap: 30px;
+    }
+
+    #modalwindow,
+    #modalreels,
+    #modalimages,
+    #modalfiles {
+        width: 1053px;
+        margin: -10px 0 0 -20px;
+    }
+
+    body .anounceinfosmalltext p {
+        line-height: 40px;
+    }
+    .advantageiconsrow img {
+        width: 92px;
+        height: 91px;
+    }
+    .iconcol p {
+        font-size: 18px;
+
+        margin-top: 20px;
+    }
+    .advantageiconsrow {
+        margin-top: -20px;
+        grid-column-gap: 140px;
+    }
+    .ouradress {
+        margin-left: 50px;
+    }
+}
+@media screen and (max-width: 1126px) {
+    .ouradress {
+        margin-left: 30px;
+    }
+    .ouradress li {
+    }
+}
+@media screen and (max-width: 1107px) {
+    #researches {
+        grid-column-gap: 30px;
+    }
+
+    .contactadressthree {
+        margin-top: 20px;
+    }
+    .contactadressfour {
+        margin-top: 45px;
+    }
+    .contact p {
+        margin-bottom: -10px;
+    }
+    .anouncement h2 {
+        font-size: 42px;
+    }
+    .anouncement {
+        margin-top: 50px;
+    }
+    .advantages {
+        margin-top: 10px;
+    }
+    .contact {
+        grid-template-columns: 1fr;
+    }
+    .contactline {
+        display: none;
+    }
+    .mobilefooter {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-column-gap: 40px;
+
+        align-items: center;
+        justify-content: center;
+    }
+    .contactform {
+        width: 100%;
+    }
+    .fbpages li {
+        margin-top: 10px;
+    }
+    .contactaddresses {
+        width: 10;
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-column-gap: 80px;
+        margin-left: 40px;
+    }
+    .contact li,
+    .contact p,
+    .fbpages li a {
+        font-size: 22px;
+        line-height: 36.22px;
+    }
+    .advantages h2 {
+        line-height: 111px;
+    }
+    #modalwindow,
+    #modalreels,
+    #modalimages,
+    #modalfiles {
+        width: 975px;
+        margin: -10px 0 0 -20px;
+    }
+    .home-slider img {
+        width: 100%;
+        height: 100%;
+
+        object-fit: contain;
+    }
+    .anounceinfosmalltext h2 {
+        font-size: 20px;
+        line-height: 30px;
+    }
+    .anounceinfosmalltext p,
+    .anounceinfotext p,
+    .anounceinfodotes p,
+    .anounceinfodotes li,
+    .anounceinfotext a {
+        font-size: 16px;
+        line-height: 35px;
+    }
+    body .anounceinfosmalltext p {
+        line-height: 30px;
+    }
+    .boxreels {
+        width: 300px;
+    }
+    .boxtwo .box-imgtwo {
+        width: 260px;
+        height: 260px;
+        font-size: 24px;
+    }
+
+    .modalboxes {
+        margin-left: 35px;
+    }
+    .anouncerow h3 {
+        font-size: 18px;
+    }
+    .announcerow p {
+        font-size: 13px;
+
+        line-height: 35px;
+    }
+    .announcerow button {
+        width: 150px;
+        height: 38px;
+        font-size: 14px;
+        margin-top: 10px;
+    }
+    .announcecol img {
+        width: 300px;
+        height: 300px;
+        margin-left: 5px;
+        margin-top: -15px;
+    }
+}
+@media screen and (max-width: 1068px) {
+    .countcol img {
+        width: 230px;
+        height: 230px;
+    }
+   body .card_section {
+        display: grid;
+        grid-template-columns: 1fr 1fr !important;
+        justify-items: center;
+        
+    }
+    .programminfo h2 {
+        font-size: 28px;
+    }
+    .smallabouttext {
+        margin-top: 530px;
+    }
+    .smallabouttext h1 {
+        font-size: 37px;
+        line-height: 90px;
+    }
+
+    .home-slider img {
+        width: 100%;
+        height: 100%;
+        margin-top: 20px;
+        object-fit: contain;
+    }
+    .programmcol p,
+    .programmcoltwo p {
+        font-size: 14px;
+        line-height: 35px;
+    }
+    #modalwindow,
+    #modalreels,
+    #modalimages,
+    #modalfiles {
+        width: 900px;
+        margin: -10px 0 0 -20px;
+    }
+    .boxreels {
+        width: 250px;
+    }
+    .boxtwo .box-imgtwo {
+        width: 220px;
+        height: 220px;
+        font-size: 20px;
+    }
+    .countcol p,
+    .countcol span {
+        font-size: 14px;
+    }
+    .box .box-img {
+        width: 260px;
+        height: 260px;
+        font-size: 24px;
+    }
+    #researches {
+        grid-column-gap: 0px;
+    }
+    .box-content {
+        width: 260px;
+        height: 260px;
+    }
+    .box-content p {
+        font-size: 11.5px;
+        width: 240px;
+        line-height: 27px;
+    }
+    #researches {
+        grid-column-gap: 50px;
+    }
+}
+@media screen and (max-width: 1000px) {
+    .smallabouttext {
+        margin-top: 490px;
+    }
+   
+    .advantages h2 {
+        font-size: 42px;
+    }
+  
+    .sp-container h2 {
+        position: absolute;
+        top: 30%;
+}
+    .fbpages li a {
+        font-size: 18px;
+        line-height: 36.22px;
+    }
+    .mobilefooter {
+        grid-column-gap: 70px;
+    }
+}
+@media screen and (max-width: 958px) {
+    .countcol img {
+        width: 200px;
+        height: 200px;
+    }
+    .anounceinfo {
+        width: 90%;
+    }
+    .modalboxes {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-row-gap: 20px;
+        margin-top: 10px;
+        grid-column-gap: 10px;
+    }
+
+    #images {
+        margin-left: -95px;
+    }
+    #modalwindow,
+    #modalreels,
+    #modalimages,
+    #modalfiles {
+        height: auto;
+        overflow-y: scroll;
+        margin: -40px 0 0 -50px;
+    }
+    #closetext,
+    #closereels,
+    #closeimages,
+    #closefiles {
+        top: 10px;
+
+        right: 30px;
+    }
+
+    .countcol p,
+    .countcol span {
+        font-size: 12px;
+    }
+    #researches {
+        display: grid;
+        grid-template-columns: auto auto;
+
+        grid-column-gap: 10px;
+    }
+    .box .box-img,
+    .boxtwo .box-imgtwo {
+        width: 300px;
+        height: 300px;
+        font-size: 26px;
+    }
+
+    .box-content {
+        width: 300px;
+        height: 300px;
+    }
+    .box-content p {
+        font-size: 14px;
+        width: 260px;
+        line-height: 27px;
+    }
+}
+@media screen and (max-width: 912px) {
+    .modalvideos {
+        margin-top: 30px;
+        display: grid;
+        grid-template-columns: auto auto;
+        justify-content: center;
+        grid-gap: 10px;
+        margin-left: 10px;
+    }
+    .smallabouttext {
+        margin-top: 470px;
+    }
+    .smallabouttext h1 {
+        font-size: 34px;
+        line-height: 80px;
+    }
+    .home-slider img {
+        width: 100%;
+        height: 100%;
+        margin-top: 20px;
+        object-fit: contain;
+    }
+    .programmcardrow {
+        display: grid;
+        grid-template-columns: auto auto;
+        justify-content: center;
+        grid-column-gap: 10px;
+        grid-row-gap: 35px;
+    }
+    .programmcol p,
+    .programmcoltwo p {
+        font-size: 14px;
+        line-height: 30px;
+    }
+    .programminfo h2 {
+        font-size: 25px;
+    }
+
+    #arrowback,
+    #arrowbacktwo,
+    #arrowbackfour {
+        width: 30px;
+        height: 30px;
+
+        top: 20px;
+        left: 10px;
+    }
+
+    .announcerow h3 {
+        font-size: 16px;
+        line-height: 30px;
+    }
+    .announcerow p {
+        font-size: 13px;
+        line-height: 30px;
+    }
+
+    #arrowback i,
+    #arrowbacktwo i,
+    #arrowbackfour i {
+        font-size: 15px;
+    }
+    #closereels {
+        top: 20px;
+        right: 2px;
+        font-size: 22px;
+    }
+}
+@media screen and (max-width: 868px) {
+    .countrowone {
+        grid-column-gap: 50px;
+    }
+    .programmcol h3 {
+        text-align: center;
+    }
+    .mobilefooter {
+        grid-column-gap: 40px;
+    }
+    .card {
+        width: 305px;
+        height: 305px;
+    }
+    .card .card-details {
+        width: 305px;
+        height: 305px;
+    }
+    .card-details p {
+        line-height: 18px;
+    }
+    .cardblocktext {
+        width: 305px;
+        height: 85px;
+    }
+    .anounces {
+        margin-top: -55px;
+    }
+    .card-details h3 {
+        line-height: 24px;
+    }
+    .cardblock {
+        width: 325px;
+        height: 445px;
+    }
+
+    .advantageiconsrow {
+        margin-top: -20px;
+        grid-column-gap: 80px;
+    }
+    #more {
+        margin-top: 25px;
+    }
+    .smallabouttext p {
+        width: 90%;
+        font-size: 16px;
+    }
+    .home-slider img {
+        width: 100%;
+        height: 100%;
+        margin-top: 20px;
+        object-fit: contain;
+    }
+    .smallabouttext {
+        margin-top: 450px;
+    }
+    .smallabouttext h1,
+    .advantages h2 {
+        font-size: 30px;
+        line-height: 80px;
+    }
+    .back,
+    .front,
+    .card-container {
+        width: 280px;
+        height: 280px;
+    }
+    .cardprogramm {
+        width: 300px;
+        height: 420px;
+    }
+    .cardprogramm .front img {
+        width: 280px;
+        height: 280px;
+        margin-top: -75px;
+    }
+    .backgroundtext {
+        width: 280px;
+    }
+    .backgroundtext p {
+        font-size: 12px;
+    }
+    .programmrow {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .programmcol {
+        width: 100%;
+    }
+
+    .programmcol h3 {
+        margin-top: 5px;
+    }
+    .back h3 {
+        font-size: 12px;
+
+        line-height: 20px;
+    }
+    .back p {
+        font-size: 11px;
+
+        line-height: 17px;
+        text-align: center;
+    }
+    #modalwindow,
+    #modalreels,
+    #modalimages,
+    #modalfiles {
+        width: 750px;
+    }
+    .boxtwo .box-imgtwo {
+        width: 250px;
+        height: 250px;
+        font-size: 26px;
+    }
+    #images,
+    #reels {
+        margin-top: 20px;
+    }
+    #files {
+        margin-top: -40px;
+    }
+    .footermenu {
+        justify-content: flex-start;
+    }
+    .footermenu > div {
+        margin-left: 140px;
+    }
+    .footermenu > div:nth-child(1) {
+        margin-left: 0;
+    }
+    .footermenu > div:nth-child(4) {
+        margin-left: 0;
+    }
+}
+@media screen and (max-width: 815px) {
+    .anounceinfosmalltext {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .smallabouttext {
+        margin-top: 420px;
+    }
+
+    .anouncesmalltxt {
+        margin-left: 0;
+    }
+    .anounceinfosmalltext h2 {
+        text-align: center;
+    }
+}
+@media screen and (max-width: 775px) {
+    .member_img {
+        width: 265px;
+        height: 326px;
+    }
+    .card_main > p{
+        font-size: 16px;
+    }
+    .abouttext>div{
+        width: 90%;
+        margin-left: 27px;
+    }
+    .member {
+        margin: 10px;
+    }
+    .announcecol img {
+        width: 250px;
+        height: 250px;
+    }
+    .smallabouttext p {
+        width: 90%;
+        font-size: 14px;
+    }
+    .advantageiconsrow {
+        display: grid;
+        text-align: center;
+        align-items: center;
+        grid-template-columns: auto auto;
+        justify-content: center;
+        grid-row-gap: 90px;
+        grid-column-gap: 100px;
+    }
+    .iconcol p {
+        font-size: 20px;
+    }
+    .anouncement h2 {
+        font-size: 35px;
+    }
+    .advantageiconsrow img {
+        width: 102px;
+        height: 101px;
+    }
+    .contact li,
+    .contact p,
+    .fbpages li a {
+        font-size: 20px;
+        line-height: 35.22px;
+    }
+
+    .contactaddresses {
+        grid-column-gap: 50px;
+        margin-left: 20px;
+    }
+    .contact {
+        margin-top: -20px;
+    }
+    .contacts {
+        margin-top: 130px !important;
+    }
+    .smallp2 {
+        display: block;
+    }
+
+    .smallabouttext {
+        margin-top: 400px;
+    }
+    .smallabouttext h1 {
+        font-size: 28px;
+        margin-top: 30px;
+        line-height: 70px;
+    }
+    .announcerow p {
+        font-size: 13px;
+        line-height: 25px;
+    }
+    .announcerow h3 {
+        font-size: 14px;
+        line-height: 25px;
+    }
+
+    .card {
+        width: 265px;
+        height: 265px;
+    }
+    .card .card-details {
+        width: 265px;
+        height: 265px;
+    }
+    .card-details p {
+        line-height: 18px;
+    }
+    .cardblocktext {
+        width: 265px;
+        height: 75px;
+    }
+    .anounces {
+        margin-top: -55px;
+    }
+    .card-details h3 {
+        line-height: 24px;
+    }
+    .cardblock {
+        width: 285px;
+        height: 385px;
+    }
+    .card {
+        width: 265px;
+        height: 265px;
+    }
+    .card .card-details {
+        width: 265px;
+        height: 265px;
+    }
+    .card-details p {
+        line-height: 14px;
+        font-size: 11px;
+    }
+    .cardblocktext {
+        width: 265px;
+        height: 70px;
+    }
+    .anounces {
+        margin-top: -55px;
+    }
+    .card-details h3 {
+        font-size: 12px;
+        line-height: 16px;
+    }
+    .cardblocktext p {
+        font-size: 10.5px;
+        line-height: 24px;
+    }
+    body .modal_main{
+        grid-template-columns: 1fr 1fr !important;
+    }
+}
+@media screen and (max-width: 758px) {
+    #modalwindow,
+    #modalreels,
+    #modalimages,
+    #modalfiles {
+        width: 600px;
+        margin: -40px 0 0 0;
+    }
+
+    .boxtwo .box-imgtwo {
+        width: 200px;
+        height: 200px;
+        font-size: 20px;
+    }
+    .home-slider img {
+        width: 100%;
+        height: 100%;
+        margin-top: 20px;
+        object-fit: contain;
+    }
+   
+}
+@media screen and (max-width: 735px) {
+    .countrowone {
+        display: grid;
+        grid-template-columns: auto auto;
+        justify-content: center;
+        align-items: center;
+        grid-row-gap: -250px;
+    }
+
+    .footerform form input,
+    textarea {
+        height: 40px;
+        border: 2px solid rgba(224, 224, 224, 1);
+        border-radius: 30px;
+        margin-top: 20px;
+    }
+    .mobilefooter {
+        grid-template-columns: auto;
+    }
+    .smallabouttext {
+        margin-top: 380px;
+    }
+    .smallabouttext h1 {
+        font-size: 26px;
+        line-height: 65px;
+    }
+    .programmcardrow {
+        grid-column-gap: 0;
+    }
+    .countcol img {
+        width: 230px;
+        height: 230px;
+    }
+    .countcol p,
+    .countcol span {
+        font-size: 14px;
+    }
+    .countcol {
+        margin-bottom: 40px;
+    }
+    .box .box-img {
+        width: 260px;
+        height: 260px;
+        font-size: 24px;
+    }
+    #researches {
+        grid-column-gap: 0px;
+    }
+    .box-content {
+        width: 260px;
+        height: 260px;
+    }
+    .box-content p {
+        font-size: 11.5px;
+        width: 240px;
+        line-height: 27px;
+    }
+    .box {
+        margin: 0;
+    }
+
+    .gallery-container {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-gap: 12px;
+        grid-row-gap: 2px;
+    }
+    .ourimages {
+        margin-left: -20px;
+    }
+    .modal-content>div{
+        width: 532px;
+    }
+}
+@media screen and (max-width: 685px) {
+    .box .box-img {
+        width: 220px;
+        height: 220px;
+        font-size: 20px;
+    }
+   body .card_title {
+        font-size: 20px !important;
+    }
+    .sp-container h2 {
+        position: absolute;
+        top: 18%;
+    }
+    .abouttext>div{
+        margin-left: 20px;
+    }
+    .gradientabout{
+        margin-top: -20px;
+        margin-bottom: -20px;
+    }
+    .contacts h2 {
+        font-size: 42px;
+    }
+    .gradientabout h1{
+        margin-top: -50px;
+    }
+    .call_beck_flue h3 {
+        margin-bottom: 30px;
+    margin-top: 20px;};
+    .announcecol img {
+        width: 200px;
+        height: 200px;
+    }
+    .smallabouttext p {
+        width: 94%;
+        font-size: 13.5px;
+    }
+    .back,
+    .front,
+    .card-container {
+        width: 240px;
+        height: 240px;
+    }
+
+    .cardprogramm {
+        width: 260px;
+        height: 380px;
+    }
+    .cardprogramm .front img {
+        width: 240px;
+        height: 240px;
+        margin-top: -75px;
+    }
+    .ourimages {
+        margin-left: -50px;
+    }
+    .gallery-item img {
+        width: 240px !important;
+        height: 157px !important;
+    }
+    .backgroundtext {
+        width: 240px;
+    }
+    .backgroundtext p {
+        font-size: 10px;
+    }
+
+    .back h3,
+    .card-details h3 {
+        font-size: 11px;
+        line-height: 17px;
+    }
+
+    .back p {
+        font-size: 10px;
+        line-height: 13.5px;
+        text-align: center;
+        width: 200px;
+        margin-left: -10px;
+        width: 100%;
+    }
+
+    .contact li,
+    .contact p,
+    .fbpages li a {
+        font-size: 18px;
+        line-height: 36.22px;
+    }
+    .contactaddresses {
+        grid-column-gap: 30px;
+        margin-left: 10px;
+    }
+    .announcerow h3 {
+        font-size: 13px;
+        line-height: 20px;
+    }
+    .box-content {
+        width: 220px;
+        height: 220px;
+    }
+    #researches {
+        grid-column-gap: 0px;
+    }
+    .cardblocktext p {
+        font-size: 13px;
+        line-height: 30px;
+    }
+    .modalboxes {
+        display: grid;
+        grid-template-columns: auto;
+    }
+    #modalwindow,
+    #modalreels,
+    #modalimages,
+    #modalfiles {
+        width: 600px;
+        margin: -400px 0 0 -30px;
+        transform: translateY(-1000px);
+    }
+    #modalreels {
+        margin-top: -50px;
+    }
+    #closetext,
+    #closereels,
+    #closeimages,
+    #closefiles {
+        top: 350px;
+    }
+    #closereels {
+        top: 30px;
+    }
+    .boxtwo .box-imgtwo {
+        width: 250px;
+        height: 250px;
+        font-size: 20px;
+    }
+    .card-details p {
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 22px;
+    }
+    .card-details h3 {
+        font-size: 14px;
+
+        line-height: 27px;
+    }
+    #images {
+        margin-left: 0;
+    }
+    .anounces .container {
+        grid-template-columns: auto;
+        justify-content: center;
+    }
+
+    .card {
+        width: 335px;
+        height: 335px;
+    }
+    .card .card-details {
+        width: 332px;
+        height: 333px;
+    }
+    .cardblocktext {
+        width: 335px;
+        height: 95px;
+    }
+    .cardblock {
+        width: 375px;
+        height: 495px;
+    }
+
+    #reels {
+        margin-top: 350px;
+    }
+    #images {
+        margin-top: -40px;
+    }
+
+    .box-content {
+        width: 220px;
+        height: 220px;
+    }
+    .box-content p {
+        font-size: 8.5px;
+        width: 180px;
+        line-height: 20px;
+    }
+    .box {
+        width: 250px;
+        height: 250px;
+    }
+
+    .smallabouttext {
+        margin-top: 260px;
+    }
+}
+@media screen and (max-width: 625px) {
+    #modalwindow,
+    #modalreels,
+    #modalimages,
+    #modalfiles {
+        width: 500px;
+        margin: -400px auto;
+        text-align: center;
+    }
+
+    .contactadressfour {
+        margin-top: -15px;
+    }
+    .advantageiconsrow {
+        grid-column-gap: 50px;
+        grid-row-gap: 70px;
+    }
+    .anouncement h2 {
+        font-size: 30px;
+    }
+    .anouncement {
+        margin-top: 40px;
+    }
+
+    .contactaddresses {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        width: 100%;
+    }
+
+    .iconcol p {
+        font-size: 16px;
+    }
+    .home-slider img {
+        width: 100%;
+        height: 100%;
+        margin-top: 20px;
+        object-fit: contain;
+    }
+
+    #modalreels {
+        margin: -50px auto;
+        overflow-x: hidden;
+    }
+
+    .programmcardrow {
+        display: grid;
+        grid-template-columns: auto;
+    }
+
+    .cardprogramm {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        border: 1px solid rgba(108, 150, 94, 1);
+        width: 360px;
+        height: 480px;
+        border-radius: 10px;
+        margin-left: 40px;
+    }
+    .cardprogramm .front img {
+        width: 330px;
+        height: 330px;
+        margin-top: -75px;
+    }
+    .backgroundtext {
+        width: 330px;
+        height: 95px;
+        background-color: rgba(108, 150, 94, 1);
+        display: flex;
+        margin-top: -125px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .back,
+    .front,
+    .card-container {
+        width: 330px;
+        height: 330px;
+    }
+    .back h3 {
+        font-size: 14px;
+        line-height: 27px;
+        text-align: center;
+    }
+    .backgroundtext p {
+        font-size: 13px;
+
+        line-height: 30px;
+        width: 265px;
+        text-align: center;
+    }
+
+    .back p {
+        font-size: 12px;
+        line-height: 22px;
+        text-align: center;
+    }
+
+    .boxreels iframe {
+        border-radius: 10px;
+        width: 100%;
+        height: 105px;
+    }
+    .anounceinfodotes li {
+        word-spacing: -2px;
+    }
+    #closereels {
+        top: 5px;
+    }
+    .programminfo h2 {
+        font-size: 22px;
+    }
+    #arrowback,
+    #arrowbacktwo,
+    #arrowbackfour {
+        width: 30px;
+        height: 30px;
+        top: 0.5px;
+        left: 10px;
+    }
+    .ourimages {
+        margin-left: -20px;
+    }
+    .smallabouttext {
+        margin-top: 240px;
+    }
+    .smallabouttext h1 {
+        font-size: 22px;
+        line-height: 60px;
+    }
+    .advantages h2 {
+        font-size: 26px;
+        line-height: 60px;
+    }
+    .contact li span {
+        display: inline;
+    }
+    .othericons {
+        margin: -40px 0 100px 172px;
+        grid-column-gap: 0;
+    }
+
+    .contact li,
+    .contact p {
+        font-size: 18px;
+        line-height: 28.22px;
+    }
+    body .mobilespan {
+        display: block !important;
+    }
+    .fbpages li a {
+        line-height: 34px;
+    }
+
+    .facebook,
+    .fbpages ul {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+@media screen and (max-width: 600px) {
+    .member_img {
+        width: 165px;
+        height: 226px;
+    }
+    .member h2 {
+        font-size: 20px;
+    }
+    .member p {
+        font-size: 16px;
+    }
+    .sp-container {
+        height: 500px;
+    }
+
+    .modal-content>div{
+        width: 400px;
+        height: 80px;
+    }
+}
+@media screen and (max-width: 505px) {
+    .member_img {
+        width: 165px;
+        height: 226px;
+    }
+    .member h2 {
+        font-size: 16px;
+    }
+    .member p {
+        font-size: 12px;
+    }
+}
+@media screen and (max-width: 505px) {
+    .member_img {
+        width: 100%;
+        height: 400px;
+    }
+    .member h2 {
+        font-size: 22px;
+    }
+    .member p {
+        font-size: 18px;
+    }
+    .sp-container h2 {
+        font-size: 40px;
+        top: 20%;
+    }
+}
+@media screen and (max-width: 568px) {
+    .countcol img {
+        width: 200px;
+        height: 200px;
+    }
+body #card_section{
+    grid-template-columns: 1fr !important;
+}
+    #modal_content_h2{
+      font-size: 20px;
+      margin-bottom: 50px;
+    }
+    .smallabouttext p {
+        width: 97%;
+        font-size: 13.5px;
+    }
+    .contact li,
+    .contact p,
+    .fbpages li a {
+        font-size: 16px;
+        line-height: 24.22px;
+    }
+    .iconcontact,
+    .fbpages .fbicon {
+        width: 40px;
+        height: 40px;
+    }
+    .othericons i,
+    .fbpages i {
+        font-size: 20px;
+    }
+    .othericons {
+        margin: -30px 0 100px 172px;
+    }
+    #more {
+        margin-top: 35px;
+    }
+    .gallery-item img {
+        width: 200px !important;
+        height: 127px !important;
+    }
+    .smallabouttext {
+        margin-top: 220px;
+    }
+    .ourimages {
+        margin-left: -50px;
+    }
+
+    .announcerow {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .announcecol > img {
+        margin: 0 !important;
+    }
+    .announcecol {
+        text-align: center;
+        margin-right: 0;
+    }
+
+    #modalwindow,
+    #modalreels,
+    #modalimages,
+    #modalfiles {
+        width: 450px;
+        margin: -400px auto;
+        text-align: center;
+    }
+
+    .anounceinfosmalltext h2 {
+        font-size: 16px;
+    }
+    .anounceinfosmalltext p,
+    .anounceinfotext p,
+    .anounceinfodotes p,
+    .anounceinfodotes li,
+    .anounceinfotext a {
+        font-size: 14px;
+    }
+
+    .modalvideos {
+        margin-top: 30px;
+        display: grid;
+        grid-template-columns: auto;
+        justify-content: center;
+        grid-gap: 10px;
+        margin-left: 10px;
+    }
+    .boxreels iframe {
+        border-radius: 10px;
+        width: 100%;
+        height: 165px;
+    }
+    .boxreels {
+        width: 300px;
+    }
+
+    .countcol p,
+    .countcol span {
+        font-size: 12px;
+    }
+    .box .box-img {
+        width: 200px;
+        height: 200px;
+        font-size: 18px;
+    }
+    #researches {
+        grid-column-gap: 0px;
+        margin-left: 20px;
+    }
+    .box-content {
+        width: 200px;
+        height: 200px;
+    }
+    .box-content p {
+        font-size: 8.5px;
+        width: 180px;
+        line-height: 20px;
+    }
+    .box {
+        width: 230px;
+        height: 230px;
+    }
+}
+@media screen and (max-width: 535px) {
+    .countrowone {
+        grid-column-gap: 30px;
+    }
+    .ourimages {
+        margin-left: -20px;
+    }
+    .contact li,
+    .contact p,
+    .fbpages li a {
+        font-size: 14px;
+        line-height: 22.22px;
+    }
+    body .card_title {
+        font-size: 24px !important;
+    }
+    .countcol img {
+        width: 180px;
+        height: 180px;
+    }
+    .gallery-item img {
+        width: 180px !important;
+        height: 107px !important;
+    }
+    .gallery-container {
+        display: grid;
+        grid-template-columns: auto auto;
+        /* grid-gap: 12px; */
+        grid-row-gap: 1px;
+        grid-column-gap: 5px;
+    }
+    .ourimages {
+        margin-left: -5px;
+    }
+
+    .countcol p,
+    .countcol span {
+        font-size: 10px;
+    }
+    .smallabouttext {
+        margin-top: 220px;
+    }
+    .smallabouttext h1 {
+        font-size: 25px;
+        line-height: 40px;
+    }
+    .countcol {
+        margin-bottom: 20px;
+    }
+    #modalwindow,
+    #modalreels,
+    #modalimages,
+    #modalfiles {
+        width: 450px;
+        margin: -400px 0 0 -25px;
+    }
+}
+@media screen and (max-width: 500px) {
+    .footerform form {
+        margin: 30px;
+        padding: 10px;
+    }
+    .box .box-img {
+        width: 180px;
+        height: 180px;
+        font-size: 16px;
+    }
+    .advantageiconsrow img {
+        width: 92px;
+        height: 91px;
+    }
+    .smallabouttext {
+        margin-top: 200px;
+    }
+    #more {
+        border: 3px solid rgba(108, 150, 94, 1);
+        border-radius: 28px;
+        width: 160px;
+        height: 45px;
+        background-color: rgba(108, 150, 94, 1);
+        color: #ffffff;
+        font-size: 16px;
+        margin-top: 18px;
+        line-height: 20px;
+    }
+    .back,
+    .front,
+    .card-container {
+        width: 280px;
+        height: 280px;
+    }
+    .cardprogramm {
+        width: 300px;
+        height: 420px;
+    }
+    .cardprogramm .front img {
+        width: 280px;
+        height: 280px;
+        margin-top: -75px;
+    }
+    .backgroundtext {
+        width: 280px;
+    }
+    .backgroundtext p {
+        font-size: 12px;
+    }
+    .back h3,
+    .card-details h3 {
+        font-size: 12px;
+
+        line-height: 20px;
+    }
+    .back p {
+        font-size: 11px;
+
+        line-height: 17px;
+        text-align: center;
+        margin-left: 2px;
+    }
+
+    #researches {
+        grid-column-gap: 0px;
+        margin-left: 20px;
+    }
+    .box-content {
+        width: 180px;
+        height: 180px;
+    }
+    .box-content p {
+        font-size: 8.5px;
+        width: 170px;
+        line-height: 14px;
+    }
+    .box {
+        width: 200px;
+        height: 200px;
+    }
+    .box-content img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .anounceinfosmalltext h2 {
+        font-size: 14px;
+    }
+    .anounceinfosmalltext p,
+    .anounceinfotext p,
+    .anounceinfodotes p,
+    .anounceinfodotes li,
+    .anounceinfotext a {
+        font-size: 13px;
+    }
+}
+@media screen and (max-width: 485px) {
+    .smallabouttext h1 {
+        font-size: 22px;
+        line-height: 40px;
+    }
+    .modal-content>div {
+        width: 380px;
+        height: 75px;
+    }
+    .search_section input::placeholder{
+        font-size: 16px;
+    }
+    .search_section i {
+        font-size: 20px;
+        
+    }
+
+    .contact li,
+    .contact p,
+    .fbpages li a {
+        font-size: 12.5px;
+        line-height: 20.22px;
+    }
+    .anouncement {
+        margin-top: 35px;
+    }
+    .anouncement h2 {
+        font-size: 26px;
+    }
+    .contacts h2 {
+        font-size: 38px;
+    }
+    .advantageiconsrow {
+        grid-column-gap: 20px;
+        grid-row-gap: 50px;
+    }
+    .advantageiconsrow img {
+        width: 82px;
+        height: 81px;
+    }
+    .iconcol p {
+        font-size: 14px;
+        margin-top: 18px;
+    }
+    .card {
+        width: 265px;
+        height: 265px;
+    }
+    .card .card-details {
+        width: 265px;
+        height: 265px;
+    }
+    .card-details p {
+        line-height: 18px;
+    }
+    .cardblocktext {
+        width: 265px;
+        height: 75px;
+    }
+    .anounces {
+        margin-top: -55px;
+    }
+    .card-details h3 {
+        line-height: 24px;
+    }
+    .cardblock {
+        width: 285px;
+        height: 385px;
+    }
+    .card {
+        width: 265px;
+        height: 265px;
+    }
+    .card .card-details {
+        width: 265px;
+        height: 265px;
+    }
+    .card-details p {
+        line-height: 16px;
+        font-size: 11px;
+    }
+    .cardblocktext {
+        width: 265px;
+        height: 70px;
+    }
+    .anounces {
+        margin-top: -55px;
+    }
+    .card-details h3 {
+        font-size: 12px;
+        line-height: 16px;
+    }
+    .cardblocktext p {
+        font-size: 10.5px;
+        line-height: 24px;
+    }
+}
+@media screen and (max-width: 458px) {
+    .footermenu > div {
+        margin: 10px;
+    }
+    body .card_title {
+        font-size: 24px !important;
+    }
+    .icons {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+    }
+    .liner {
+        display: none;
+    }
+    .footericons {
+        width: 70%;
+    }
+
+    .countcol img {
+        width: 160px;
+        height: 160px;
+    }
+    .countcol p,
+    .countcol span {
+        font-size: 9px;
+    }
+    .smallabouttext {
+        margin-top: 185px;
+    }
+    .box .box-img {
+        width: 160px;
+        height: 160px;
+        font-size: 16px;
+    }
+    #researches {
+        grid-column-gap: 0px;
+        margin-left: 20px;
+    }
+    .box-content {
+        width: 160px;
+        height: 160px;
+    }
+    .box-content p {
+        font-size: 8.5px;
+        width: 150px;
+        line-height: 13px;
+    }
+    .box {
+        width: 180px;
+        height: 180px;
+    }
+    .box-content img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .countrowone {
+        grid-column-gap: 15px;
+    }
+    .countcol {
+        margin-bottom: 10px;
+    }
+    #modalwindow,
+    #modalreels,
+    #modalimages,
+    #modalfiles {
+        width: 380px;
+        margin: -400px 0 0 -25px;
+    }
+    .programminfo h2 {
+        font-size: 18px;
+        line-height: 30px;
+    }
+
+    .programmcol h3 {
+        font-size: 18px;
+        line-height: 30px;
+    }
+    .programmcol p,
+    .programmcoltwo p {
+        font-size: 13px;
+        line-height: 30px;
+    }
+}
+@media screen and (max-width: 425px) {
+    .countrowone {
+        display: grid;
+        grid-template-columns: auto;
+    }
+    .gallery-item img {
+        width: 160px !important;
+        height: 100px !important;
+    }
+    .smallabouttext h1 {
+        font-size: 20px;
+        line-height: 40px;
+    }
+
+    .smallabouttext {
+        margin-top: 170px;
+    }
+    .announcecol img {
+        width: 290px;
+        height: 290px;
+    }
+    .contact li,
+    .contact p,
+    .fbpages li a {
+        font-size: 22.5px;
+        line-height: 40.22px;
+    }
+    .contactadress li,
+    .contactadresstwo li {
+        margin-top: 10px;
+    }
+    .othericons {
+        margin: 10px 0 100px 25px;
+    }
+
+    .contact li span {
+        font-size: 16px;
+        display: block;
+        word-break: break-all;
+    }
+
+    .announcerow button {
+        font-size: 13px;
+        margin-top: 10px;
+    }
+    .gallery-item img {
+        width: 150px !important;
+        height: 100px !important;
+    }
+    .announcerow h3 {
+        font-size: 14px;
+        line-height: 20px;
+        text-align: center;
+    }
+
+    .countcol img {
+        width: 200px;
+        height: 200px;
+    }
+    .countcol p,
+    .countcol span {
+        font-size: 12px;
+    }
+    .announcerow p {
+        font-size: 13px;
+        line-height: 25px;
+        padding-left: 10px;
+    }
+    #researches {
+        grid-template-columns: auto;
+    }
+    .box .box-img {
+        width: 250px;
+        height: 250px;
+        font-size: 22px;
+    }
+
+    .box-content {
+        width: 250px;
+        height: 250px;
+    }
+    .box-content p {
+        font-size: 12.5px;
+        width: 230px;
+        line-height: 18px;
+    }
+    .box {
+        width: 300px;
+        height: 300px;
+    }
+    .box-content img {
+        width: 20px;
+        height: 20px;
+    }
+}
+@media screen and (max-width: 415px) {
+    .contact li,
+    .contact p,
+    .fbpages li a {
+        font-size: 20px;
+        line-height: 36.22px;
+    }
+    .abouttext>div{
+        margin-left: 20px;
+    }
+    .call_beck_flue h3{
+        margin-top: 20px;
+    }
+    .modal-content>div {
+        width: 330px;
+        height: 70px;
+    }
+    .search_section input::placeholder{
+        font-size: 16px;
+    }
+    .search_section i {
+        font-size: 20px;
+        
+    }
+    .close {
+  
+        right: 21px;
+    }
+}
+@media screen and (max-width: 380px) {
+    #modalwindow,
+    #modalreels,
+    #modalimages,
+    #modalfiles {
+        width: 320px;
+        margin: -400px 0 0 5px;
+    }
+    body .card_title {
+        font-size: 22px !important;
+    }
+
+    .contact li,
+    .contact p,
+    .fbpages li a {
+        font-size: 19.5px;
+        line-height: 34.22px;
+    }
+
+    .smallabouttext {
+        margin-top: 155px;
+    }
+    .anounces {
+        margin-top: -65px;
+    }
+    .smallabouttext h1 {
+        font-size: 19px;
+        line-height: 37px;
+    }
+    .boxreels {
+        width: 250px;
+    }
+    .boxreels iframe {
+        height: 170px;
+    }
+    #closetext,
+    #closereels,
+    #closeimages,
+    #closefiles {
+        top: 330px;
+        right: 20px;
+    }
+    #closereels {
+        top: 0;
+    }
+
+    .boxtwo .box-imgtwo {
+        width: 220px;
+        height: 220px;
+        font-size: 20px;
+    }
+    #modalwindow,
+    #modalreels,
+    #modalimages,
+    #modalfiles {
+        width: 350px;
+        overflow-x: hidden;
+        margin: -400px 0 0 -25px;
+    }
+    .modalboxes {
+        margin-left: 55px;
+    }
+}
+@media screen and (max-width: 365px) {
+    .programmrow_img {
+        width: 303px;
+    }
+.abouttext>div{
+    margin-left: 7px;
+}
+    .contact li,
+    .contact p,
+    .fbpages li a {
+        font-size: 18.5px;
+        line-height: 30.22px;
+    }
+
+    .smallabouttext h1 {
+        font-size: 18.5px;
+        line-height: 37px;
+    }
+    .iconcol p {
+        font-size: 13px;
+        margin-top: 12px;
+    }
+    .advantageiconsrow img {
+        width: 72px;
+        height: 71px;
+    }
+    .advantages h2 {
+        font-size: 24px;
+        line-height: 50px;
+    }
+    .smallabouttext {
+        margin-top: 125px;
+    }
+
+    .programmcardrow {
+        margin-left: -17px;
+    }
+    .programminfo h2 {
+        font-size: 16px;
+        line-height: 30px;
+    }
+    .contacts h2 {
+        font-size: 32px;
+    }
+    .footermenu {
+        flex-direction: column;
+    }
+    .footermenu {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+@media screen and (max-width: 330px) {
+    #modalwindow,
+    #modalreels,
+    #modalimages,
+    #modalfiles {
+        width: 320px;
+        overflow-x: hidden;
+        margin: -400px 0 0 -25px;
+    }
+
+    .advantages h2 {
+        font-size: 22px;
+        line-height: 45px;
+    }
+
+    .anouncement h2 {
+        font-size: 24px;
+    }
+    .anouncement {
+        margin-top: 30px;
+    }
+    .gallery-item img {
+        width: 140px !important;
+        height: 90px !important;
+    }
+
+    .smallabouttext h1 {
+        font-size: 18px;
+        line-height: 37px;
+    }
+    .smallabouttext {
+        margin-top: 130px;
+    }
+    .programmcol {
+        width: 100%;
+    }
+
+    .announcecol img {
+        width: 270px;
+        height: 270px;
+    }
+
+    .anouncetext p {
+        padding-left: -2px;
+    }
+    .back,
+    .front,
+    .card-container {
+        width: 260px;
+        height: 260px;
+    }
+    .cardprogramm {
+        width: 280px;
+        height: 400px;
+    }
+    .cardprogramm .front img {
+        width: 260px;
+        height: 260px;
+        margin-top: -75px;
+    }
+    .backgroundtext {
+        width: 260px;
+    }
+    .backgroundtext p {
+        font-size: 12px;
+    }
+    .back h3 {
+        font-size: 12px;
+
+        line-height: 20px;
+    }
+    .back p {
+        font-size: 10px;
+
+        line-height: 14px;
+        text-align: center;
+        margin-left: 2px;
+    }
+    .contact li,
+    .contact p,
+    .fbpages li a {
+        font-size: 16.5px;
+    }
+}
+
+
+
+
+

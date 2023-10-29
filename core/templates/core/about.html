@@ -1,0 +1,100 @@
+{% extends 'core/index.html' %}
+{% load static %}
+{% block main %}
+    <main>
+      <div class="sp-container">
+        <div class="sp-content">
+          <div class="sp-globe"></div>
+          <h2 class="frame-1" id="frame_1"></h2>
+          <h2 class="frame-2" id="frame_2"></h2>
+          <h2 class="frame-3" id="frame_3"></h2>
+          <h2 class="frame-4" id="frame_4"></h2>
+          <h2 class="frame-5">
+            <span id="frame_1_1"></span>
+            <span id="frame_1_2"></span>
+            <span id="frame_1_3"></span>
+            <span id="frame_1_4"></span>
+          </h2>
+        </div>
+      </div>
+
+      <div class="gradient gradientabout">
+        <h1 class="gradient_h1" id="title_1"></h1>
+      </div>
+      <section class="abouttext">
+        <div class="textone">
+          <p id="desc_1"></p>
+          <br />
+          <p id="desc_2"></p>
+        </div>
+
+        <div class="texttwo">
+          <p id="desc_3"></p>
+          <br />
+          <ul>
+            <li id="desc_4"></li>
+            <li id="desc_5"></li>
+            <li id="desc_6"></li>
+            <li id="desc_7"></li>
+            <li id="desc_8"></li>
+            <li id="desc_9"></li>
+            <li id="desc_10"></li>
+            <li id="desc_11"></li>
+          </ul>
+        </div>
+        <div class="textthree">
+          <p id="desc_12"></p>
+          <br />
+          <ul>
+            <li id="desc_13"></li>
+            <li id="desc_14"></li>
+          </ul>
+        </div>
+        <div class="textfour">
+          <p id="desc_15"></p>
+          <br />
+          <ul>
+            <li id="desc_16"></li>
+            <li id="desc_17"></li>
+            <li id="desc_18"></li>
+            <li id="desc_19"></li>
+            <li id="desc_20"></li>
+          </ul>
+        </div>
+        <div class="textfive">
+          <p id="desc_21"></p>
+          <br />
+          <ul>
+            <li id="desc_22"></li>
+            <li id="desc_23"></li>
+            <li id="desc_24"></li>
+            <li id="desc_25"></li>
+            <li id="desc_26"></li>
+            <li id="desc_27"></li>
+          </ul>
+        </div>
+      </section>
+      <section class="team">
+        <h2 class="teamheadline gradient-texttwo" id="title_2"></h2>
+        <div class="members" id="members"></div>
+        <div id="show_more_1"></div>
+      </section>
+
+      <section class="partners">
+        <h2 class="gradient-texttwo" id="title_3"></h2>
+        <div class="partnerrow" id="partnerrow"></div>
+        <div id="show_more_2"></div>
+      </section>
+    </main>
+{% endblock %}
+{% block scripts %}
+    <script
+      src="https://kit.fontawesome.com/9a1fc58522.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="{% static 'core/js/pordz.js' %}"></script>
+    <script src="{% static 'core/js/script.js' %}"></script>
+    <script src="{% static 'core/js/aboutLeng.js' %}"></script>
+    <script src="{% static 'core/js/about.js' %}"></script>
+    <script src="{% static 'core/js/about_api.js' %}"></script>
+{% endblock %}

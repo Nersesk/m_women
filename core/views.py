@@ -3,6 +3,7 @@ import json
 
 from django.core.handlers.wsgi import WSGIRequest
 from django.shortcuts import render, redirect
+from django.views.generic import TemplateView
 from django.http import HttpResponse, HttpResponseBadRequest, HttpResponseNotAllowed
 from django.core.exceptions import ObjectDoesNotExist
 from django.http import JsonResponse
@@ -30,6 +31,16 @@ from core.utils import (
     get_report_dict,
     send_email, filter_announcement_qs, filter_programs_qs
 )
+
+
+class Index(TemplateView):
+    template_name = 'core/index.html'
+
+class About(TemplateView):
+    template_name = 'core/about.html'
+
+
+
 
 
 def get_announcement_list(request: WSGIRequest, lang: str, page: int) -> JsonResponse:

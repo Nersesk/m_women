@@ -26,11 +26,7 @@ msgstr "Մարտունու Կանանց Համայնքային Խորհուրդ�
 msgid "Site Administration"
 msgstr "Կայքի Ադմինիստրացիա"
 
-#: .\core\admin.py:64 .\core\admin.py:126 .\core\admin.py:167
-#: .\core\admin.py:211 .\core\admin.py:249 .\core\admin.py:352
-#: .\core\models.py:33 .\core\models.py:92 .\core\models.py:110
-#: .\core\models.py:205 .\core\models.py:246 .\core\models.py:261
-#: .\core\models.py:317
+
 msgid "Image"
 msgstr "Նկար"
 
@@ -238,15 +234,11 @@ msgstr "Ծրագիր"
 msgid "Programs"
 msgstr "Ծրագրեր"
 
-#: .\core\models.py:239
-#, fuzzy
-#| msgid "Program"
+
 msgid "Archive Program"
 msgstr "Արխիվային Ծրագիր"
 
-#: .\core\models.py:240
-#, fuzzy
-#| msgid "Programs"
+
 msgid "Archive Programs"
 msgstr "Արխիվային Ծրագրեր"
 

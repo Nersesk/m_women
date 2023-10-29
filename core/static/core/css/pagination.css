@@ -1,0 +1,53 @@
+.pagination ul {
+    list-style: none;
+    font-size: clamp(1.4vw, 1.6rem, 1.4rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: white;
+    border-radius: 50px;
+    padding: 1rem;
+    font-weight: semi-bold;
+}
+.pagination > ul li {
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.dots {
+    cursor: default;
+}
+span {
+    display: block;
+}
+span ion-icon {
+    font-size: 1.5rem;
+}
+
+.num {
+    border-radius: 50%;
+    border: 1px solid #6c965e;
+}
+.pagination > ul .active,
+.pagination > ul .num:hover,
+.pagination > ul .btn:hover {
+    background-image: linear-gradient(180deg, #6c965e 40.63%, #b3c985 100%);
+    color: white;
+}
+
+#par {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    height: 100vh;
+    z-index: -1;
+    overflow: hidden;
+}
