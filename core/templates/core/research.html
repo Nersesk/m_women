@@ -1,53 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/media.css" />
-    <link rel="stylesheet" href="css/about.css" />
-    <link rel="stylesheet" href="css/research.css" />
+{% extends 'core/index.html' %}
+{% load static %}
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'core/css/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'core/css/media.css' %}" />
+    <link rel="stylesheet" href="{% static 'core/css/about.css' %}" />
+    <link rel="stylesheet" href="{% static 'core/css/research.css' %}" />
 
     <link
       rel="stylesheet"
       href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1356355/responsiveslides.min.js"
     />
-    <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
-    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1356355/responsiveslides.min.js"></script>
-  </head>
-  <body>
-    <header id="menu_1">
-      <div class="menu">
-        <div class="logo"><a href="index.html"><img src="images/logo.svg" alt="logo" /></a></div>
-        <div class="navbar navMenu">
-          <ul>
-            <li class="dotli"><a href="index.html" id="home"></a></li>
-            <li class="dotli">
-              <a href="about.html" class="aboutus submenu-btn" id="about"></a>
-              <ul class="submenu">
-                <li><a href="about.html" id="organization"></a></li>
-                <li><a href="research.html" id="product"></a></li>
-                <li><a href="count.html" id="report"></a></li>
-              </ul>
-            </li>
-            <li class="dotli"><a href="programm.html" id="programs"></a></li>
-            <li class="dotli">
-              <a href="announcement.html" id="announcements"></a>
-            </li>
-            <li class="dotli"><a href="archives.html" id="archive"></a></li>
-            <li class="dotli"><a href="contact.html" id="contact"></a></li>
-            <div id="activCir" class="activCir start-home activ"></div>
-          </ul>
-        </div>
-
-        <div class="languages">
-          <a id="lengArm">հայ</a>
-          <a class="line"></a>
-          <a id="lengEng">Eng</a>
-        </div>
-      </div>
-    </header>
+{% endblock %}
+{% block main %}
     <main>
       <div class="gradient gradient_count"></div>
       <div class="containerF">
@@ -55,115 +19,16 @@
       </div>
       <div id="show_more_2"></div>
     </main>
-    <footer>
-      <div class="footermenu">
-        <div class="firstfootermenu">
-          <a href="index.html" id="f_home"></a>
-          <a href="about.html" id="f_about"></a>
-          <a href="research.html" id="f_product"></a>
-          <a href="programm.html" id="f_programs"></a>
-        </div>
-        <div class="firstfootermenu">
-          <a href="count.html" id="f_report"></a>
-          <a href="announcement.html" id="f_announcements"></a>
-          <a href="archives.html" id="f_archive"></a>
-          <a href="contact.html" id="f_contact"></a>
-        </div>
-
-        <div class="footericons">
-          <div class="liner"></div>
-          <div class="icons">
-            <div class="icondiv"><a href="https://www.facebook.com/mwccngo"><i class="fa-brands fa-facebook-f"></i></a></div>
-            <div class="icondiv"><a href="https://www.youtube.com/channel/UCCDdC6MSKDztvIxLV6KDexw"><i class="fa-brands fa-youtube"></i></a></div>
-            <div class="icondiv"><a href="https://www.flickr.com/photos/132989129@N05"><i class="fa-brands fa-flickr"></i></a></div>
-          </div>
-          <div class="liner"></div>
-        </div>
-
-        <div class="footeraddress">
-          <span id="f_addres_title"></span>
-          <span id="f_addres_addres"></span>
-          <span id="f_addres_email"></span>
-          <span id="f_addres_phone"></span>
-        </div>
-      </div>
-    </footer>
-    <div id="menu_2">
-      <div class="mobile-menu hide" id="burger">
-        <div class="cloase" style="display: none" id="cloase">
-          <i class="fa-solid fa-xmark"></i>
-        </div>
-        <div class="b_menu" style="display: none" id="b_menu">
-          <ul>
-            <li class="dotli"><a href="index.html" id="home_m"></a></li>
-            <li class="dotli">
-              <a id="aboutus" class="aboutus submenu-btn"></a>
-              <ul class="submenu" id="submenu">
-                <li><a href="about.html" id="organization_m"></a></li>
-                <li><a href="research.html" id="product_m"></a></li>
-                <li><a href="count.html" id="report_m"></a></li>
-              </ul>
-            </li>
-            <li class="dotli"><a href="programm.html" id="programs_m"></a></li>
-            <li class="dotli">
-              <a href="announcement.html" id="announcements_m"></a>
-            </li>
-            <li class="dotli"><a id="archive_m" href="archives.html"></a></li>
-            <li class="dotli"><a id="contact_m" href="contact.html"></a></li>
-            <div class="activCir start-home activ"></div>
-          </ul>
-
-          <div class="b_languages">
-            <a id="leng_Arm">հայ</a>
-            <a id="leng_Eng">ENG</a>
-          </div>
-        </div>
-      </div>
-      <div class="mobile-menu-navBar">
-        <i class="fa-brands fa-facebook-messenger"></i>
-        <a href="index.html"><i class="fa-solid fa-house"></i></a>
-        <i id="burger_toggle" class="fa-solid fa-bars"></i>
-      </div>
-    </div>
-   
-
-   <!-- GetButton.io widget -->
-   <script type="text/javascript">
-    (function () {
-      var options = {
-        facebook: "1789699921392411", // Facebook page ID
-        facebook_color: "#666666", // Facebook button color
-        whatsapp: "+37493939465", // WhatsApp number
-        call_to_action: "Message us", // Call to action
-        button_color: "rgba(108, 150, 94, 1)", // Color of button
-
-        position: "right", // Position may be 'right' or 'left'
-        order: "facebook,whatsapp", // Order of buttons
-      };
-      var proto = "https:",
-        host = "getbutton.io",
-        url = proto + "//static." + host;
-      var s = document.createElement("script");
-      s.type = "text/javascript";
-      s.async = true;
-      s.src = url + "/widget-send-button/js/init.js";
-      s.onload = function () {
-        WhWidgetSendButton.init(host, proto, options);
-      };
-      var x = document.getElementsByTagName("script")[0];
-      x.parentNode.insertBefore(s, x);
-    })();
-  </script>
-  <!-- /GetButton.io widget -->
+{% endblock %}
+  {% block scripts %}
     <script
       src="https://kit.fontawesome.com/9a1fc58522.js"
       crossorigin="anonymous"
     ></script>
-    <script src="js/script.js"></script>
+    <script src="{% static 'core/js/script.js' %}"></script>
 
-    <script src="js/pordz.js"></script>
-    <script src="js/modal.js"></script>
-    <script src="js/navAndFooter.js"></script>
-    <script src="js/research_api.js"></script>
-  </body>
-</html>
+    <script src="{% static 'core/js/pordz.js' %}"></script>
+    <script src="{% static 'core/js/modal.js' %}"></script>
+    <script src="{% static 'core/js/navAndFooter.js' %}"></script>
+    <script src="{% static 'core/js/research_api.js' %}"></script>
+{% endblock %}

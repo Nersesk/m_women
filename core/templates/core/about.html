@@ -1,5 +1,14 @@
 {% extends 'core/index.html' %}
 {% load static %}
+{% block styles %}
+    <link rel="stylesheet" href="{%  static 'core/css/style.css' %}" />
+    <link rel="stylesheet" href="{%  static 'core/css/media.css' %}" />
+    <link rel="stylesheet" href="{%  static 'core/css/about.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1356355/responsiveslides.min.js"
+    />
+{% endblock %}
 {% block main %}
     <main>
       <div class="sp-container">

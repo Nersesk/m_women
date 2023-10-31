@@ -2,8 +2,14 @@ from django.urls import path
 from core import views
 
 urlpatterns = [
-    path('',views.Index.as_view(), name='home'),
+    path('', views.Index.as_view(), name='home'),
     path('about', views.About.as_view(), name='about'),
+    path('contacts', views.Contact.as_view(), name='contacts'),
+    path('announcments', views.Announcement.as_view(), name='announcement'),
+    path('programs', views.Programs.as_view(), name='programs-view'),
+    path('archive',views.Archive.as_view(), name='archive'),
+    path('count',views.Count.as_view(), name='count'),
+    path('research', views.Research.as_view(), name='research'),
     path('get_announcements_page_count', views.get_announcements_page_count, name='announcement_count'),
     path('get_latest_announcements/<str:lang>', views.get_last_three_announcements, name='latest_announcements'),
     path('get_announcment_list/<str:lang>/<int:page>', views.get_announcement_list, name='announcement_list'),

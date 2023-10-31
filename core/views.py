@@ -36,12 +36,33 @@ from core.utils import (
 class Index(TemplateView):
     template_name = 'core/index.html'
 
+
 class About(TemplateView):
     template_name = 'core/about.html'
 
 
+class Contact(TemplateView):
+    template_name = 'core/contact.html'
 
 
+class Announcement(TemplateView):
+    template_name = 'core/announcement.html'
+
+
+class Programs(TemplateView):
+    template_name = 'core/programm.html'
+
+
+class Archive(TemplateView):
+    template_name = 'core/archives.html'
+
+
+class Count(TemplateView):
+    template_name = 'core/count.html'
+
+
+class Research(TemplateView):
+    template_name = 'core/research.html'
 
 def get_announcement_list(request: WSGIRequest, lang: str, page: int) -> JsonResponse:
     lst = []

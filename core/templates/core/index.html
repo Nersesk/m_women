@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+      {% block styles %}
     <link rel="stylesheet" href="{%  static 'core/css/style.css' %}" />
     <link rel="stylesheet" href="{%  static 'core/css/media.css' %}" />
     <link rel="stylesheet" href="{%  static 'core/css/home.css' %}" />
@@ -12,6 +13,7 @@
       rel="stylesheet"
       href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1356355/responsiveslides.min.js"
     />
+      {% endblock %}
     <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
     <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1356355/responsiveslides.min.js"></script>
   </head>
@@ -19,25 +21,25 @@
     <header id="menu_1">
       <div class="menu">
         <div class="logo">
-          <a href="index.html"><img src="{%  static 'core/images/logo.svg' %}" alt="logo" /></a>
+          <a href="{% url 'home' %}"><img src="{%  static 'core/images/logo.svg' %}" alt="logo" /></a>
         </div>
         <div class="navbar navMenu">
           <ul>
-            <li class="dotli"><a href="index.html" id="home"></a></li>
+            <li class="dotli"><a href="{% url 'home' %}" id="home"></a></li>
             <li class="dotli">
               <a href="{% url 'about' %}" class="aboutus submenu-btn" id="about"></a>
               <ul class="submenu">
                 <li><a href="{% url 'about' %}" id="organization"></a></li>
-                <li><a href="research.html" id="product"></a></li>
-                <li><a href="count.html" id="report"></a></li>
+                <li><a href="{% url 'research' %}" id="product"></a></li>
+                <li><a href="{% url 'count' %}" id="report"></a></li>
               </ul>
             </li>
-            <li class="dotli"><a href="programm.html" id="programs"></a></li>
+            <li class="dotli"><a href="{% url 'programs-view' %}" id="programs"></a></li>
             <li class="dotli">
-              <a href="announcement.html" id="announcements"></a>
+              <a href="{% url 'announcement' %}" id="announcements"></a>
             </li>
-            <li class="dotli"><a href="archives.html" id="archive"></a></li>
-            <li class="dotli"><a href="contact.html" id="contact"></a></li>
+            <li class="dotli"><a href="{% url 'archive' %}" id="archive"></a></li>
+            <li class="dotli"><a href={% url 'contacts' %} id="contact"></a></li>
             <div id="activCir" class="activCir start-home activ"></div>
           </ul>
         </div>
@@ -110,16 +112,16 @@
     <footer>
       <div class="footermenu">
         <div class="firstfootermenu">
-          <a href="index.html" id="f_home"></a>
+          <a href="{% url 'home' %}" id="f_home"></a>
           <a href="{% url 'about' %}" id="f_about"></a>
-          <a href="research.html" id="f_product"></a>
-          <a href="programm.html" id="f_programs"></a>
+          <a href="{% url 'research' %}" id="f_product"></a>
+          <a href="{% url 'programs-view' %}" id="f_programs"></a>
         </div>
         <div class="firstfootermenu">
-          <a href="count.html" id="f_report"></a>
-          <a href="announcement.html" id="f_announcements"></a>
-          <a href="archives.html" id="f_archive"></a>
-          <a href="contact.html" id="f_contact"></a>
+          <a href="{% url 'count' %}" id="f_report"></a>
+          <a href="{% url 'announcement' %}" id="f_announcements"></a>
+          <a href="{% url 'archive' %}" id="f_archive"></a>
+          <a href="{% url 'contacts' %}" id="f_contact"></a>
         </div>
 
         <div class="footericons">
@@ -147,21 +149,21 @@
         </div>
         <div class="b_menu" style="display: none" id="b_menu">
           <ul>
-            <li class="dotli"><a href="index.html" id="home_m"></a></li>
+            <li class="dotli"><a href="{% url 'home' %}" id="home_m"></a></li>
             <li class="dotli">
               <a id="aboutus" class="aboutus submenu-btn"></a>
               <ul class="submenu" id="submenu">
                 <li><a href="{% url 'about' %}" id="organization_m"></a></li>
-                <li><a href="research.html" id="product_m"></a></li>
-                <li><a href="count.html" id="report_m"></a></li>
+                <li><a href="{% url 'research' %}" id="product_m"></a></li>
+                <li><a href="{% url 'count' %}" id="report_m"></a></li>
               </ul>
             </li>
-            <li class="dotli"><a href="programm.html" id="programs_m"></a></li>
+            <li class="dotli"><a href="{% url 'programs-view' %}" id="programs_m"></a></li>
             <li class="dotli">
-              <a href="announcement.html" id="announcements_m"></a>
+              <a href="{% url 'announcement' %}" id="announcements_m"></a>
             </li>
-            <li class="dotli"><a id="archive_m" href="archives.html"></a></li>
-            <li class="dotli"><a id="contact_m" href="contact.html"></a></li>
+            <li class="dotli"><a id="archive_m" href="{% url 'archive' %}"></a></li>
+            <li class="dotli"><a id="contact_m" href="{% url 'contacts' %}"></a></li>
             <div class="activCir start-home activ"></div>
           </ul>
 
@@ -173,7 +175,7 @@
       </div>
       <div class="mobile-menu-navBar">
         <i class="fa-brands fa-facebook-messenger"></i>
-        <a href="index.html"><i class="fa-solid fa-house"></i></a>
+        <a href="{% url 'home' %}"><i class="fa-solid fa-house"></i></a>
         <i id="burger_toggle" class="fa-solid fa-bars"></i>
       </div>
     </div>
