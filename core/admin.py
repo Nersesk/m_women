@@ -147,7 +147,7 @@ class JobAnnouncementAdmin(admin.ModelAdmin):
         (
             _('General Fields'),
             {
-                "fields": ['contacts', 'image', 'created', 'updated', 'active'],
+                "fields": ['image', 'created', 'updated', 'active'],
                 "classes": ["wide", "extrapretty"],
             }
 

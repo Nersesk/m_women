@@ -112,13 +112,17 @@ def get_dict_for_announcement_list(announcement: Union[JobAnnouncement, OpenComp
         )
     if isinstance(announcement, JobAnnouncement):
         url = reverse('job_announcement_detail', kwargs={'lang': lang, 'id': announcement.id})
+        instance = 'job'
     else:
         url = reverse('open_competition_detail', kwargs={'lang': lang, 'id': announcement.id})
+        instance = 'open'
     return {
         'name': name,
         'description': description,
         'image': announcement.image.url,
-        'url': url
+        'url': url,
+        'type': instance,
+        'id': announcement.id
     }
 
 
@@ -260,7 +264,6 @@ def get_product_detail_dict(product: Product, lang: str) -> Dict[str, Union[int,
         product_images.append(image)
     for product_video in product.product_videos.order_by('id'):
         video_dict = {
-            'description': product_video.video_description_arm if lang == 'arm' else product_video.video_description_eng,
             'url': product_video.video_url,
         }
         product_videos.append(video_dict)

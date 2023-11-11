@@ -2,13 +2,14 @@ import os
 import json
 
 from django.core.handlers.wsgi import WSGIRequest
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic import TemplateView
 from django.http import HttpResponse, HttpResponseBadRequest, HttpResponseNotAllowed
 from django.core.exceptions import ObjectDoesNotExist
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 
+from core.models import Program, JobAnnouncement, OpenCompetition, ArchiveProgram
 from core.utils import (
     get_announcements_qs,
     get_dict_for_announcement_list,
@@ -45,12 +46,16 @@ class Contact(TemplateView):
     template_name = 'core/contact.html'
 
 
-class Announcement(TemplateView):
+class Announcements(TemplateView):
     template_name = 'core/announcement.html'
 
 
-class Programs(TemplateView):
-    template_name = 'core/programm.html'
+# class Programs(TemplateView):
+#     template_name = 'core/programm.html'
+#
+
+def programs_view(request):
+    return render(request, 'core/programm.html')
 
 
 class Archive(TemplateView):
@@ -63,6 +68,56 @@ class Count(TemplateView):
 
 class Research(TemplateView):
     template_name = 'core/research.html'
+
+
+class ProgramDetail(TemplateView):
+    template_name = 'core/programm1.html'
+
+    def get(self, request, *args, **kwargs):
+        program_id = self.kwargs.get('program_id')
+        program = get_object_or_404(Program, id=program_id)
+        context = self.get_context_data(program=program)
+        context['program'] = get_program_detail_dict(program, self.kwargs.get('lang'))
+        return self.render_to_response(context)
+
+
+def program_detail(request, program_id, lang):
+    program = get_object_or_404(Program, id=program_id)
+    program_dict = get_program_detail_dict(program, lang)
+    return render(request, 'core/programm1.html', context={'program': program_dict})
+
+class ArchiveProgramDetail(TemplateView):
+    template_name = 'core/anounce2.html'
+
+    def get(self, request, *args, **kwargs):
+        program_id = self.kwargs.get('program_id')
+        program = get_object_or_404(ArchiveProgram, id=program_id)
+        context = self.get_context_data(program=program)
+
+        return self.render_to_response(context)
+
+
+class JobAnnouncementDetail(TemplateView):
+    template_name = 'core/anounce1.html'
+
+    def get(self, request, *args, **kwargs):
+        program_id = self.kwargs.get('job_id')
+        program = get_object_or_404(JobAnnouncement, id=program_id)
+        context = self.get_context_data(program=program)
+
+        return self.render_to_response(context)
+
+
+class OpenCompetitionDetail(TemplateView):
+    template_name = 'core/anounce1.html'
+
+    def get(self, request, *args, **kwargs):
+        program_id = self.kwargs.get('comp_id')
+        program = get_object_or_404(OpenCompetition, id=program_id)
+        context = self.get_context_data(program=program)
+
+        return self.render_to_response(context)
+
 
 def get_announcement_list(request: WSGIRequest, lang: str, page: int) -> JsonResponse:
     lst = []

@@ -174,8 +174,8 @@ class JobAnnouncement(models.Model):
         verbose_name=_('About the company (Armenian)')
     )
     contacts = RichTextField(
-        blank=False,
-        null=False,
+        blank=True,
+        null=True,
         verbose_name=_('Contacts')
     )
     created = models.DateTimeField(auto_now=True, verbose_name=_('Created'))

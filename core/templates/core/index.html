@@ -206,6 +206,12 @@
         var x = document.getElementsByTagName("script")[0];
         x.parentNode.insertBefore(s, x);
       })();
+      function main_url(){
+          return '{% url 'home' %}'
+      }
+      function request_url(){
+          return "{{ request.build_absolute_uri }}";
+      }
     </script>
     <!-- /GetButton.io widget -->
     {% block scripts %}

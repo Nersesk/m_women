@@ -1,0 +1,22 @@
+.activ {
+    left: 70px;
+}
+.activ_2 {
+    left: 55px !important;
+}
+@media screen and (max-width: 1140px) {
+    .activ {
+        left: 53px;
+    }
+    .activ_2 {
+        left: 40px !important;
+    }
+}
+@media screen and (max-width: 950px) {
+    .activ {
+        left: 30px;
+    }
+    .activ_2 {
+        left: 20px !important;
+    }
+}
