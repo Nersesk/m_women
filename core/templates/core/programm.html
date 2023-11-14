@@ -1,5 +1,8 @@
 {% extends 'core/index.html' %}
 {% load static %}
+{% block title %}
+    <title id="title_header8"></title>
+{% endblock %}
 {% block styles %}
     <link rel="stylesheet" href="{% static 'core/css/style.css' %}" />
     <link rel="stylesheet" href="{% static 'core/css/programm.css' %}" />
@@ -32,7 +35,7 @@
         <div class="search_section">
           <div>
               <form  action="#" onsubmit='return search_program()' >
-            <input type="search" placeholder="Փնտրել" id="search" />
+            <input type="search"  id="search" />
               </form>
 
           </div>
@@ -44,6 +47,7 @@
     <script src="{% static 'core/js/script.js' %}"></script>
     <script src="{% static 'core/js/navAndFooter.js' %}"></script>
     <script src="{% static 'core/js/program_api.js' %}"></script>
+    <script src="{% static 'core/js/documentprogram.js' %}"></script>
     <script
       src="https://kit.fontawesome.com/9a1fc58522.js"
       crossorigin="anonymous"

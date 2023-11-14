@@ -1,5 +1,8 @@
 {% extends 'core/index.html' %}
 {% load static %}
+  {% block title %}
+<title id="title_header4"></title>
+  {% endblock %}
 {% block styles %}
     <link rel="stylesheet" href="{% static 'core/css/style.css' %}" />
     <link rel="stylesheet" href="{% static 'core/css/archive.css' %}" />
@@ -23,7 +26,7 @@
     <script src="{% static 'core/js/script.js' %}"></script>
     <script src="{% static 'core/js/navAndFooter.js' %}"></script>
     <script src="{% static 'core/js/archives_api.js' %}"></script>
-
+    <script src="{% static 'core/js/documentarchive.js' %}"></script>
     <script
       src="https://kit.fontawesome.com/9a1fc58522.js"
       crossorigin="anonymous"

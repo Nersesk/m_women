@@ -1,5 +1,6 @@
 const data = {
   arm: {
+    title_header2:"Կազմակերպություն",
     home: "Գլխավոր",
     about: "Մեր մասին",
     organization: "Կազմակերպություն",
@@ -59,6 +60,7 @@ const data = {
     title_3: "Գոր<span class='ts_tar'>ծ</span>ընկերներ",
   },
   eng: {
+    title_header2:"Organizatiion",
     home: "Home",
     about: "About us",
     organization: "Organizatiion",
@@ -130,7 +132,7 @@ window.addEventListener("load", async function (event) {
   } else {
     activCir.classList.add("activ_2");
   }
-
+  const title_header2 = this.document.getElementById("title_header2");
   const home = this.document.getElementById("home");
   const home_m = this.document.getElementById("home_m");
   const about = this.document.getElementById("about");
@@ -150,6 +152,7 @@ window.addEventListener("load", async function (event) {
   const contact = this.document.getElementById("contact");
   const contact_m = this.document.getElementById("contact_m");
 
+ title_header2.innerText = data[`${leng}`].title_header2;
   home.innerText = data[`${leng}`].home;
   home_m.innerText = data[`${leng}`].home;
   about.innerText = data[`${leng}`].about;

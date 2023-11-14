@@ -1,5 +1,6 @@
 const data_index = {
   arm: {
+    title_header:"Մարտունու կանանց համայնքային խորհուրդ",
     title_1: "Մարտունու կանանց համայնքային խորհուրդ",
     descriptio:
       "Մեր կազմակերպությունը Գեղարքունիքի մարզի առաջատար հասարակական կազմակերպություններից է։ Հիմնադրվելով 2000 թ–ին՝ այն գործունեություն է իրականացնում առողջապահության, բնապահպանության, սոցիալական և համայնքային զարգացման ոլորտներում՝ կարևորելով բնակչության անմիջական ներգրավվածությունը տարբեր խնդիրների լուծման գործընթացում: Մեր խորհրդի ջանքերով Գեղարքունիքի մարզում վերակառուցվել են բուժկետեր, կառուցվել նախակրթարաններ, հիմնվել է սոցիալական ձեռնարկություն, որտեղ աշխատում են բացառապես հաշմանդամություն ունեցող անձիք: Փորձում ենք նպաստել համայնքում ապահով և պաշտպանված քաղաքացու ձևավորմանը։",
@@ -33,6 +34,7 @@ const data_index = {
     f_addres_phone: "+37494211396",
   },
   eng: {
+    title_header:"Martuni Women's Community Council",
     title_1: "Martuni Women's Community Council",
     descriptio:
       "Our organization is one of the leading non-governmental organizations of Gegharkunik region. Founded in 2000, it carries out activities in the fields of healthcare, environmental protection, social and community development, emphasizing the direct involvement of the population in the process of solving various problems. With the efforts of our council, medical centers were rebuilt in Gegharkunik region, preschools were built, and a social enterprise was established, where only people with disabilities work. We try to contribute to the formation of a safe and protected citizen in the community.",
@@ -81,7 +83,7 @@ window.addEventListener("load", async function (event) {
   } else {
     activCir.classList.add("activ_2");
   }
-
+  const title_header=this.document.getElementById("title_header")
   const title_1 = this.document.getElementById("title_1");
   const descriptio = this.document.getElementById("descriptio");
   const more = this.document.getElementById("more");
@@ -161,6 +163,7 @@ window.addEventListener("load", async function (event) {
   f_addres_email.innerText = data_index[`${leng}`].f_addres_email;
   f_addres_phone.innerText = data_index[`${leng}`].f_addres_phone;
 
+  title_header.innerText=data_index[`${leng}`].title_header;
   title_1.innerText = data_index[`${leng}`].title_1;
   descriptio.innerText = data_index[`${leng}`].descriptio;
   more.innerText = data_index[`${leng}`].read_more_button;

@@ -12,7 +12,7 @@ const lenguage = {
 const leng = this.localStorage.getItem("leng");
 const server_url = main_url();
 window.addEventListener("load", async function () {
-  const { pages_count } = await getPageCount();
+  const { pages_count } = await getPageCount();  const pagenumber = this.localStorage.getItem("crag_page_number");
   await pagination(pages_count, 1);
 });
 async function getPageCount() {
@@ -38,6 +38,7 @@ async function getPageCount() {
 
 async function getPrograms(page) {
   try {
+    localStorage.setItem("crag_page_number", page)
     const response = await fetch(
       `${server_url}get_programs/${leng}/${page}`,
       {
@@ -182,6 +183,7 @@ async function  search_program() {
     if (!programs.length) {
       modal_content_h2.innerText = lenguage[`${leng}`].no_data;
       search.value = "";
+      ulTag.style.display="none"
       pagination(0, 0, {});
     } else {
       pagination(1, 1, programs);

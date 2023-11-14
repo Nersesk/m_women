@@ -1,4 +1,7 @@
 {% extends 'core/index.html' %}
+  {% block title %}
+    <title id="title_header3"></title>
+  {% endblock %}
 {% load static %}
       {% block styles %}
     <link rel="stylesheet" href="{% static 'core/css/style.css' %}" />
@@ -34,7 +37,7 @@
         <div class="search_section">
           <div>
               <form  action="#" onsubmit='return search_announcments()' >
-            <input type="search" placeholder="Փնտրել" id="search" />
+            <input type="search"  id="search" />
               </form>
           </div>
           <i class="fa-solid fa-magnifying-glass" id="searchicon"></i>
@@ -45,7 +48,7 @@
     <script src="{% static 'core/js/script.js' %}"></script>
     <script src="{% static 'core/js/navAndFooter.js' %}"></script>
     <script src="{% static 'core/js/announcement_api.js' %}"></script>
-
+    <script src="{% static 'core/js/documentanounce.js' %}"></script>
     <script
       src="https://kit.fontawesome.com/9a1fc58522.js"
       crossorigin="anonymous"

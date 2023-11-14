@@ -440,6 +440,7 @@ body .transparent-btns_tabs a:focus {
 .search_section i {
   font-size: 24px;
   padding-right: 20px;
+  cursor: pointer;
 }
 .search_section >div {
   width: 80%;
@@ -631,6 +632,7 @@ footer {
 .footericons div i {
   font-size: 18px;
   color: rgba(108, 150, 94, 1);
+  margin-top: 2px;
 }
 
 .footermenu>div {
@@ -877,6 +879,7 @@ li {
   justify-content: center;
   align-items: center;
   z-index: 1000000000;
+  cursor: pointer;
 }
 
 .search-box i {
@@ -1349,7 +1352,7 @@ body.announcements {
   border-radius: 30px;
   margin-top: 20px;
   padding: 10px 25px;
-  text-transform: capitalize;
+
 }
 
 .announcerow button {
@@ -2472,6 +2475,7 @@ p.demos {
   font-size: 24px;
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
+  margin-top: 70px;
   margin-bottom: 100px;
 }
 .anouncefooter{
@@ -2492,4 +2496,28 @@ header li {
 
 body button {
   cursor: pointer;
+}
+body .moreindex{
+cursor: auto;
+}
+.bord {
+text-decoration:underline;
+text-decoration-color: rgba(102, 102, 102, 1);
+
+text-underline-offset: 5px;
+}
+.pagination{
+  margin-top: 40px;
+  margin-bottom: -70px;
+}
+html body .mod-content{
+margin-top: 70px !important;
+margin-bottom: 240px !important;
+}
+textarea{
+  resize: none;
+}
+.pagin{
+  margin-bottom: 50px;
+  margin-top: -40px;
 }

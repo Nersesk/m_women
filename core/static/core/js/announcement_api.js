@@ -14,7 +14,8 @@ const server_url = main_url()
 
 window.addEventListener("load", async function () {
   const { pages_count } = await getPageCount();
-  pagination(pages_count, 1);
+  const pagenumber = this.localStorage.getItem("hayt_page_number")
+  pagination(pages_count, pagenumber ? pagenumber : 1);
 });
 
 async function getPageCount() {
@@ -45,6 +46,7 @@ const ulTag = document.querySelector(".pagination ul");
 
 async function pagination(totalPages, page, data) {
   let programs_data;
+  ulTag.style.display="flex"
   if (!data) {
     const { announcements } = await getAnnouncements(page);
     programs_data = announcements;
@@ -115,7 +117,7 @@ async function pagination(totalPages, page, data) {
       button.innerText = lenguage[`${leng}`].btn;
       a.appendChild(button);
       if(item.type === 'job'){
-        a.setAttribute("href", `${server_url}job_announcment/${item.id}`);
+        a.setAttribute("href", `${server_url}job_announcement/${item.id}`);
       }else{
         a.setAttribute("href", `${server_url}open_competition/${item.id}`);
       }
@@ -123,7 +125,7 @@ async function pagination(totalPages, page, data) {
         e.preventDefault();
         localStorage.setItem("announcecolId", item.url);
         if(item.type === 'job'){
-        window.location.href = `${server_url}job_announcment/${item.id}`
+        window.location.href = `${server_url}job_announcement/${item.id}`
       }else{
         window.location.href = `${server_url}open_competition/${item.id}`
       }
@@ -154,6 +156,7 @@ async function pagination(totalPages, page, data) {
 
 async function getAnnouncements(page) {
   try {
+    localStorage.setItem("hayt_page_number", page)
     const response = await fetch(
       `${server_url}get_announcment_list/${leng}/${page}`,
       {
@@ -191,6 +194,7 @@ async function search_announcments (){
       pagination(1, 1, []);
       modal_content_h2.innerText = lenguage[`${leng}`].no_data;
       search.value = "";
+      ulTag.style.display="none"
     } else {
       pagination(1, 1, announcements);
     }

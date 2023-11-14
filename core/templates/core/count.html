@@ -1,5 +1,8 @@
 {% extends 'core/index.html' %}
 {% load static %}
+{% block title %}
+    <title id="title_header6"></title>
+{% endblock %}
 {% block styles %}
     <link rel="stylesheet" href="{% static 'core/css/style.css' %}" />
     <link rel="stylesheet" href="{% static 'core/css/media.css' %}" />
@@ -22,6 +25,7 @@
     <script src="{% static 'core/js/navAndFooter.js' %}"></script>
     <script src="{% static 'core/js/count_api.js' %}"></script>
     <script src="{% static 'core/js/script.js' %}"></script>
+    <script src="{% static 'core/js/documentcount.js' %}"></script>
 
     <script
       src="https://kit.fontawesome.com/9a1fc58522.js"

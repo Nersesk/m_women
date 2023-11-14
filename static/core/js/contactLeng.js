@@ -1,5 +1,6 @@
 const dataa = {
   arm: {
+    title_header5 :"Կապ",
     title_1: "Կապ մեզ հետ",
     p_1: "Ընդհանուր հարցերի համար`",
     p_2: "Կրթական բաժին",
@@ -10,7 +11,7 @@ const dataa = {
     p_7: "Ֆինանսական բաժին`",
     p_8: "Այլ հարթակներ`",
     p_9: "էլ․ Փոստ`",
-    p_10: "Ընդհանուրհարցերի համար`",
+    p_10: "Ընդհանուր հարցերի համար`",
     p_11: "Կրթական բաժին`",
     p_12: "Հասցե`",
     p_13: "Կամոյի 17, ք․ Մարտունի, Գեղարքունիքի մարզ, ՀՀ, 1402",
@@ -19,12 +20,14 @@ const dataa = {
     p_16: "Կրթապնակ",
     p_17: "Մարտունի Ինֆոտուն",
     p_18: "Կանանց աջակցման կենտրոն Գեղարքունիքի մարզում",
+    connect:"ՀԵՏԱԴԱՐՁ ԿԱՊ",
     email: "Էլ․հասցե",
     tel: "Հեռախոս",
     send: "Ուղարկել",
     textarea: "Ողջույն!...",
   },
   eng: {
+    title_header5 :"Contact",
     title_1: "Contact us",
     p_1: "For general questions",
     p_2: "Educational department",
@@ -34,10 +37,10 @@ const dataa = {
     p_6: "Purchasing Department",
     p_7: "Financial department",
     p_8: "Other platforms",
-    p_9: "email",
+    p_9: "Email",
     p_10: "For general questions",
     p_11: "Educational department",
-    p_12: "addres",
+    p_12: "Addres",
     p_13: "Kamoi 17, c. Martuni, Gegharkunik region, RA, 1402",
     p_14: "Martuni women's community",
     p_15: "MWCC NGO",
@@ -48,6 +51,7 @@ const dataa = {
     tel: "Phone Number",
     send: "Send",
     textarea: "Hello!...",
+    connect:"FEEDBACK",
   },
 };
 const server_url = main_url()
@@ -58,10 +62,12 @@ window.addEventListener("load", async function (event) {
     localStorage.setItem("leng", "arm");
     leng = "arm";
   }
-
+  const title_header5 = this.document.getElementById("title_header5");
+  title_header5.innerText = dataa[`${leng}`].title_header5;
   const title_1 = this.document.getElementById("title_1");
   title_1.innerText = dataa[`${leng}`].title_1;
-
+  const connect = this.document.getElementById("connect");
+  connect.innerText = dataa[`${leng}`].connect;
   const email = this.document.getElementById("email");
   email.setAttribute("placeholder", dataa[`${leng}`].email);
 
@@ -145,13 +151,31 @@ const tel = document.getElementById("tel");
 const textarea = document.getElementById("textarea");
 send.addEventListener("click", async (e) => {
   e.preventDefault();
-  if (email.value && tel.value && textarea.value) {
+  let leng = localStorage.getItem('leng')
+
+   if (email.value && tel.value && textarea.value) {
     const data = {
       from_email: email.value,
       phone_number: tel.value,
       message_text: textarea.value,
     };
-
     await getAllData(data);
+    if(leng === "arm"){
+        alert('Նամակն հաջողությոամբ ուղարկվեց!')
+    }else{
+      alert("The message has been successfully sent!")
+    }
+    email.value = "";
+    tel.value = "";
+    textarea.value = "";;
+  }
+
+
+  else{
+    if(leng === "arm"){
+        alert('Խնդրում ենք լրացրեք բոլոր դաշտերը!')
+    }else{
+        alert("Please fill all fields")
+    }
   }
 });

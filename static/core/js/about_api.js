@@ -2,7 +2,7 @@ const leng = this.localStorage.getItem("leng");
 const server_url = main_url()
 const lenguage = {
   arm: {
-    btn: "ավելին",
+    btn: "Ավելին",
     or_btn: "ավելի քիչ",
     cooperation: "տարի համագործակցություն<br />",
     program: "իրականացված ծրագիր",
@@ -113,7 +113,6 @@ function appendPartners(partners) {
     item.classList.add("wow");
     item.classList.add("fadeIn");
     const img = document.createElement("img");
-    console.log(partner.image)
     img.setAttribute("src", `${partner.image}`);
     img.setAttribute("alt", "partner");
     const overlay = document.createElement("div");

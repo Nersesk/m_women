@@ -1,6 +1,6 @@
 import os
 import json
-
+from math import ceil
 from django.core.handlers.wsgi import WSGIRequest
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic import TemplateView
@@ -132,7 +132,7 @@ def get_announcement_list(request: WSGIRequest, lang: str, page: int) -> JsonRes
 
 def get_announcements_page_count(request: WSGIRequest) -> JsonResponse:
     announcements = get_announcements_qs()
-    pages_count = int(1 + (len(announcements) / 12))
+    pages_count = ceil(len(announcements) / 12)
     return JsonResponse(
         {'pages_count': pages_count}
     )
@@ -197,7 +197,7 @@ def get_partners(request: WSGIRequest, lang: str, page=1) -> HttpResponse:
 
 def get_program_pages_count(request: WSGIRequest) -> HttpResponse:
     programs = get_program_qs()
-    pages_count = int(1 + (programs.count() / 12))
+    pages_count = ceil(programs.count() / 12)
     return JsonResponse({'pages_count': pages_count})
 
 

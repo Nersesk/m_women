@@ -4,7 +4,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+  {% block title %}
+      <title id="title_header"></title>
+  {% endblock %}
       {% block styles %}
     <link rel="stylesheet" href="{%  static 'core/css/style.css' %}" />
     <link rel="stylesheet" href="{%  static 'core/css/media.css' %}" />
@@ -53,19 +55,18 @@
     </header>
 {% block main %}
     <main>
-      <div class="home-slider">
+<div class="home-slider">
         <ul class="rslides" id="slider1">
-          <li><img src="{%  static 'core/images/banner1.svg' %}" alt="slide1" /></li>
-          <li><img src="{%  static 'core/images/banner2.svg' %}" /></li>
-          <li><img src="{%  static 'core/images/banner3.svg' %}" alt="slide3" /></li>
-          <li><img src="{%  static 'core/images/banner4.svg' %}" alt="slide3" /></li>
-          <li><img src="{%  static 'core/images/banner5.svg' %}" alt="slide3" /></li>
+
+          <li><img src="{%  static 'core/images/banner.png' %}" alt="slide3" /></li>
+          <li><img src="{%  static 'core/images/banner3.png' %}" /></li>
+          <li><img src="{%  static 'core/images/banner.png' %}" alt="slide3" /></li>
         </ul>
-      </div>
+</div>
       <section class="smallabouttext">
         <h1 class="gradient-text" id="title_1"></h1>
         <p id="descriptio"></p>
-        <a class="more" href="{% url 'about' %}"><button id="more"></button></a>
+        <a class="more moreindex"  href="{% url 'about' %}"><button id="more"></button></a>
       </section>
 
       <section class="advantages">

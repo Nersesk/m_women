@@ -33,7 +33,7 @@ window.addEventListener("load", async function (event) {
       localStorage.setItem("announcecolId", item.url);
 
       if(item.type === 'job'){
-        window.location.href  = `${server_url}job_announcment/${item.id}`
+        window.location.href  = `${server_url}job_announcement/${item.id}`
       }else{
         window.location.href =`${server_url}open_competition/${item.id}`
       }

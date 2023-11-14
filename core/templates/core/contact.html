@@ -1,5 +1,9 @@
 {% extends 'core/index.html' %}
 {% load static %}
+  {% block title %}
+    <title id="title_header5"></title>
+  {% endblock %}
+
       {%  block  styles %}
     <link rel="stylesheet" href="{% static 'core/css/style.css' %}" />
     <link rel="stylesheet" href="{% static 'core/css/media.css' %}" />
@@ -9,8 +13,9 @@
       href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1356355/responsiveslides.min.js"
     />
       {% endblock %}
+
     {% block main %}
-    <main>
+   <main>
       <section class="contactss">
         <div class="gradient">
           <h2 class="gradient-text" id="title_1"></h2>
@@ -111,7 +116,7 @@
                     </div>
                     <div>
                       <p class="contact_flue__item_title" id="p_10"></p>
-                      <p class="contact_flue__item_value">kananc7@gmail.com</p>
+                      <a class="bord" href="mailto:kananc7@gmail.com"><p class="contact_flue__item_value">kananc7@gmail.com</p></a>
                     </div>
                   </div>
                 </div>
@@ -122,9 +127,10 @@
                     </div>
                     <div>
                       <p class="contact_flue__item_title" id="p_11"></p>
-                      <p class="contact_flue__item_value">
+                      <a class="bord" href="mailto:kananc7@gmail.com"><p class="contact_flue__item_value">
                         edupaletteinfo@gmail.com
                       </p>
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -143,11 +149,11 @@
           </div>
           <div class="hr"></div>
           <div class="call_beck_flue">
-            <h3>ՀԵՏԱԴԱՐՁ ԿԱՊ</h3>
+            <h3 id="connect"></h3>
             <div class="form">
               <form>
-                <input id="email" type="email" name="email" />
-                <input id="tel" type="tel" name="tel" />
+                <input id="email" required type="email" name="email" />
+                <input id="tel"  type="tel" name="tel" />
                 <textarea id="textarea" rows="5"></textarea>
                 <input type="button" id="send" />
               </form>
@@ -163,8 +169,8 @@
                 <div></div>
               </div>
               <div>
-             <a href="https://www.facebook.com/mwccngo" target="_blank">   <p class="contact_flue__item_title" id="p_14"></p></a>
-             <a href="https://www.facebook.com/mwccngo" target="_blank">    <p class="contact_flue__item_value" id="p_15"></p></a>
+             <a class="bord" href="https://www.facebook.com/mwccngo" target="_blank">   <p class="contact_flue__item_title" id="p_14"></p></a>
+             <a  class="bord" href="https://www.facebook.com/mwccngo" target="_blank">    <p class="contact_flue__item_value" id="p_15"></p></a>
               </div>
             </div>
             <div class="contact_flue__item">
@@ -172,7 +178,7 @@
                 <div></div>
               </div>
               <div>
-                <a href="https://www.facebook.com/krtapnak" target="_blank">    <p class="contact_flue__item_title" id="p_16"></p></a>
+                <a class="bord" href="https://www.facebook.com/krtapnak" target="_blank">    <p class="contact_flue__item_title" id="p_16"></p></a>
               </div>
             </div>
             <div class="contact_flue__item">
@@ -180,7 +186,7 @@
                 <div></div>
               </div>
               <div>
-                  <a href="https://www.facebook.com/GegharkunikWSC" target="_blank">    <p class="contact_flue__item_title" id="p_18"></p> <a href=""></a>
+                <a class="bord" href="https://www.facebook.com/GegharkunikWSC" target="_blank">    <p class="contact_flue__item_title" id="p_18"></p> <a href="">
               </div>
             </div>
             <div class="contact_flue__item">
@@ -188,14 +194,13 @@
                 <div></div>
               </div>
               <div>
-                <a href="https://martuniinfo.blogspot.com/" target="_blank"><p class="contact_flue__item_title" id="p_17"></p></a>
+                <a class="bord" href="https://martuniinfo.blogspot.com/" target="_blank"><p class="contact_flue__item_title" id="p_17"></p></a>
               </div>
             </div>
           </div>
         </div>
       </section>
-    </main>
-{% endblock %}
+    </main>{% endblock %}
   {% block scripts %}
      <script
       src="https://kit.fontawesome.com/9a1fc58522.js"
