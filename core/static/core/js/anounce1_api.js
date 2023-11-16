@@ -32,7 +32,7 @@ const lenguage = {
 };
 window.addEventListener("load", async function () {
   let url = '';
-  if(elem_type === 'job_announcment'){
+  if(elem_type === 'job_announcement'){
         url = `${server_url}get_announcment_detail/${leng}/${elem_id}`;
       }
    else{

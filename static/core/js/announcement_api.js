@@ -133,8 +133,10 @@ async function pagination(totalPages, page, data) {
       const announcecol = document.createElement("div");
       announcecol.classList.add("announcecol");
       announcecol.classList.add("anouncetext");
-      announcecol.appendChild(h3);
-      announcecol.appendChild(p);
+      const newDiv = document.createElement('div')
+      newDiv.appendChild(h3);
+      newDiv.appendChild(p);
+      announcecol.appendChild(newDiv);
       announcecol.appendChild(a);
       const announcecol_2 = document.createElement("div");
       announcecol_2.classList.add("announcecol");

@@ -878,7 +878,7 @@ li {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000000000;
+
   cursor: pointer;
 }
 
@@ -1292,6 +1292,7 @@ body.announcements {
 .anounce {
   margin: 20px;
   max-width: 1200px;
+  width: 100%;
   padding: 10px;
   border: 3px solid rgba(108, 150, 94, 1);
   border-radius: 30px;
@@ -1300,7 +1301,7 @@ body.announcements {
 
 .announcerow {
   display: flex;
-  justify-content: space-evenly;
+
 }
 
 .announcecol {
@@ -1330,6 +1331,10 @@ body.announcements {
 }
 .anouncetext{
   margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 16px;
 }
 
 #show_more_1 {

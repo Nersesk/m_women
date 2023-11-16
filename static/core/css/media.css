@@ -274,6 +274,8 @@
         width: 300px;
         height: 300px;
     }
+
+
     .ouradress li {
         font-size: 22px;
         margin-left: 0px;
@@ -703,6 +705,7 @@
         position: absolute;
         top: 30%;
 }
+
     .fbpages li a {
         font-size: 18px;
         line-height: 36.22px;
@@ -710,6 +713,10 @@
     .mobilefooter {
         grid-column-gap: 70px;
     }
+}
+@media screen and (max-width:976px){
+
+
 }
 @media screen and (max-width: 958px) {
     .countcol img {
@@ -1427,6 +1434,10 @@
     .smallabouttext {
         margin-top: 350px;
     }
+}
+@media screen and (max-width:658px){
+
+
 }
 @media screen and (max-width: 625px) {
     #modalwindow,
@@ -2156,6 +2167,7 @@ body #card_section{
         display: block;
         word-break: break-all;
     }
+
 
     .announcerow button {
         font-size: 13px;

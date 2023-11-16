@@ -3,8 +3,8 @@ const dataa = {
     title_header5 :"Կապ",
     title_1: "Կապ մեզ հետ",
     p_1: "Ընդհանուր հարցերի համար`",
-    p_2: "Կրթական բաժին",
-    p_3: "Սոցիալական բաժին",
+    p_2: "Կրթական բաժին`",
+    p_3: "Սոցիալական բաժին`",
     p_4: "Հաղորդակցություն և հրապարակումներ`",
     p_5: "Թեժ գիծ`",
     p_6: "Գնումների բաժին`",
@@ -40,7 +40,7 @@ const dataa = {
     p_9: "Email",
     p_10: "For general questions",
     p_11: "Educational department",
-    p_12: "Addres",
+    p_12: "Address",
     p_13: "Kamoi 17, c. Martuni, Gegharkunik region, RA, 1402",
     p_14: "Martuni women's community",
     p_15: "MWCC NGO",
@@ -161,7 +161,7 @@ send.addEventListener("click", async (e) => {
     };
     await getAllData(data);
     if(leng === "arm"){
-        alert('Նամակն հաջողությոամբ ուղարկվեց!')
+        alert('Նամակը հաջողությամբ ուղարկվեց!')
     }else{
       alert("The message has been successfully sent!")
     }

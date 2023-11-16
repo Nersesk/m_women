@@ -3,8 +3,8 @@ const dataa = {
     title_header5 :"Կապ",
     title_1: "Կապ մեզ հետ",
     p_1: "Ընդհանուր հարցերի համար`",
-    p_2: "Կրթական բաժին",
-    p_3: "Սոցիալական բաժին",
+    p_2: "Կրթական բաժին`",
+    p_3: "Սոցիալական բաժին`",
     p_4: "Հաղորդակցություն և հրապարակումներ`",
     p_5: "Թեժ գիծ`",
     p_6: "Գնումների բաժին`",
@@ -161,7 +161,7 @@ send.addEventListener("click", async (e) => {
     };
     await getAllData(data);
     if(leng === "arm"){
-        alert('Նամակն հաջողությոամբ ուղարկվեց!')
+        alert('Նամակը հաջողությամբ ուղարկվեց!')
     }else{
       alert("The message has been successfully sent!")
     }
