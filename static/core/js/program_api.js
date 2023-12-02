@@ -8,11 +8,11 @@ const lenguage = {
     no_data: "No results found...",
   },
 };
-
+let clickCount = 0;
 const leng = this.localStorage.getItem("leng");
 const server_url = main_url();
 window.addEventListener("load", async function () {
-  const { pages_count } = await getPageCount();  const pagenumber = this.localStorage.getItem("crag_page_number");
+  const { pages_count } = await getPageCount();
   await pagination(pages_count, 1);
 });
 async function getPageCount() {
@@ -38,7 +38,6 @@ async function getPageCount() {
 
 async function getPrograms(page) {
   try {
-    localStorage.setItem("crag_page_number", page)
     const response = await fetch(
       `${server_url}get_programs/${leng}/${page}`,
       {
@@ -65,6 +64,7 @@ const programmcardrow = document.getElementById("programmcardrow");
 
 async function pagination(totalPages, page, data) {
   let programs_data;
+
   if (!data) {
     const { programs } = await getPrograms(page);
     programs_data = programs;
@@ -132,7 +132,7 @@ function throwPrograms(programs) {
     front.classList.add("front");
     front.appendChild(img);
 
-    const back_h3 = document.createElement("h3");
+   const back_h3 = document.createElement("h3");
     const back_p = document.createElement("p");
     const back = document.createElement("div");
     back.classList.add("back");
@@ -146,7 +146,7 @@ function throwPrograms(programs) {
     back.appendChild(back_h3);
     back.appendChild(back_p);
 
-    const backgroundtext_p = document.createElement("p");
+   const backgroundtext_p = document.createElement("p");
     const backgroundtext = document.createElement("div");
 
     backgroundtext_p.innerText = program.title;
@@ -161,10 +161,31 @@ function throwPrograms(programs) {
 
     cardprogramm.appendChild(card_container);
     cardprogramm.appendChild(backgroundtext);
-    cardprogramm.addEventListener("click", () => {
+    const userAgent = navigator.userAgent;
+
+    const handler = () => {
       localStorage.setItem("programId", program.id);
       window.location.href = `${server_url}program/${program.id}`;
-    });
+    }
+
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile|CriOS/i.test(userAgent)) {
+      cardprogramm.addEventListener("click", onDblClick);
+    } else {
+      cardprogramm.addEventListener("click", handler)
+    }
+
+    function onDblClick(e) {
+            let singleClickTimer = null
+            singleClickTimer = setTimeout(function () {
+                    clickCount = 0;
+                }, 2000);
+            clickCount++;
+            if (clickCount === 2) {
+                clearTimeout(singleClickTimer);
+                clickCount = 0;
+                handler()
+            }
+        }
     programmcardrow.appendChild(cardprogramm);
   });
 }

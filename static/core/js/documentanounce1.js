@@ -27,6 +27,4 @@ window.addEventListener("load", async function (event) {
   const title_header3 = this.document.getElementById("title_header3")
   title_header3.innerText = data_index[`${leng}`].title_header3;
 
-  const searcher = this.document.getElementById("search");
-  searcher.setAttribute("placeholder", data_index[`${leng}`].searcher);
 });

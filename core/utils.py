@@ -8,7 +8,7 @@ from django.conf import settings
 from django.db.models import QuerySet, Q
 from django.urls import reverse
 from core.models import JobAnnouncement, Staff, BusinessPartners, Program, OpenCompetition, ArchiveProgram, Product, \
-    Report
+    Report, Banner
 
 
 def get_announcements_qs() -> list:
@@ -17,6 +17,10 @@ def get_announcements_qs() -> list:
     combined_queryset.sort(key=lambda x: x.created, reverse=True)
 
     return combined_queryset
+
+
+def get_banner_images():
+    return Banner.objects.get().banner_images.all()
 
 
 def get_job_announcement_qs() -> QuerySet[JobAnnouncement]:
@@ -355,4 +359,3 @@ def filter_programs_qs(lang: str, pattern: str) -> QuerySet[Program]:
             article_arm__icontains=pattern))
     programs = get_program_qs().filter(search_query).order_by('-created')
     return programs
-

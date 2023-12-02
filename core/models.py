@@ -2,8 +2,8 @@
 Database models
 """
 import os
-import uuid
 import unidecode
+from solo.models import SingletonModel
 
 from django.db import models
 from django.contrib.auth.models import (
@@ -43,6 +43,11 @@ class Staff(models.Model):
 def generate_business_partner_image(instance, filename):
     unique_filename = unidecode.unidecode(filename)
     return os.path.join('business_partners/', unique_filename)
+
+
+def generate_banner_image(instance, filename):
+    unique_filename = unidecode.unidecode(filename)
+    return os.path.join('banners/', unique_filename)
 
 
 def generate_open_competitions_image(instance, filename):
@@ -334,3 +339,24 @@ class ProductVideos(models.Model):
 
     def __str__(self):
         return f"{_('Video')} {self.id}"
+
+
+class Banner(SingletonModel):
+    def __str__(self):
+        return f""
+
+    class Meta:
+        verbose_name = _('Banner')
+        verbose_name_plural = _('Banners')
+
+
+class BannerImages(models.Model):
+    main_model = models.ForeignKey(Banner, on_delete=models.CASCADE, related_name='banner_images')
+    image = models.ImageField(upload_to=generate_banner_image, verbose_name=_('Image'))
+
+    class Meta:
+        verbose_name = _('Banner Image')
+        verbose_name_plural = _('Banner Images')
+
+    def __str__(self):
+        return f"{_('Image')} {self.id}"

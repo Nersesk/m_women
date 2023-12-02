@@ -33,9 +33,7 @@ const data_index = {
    
    
   title_header8.innerText=data_index[`${leng}`].title_header8;
-  const searcher = this.document.getElementById("search");
-  searcher.setAttribute("placeholder", data_index[`${leng}`].searcher);
- 
+
   
   });
   

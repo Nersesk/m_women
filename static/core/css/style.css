@@ -37,12 +37,12 @@ header {
 
 .activCir {
   position: absolute;
-  background: rgba(255, 131, 131, 1);
+  background: #FF0000 ;
   width: 6px;
   height: 6px;
   bottom: 15px;
   top: 100%;
-  border-radius: 50%;
+  border-radius: 75%;
   transition: all 0.3s ease;
 }
 
@@ -464,7 +464,8 @@ body .transparent-btns_tabs a:focus {
   font-size: 18px;
   margin-top: 50px;
   line-height: 40px;
-  cursor: pointer
+  cursor: pointer;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .advantages {
@@ -871,7 +872,7 @@ li {
   position: fixed;
   top: 60%;
   right: 20px;
-  background: linear-gradient(rgba(255, 131, 131, 1), rgba(108, 150, 94, 1));
+  background-image: linear-gradient(90deg, #6C965E, rgba(147, 165, 108, 1),#B5CB86);
   border-radius: 50%;
   width: 50px;
   height: 50px;
@@ -2097,15 +2098,15 @@ p.demos {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 70%;
+  height: 60%;
 }
 
 .modal-content>div {
   background-color: transparent;
   color: #fff;
-  border-top: 2px solid rgba(255, 131, 131, 1);
-  border-left: 2px solid rgba(255, 131, 131, 1);
-  border-right: 2px solid rgba(255, 131, 131, 1);
+  border-top: 2px solid #92ba86;
+  border-left: 2px solid  rgba(147, 165, 108, 1);
+  border-right: 2px solid #B5CB86;
   border-bottom: 2px solid rgba(108, 150, 94, 1);
   box-shadow: 2px 2px 3px rgba(255, 255, 255, 0.4);
   padding-left: 60px;
@@ -2165,10 +2166,10 @@ p.demos {
 
 .gradient-text {
   /* Fallback: Set a background color. */
-  background-color: red;
+
 
   /* Create the gradient. */
-  background-image: linear-gradient(90deg, rgba(108, 150, 94, 1), rgba(147, 165, 108, 1), rgba(255, 131, 131, 1));
+  background-image: linear-gradient(90deg, #6C965E, rgba(147, 165, 108, 1),#B5CB86);
 
   /* Set the background size and repeat properties. */
   background-size: 100%;
@@ -2347,7 +2348,7 @@ p.demos {
 }
 
 .mobile-menu-navBar {
-  padding: 20px;
+  padding: 14px;
   background-color: #b5cb86;
   position: fixed;
   display: flex;
@@ -2361,13 +2362,16 @@ p.demos {
 .mobile-menu-navBar>a {
   color: #fff;
 }
+#burger_toggle{
+  cursor: pointer;
+}
 
 .mobile-menu {
   position: fixed;
   width: 100%;
   height: 100vh;
   top: 0px;
-  background: linear-gradient(180deg, #6c965e 0%, #ff8383 100%);
+  background-image: linear-gradient(90deg, #6C965E, rgba(147, 165, 108, 1),#B5CB86);
   z-index: 1000000000;
 }
 
@@ -2436,9 +2440,9 @@ p.demos {
   color: #fff;
 }
 
-.b_menu>.b_languages>a:nth-child(1) {
-  border-right: 2px solid #fff;
-  padding-right: 5px;
+.b_languages>a:nth-child(1) {
+  border-right: 2px solid #b7b1b1;
+  padding-right: 10px;
 }
 
 #gb-widget-7525 {
@@ -2452,9 +2456,12 @@ p.demos {
   padding-top: 50px;
   background: linear-gradient(180deg, #c2e2b8 20.86%, rgba(255, 255, 255, 0) 87.06%);
 }
+ body #grad{
+  background:linear-gradient(180deg, #ffffff 20.86%, rgba(252, 248, 248, 0) 87.06%);
+}
 
 .gradient_h1 {
-  background: linear-gradient(90deg, #6c965e 0.1%, #93a56c 41.71%, #ff8383 102.52%);
+  background-image: linear-gradient(90deg, #6C965E, rgba(147, 165, 108, 1),#B5CB86);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -2484,7 +2491,7 @@ p.demos {
   margin-bottom: 100px;
 }
 .anouncefooter{
-  margin-top: 157px;
+  margin-top: 227px;
 }
 .iconcol span{
   display:block !important
@@ -2505,12 +2512,10 @@ body button {
 body .moreindex{
 cursor: auto;
 }
-.bord {
-text-decoration:underline;
-text-decoration-color: rgba(102, 102, 102, 1);
-
-text-underline-offset: 5px;
+.bord .contact_flue__item_title:hover, .bord .contact_flue__item_value:hover{
+  color: #928e8e
 }
+
 .pagination{
   margin-top: 40px;
   margin-bottom: -70px;
@@ -2525,4 +2530,59 @@ textarea{
 .pagin{
   margin-bottom: 50px;
   margin-top: -40px;
+}
+
+.ourimages {
+  margin-left: -30px;
+}
+.contactss{
+  font-family: Arial, Helvetica, sans-serif;
+}
+#submenu li a {
+  text-transform: capitalize;
+}
+.lightbox-close-btn {
+  color: white;
+  position: absolute;
+  right: 0;
+  top: -50px;
+  cursor: pointer;
+  font-size: 24px;
+}
+.hidemobilemenu{
+  width: 100%;
+  height: 52px;
+  background-color: rgba(255, 255, 255, 1);
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.15);
+position: fixed;
+top: 0px;
+bottom: 0;
+display: none;
+margin-bottom: 20px;
+z-index:10000
+
+}
+.hidemenu1{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+.hidelogo img{
+  width: 50px;
+  height: 40px;
+  object-fit: cover;
+
+}
+.hidemenu1>div{
+ margin: 7px 25px 0 25px;
+}
+
+#leng_Eng{
+  margin-left: 5px;
+}
+
+
+.hoverbord:hover{
+  color: #928e8e;
 }

@@ -14,10 +14,9 @@ const server_url = main_url()
 
 window.addEventListener("load", async function () {
   const { pages_count } = await getPageCount();
-  const pagenumber = this.localStorage.getItem("hayt_page_number")
-  pagination(pages_count, pagenumber ? pagenumber : 1);
-});
+  pagination(pages_count, 1)
 
+});
 async function getPageCount() {
   try {
     const response = await fetch(
@@ -158,7 +157,6 @@ async function pagination(totalPages, page, data) {
 
 async function getAnnouncements(page) {
   try {
-    localStorage.setItem("hayt_page_number", page)
     const response = await fetch(
       `${server_url}get_announcment_list/${leng}/${page}`,
       {

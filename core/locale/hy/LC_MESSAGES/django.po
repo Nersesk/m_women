@@ -404,3 +404,12 @@ msgstr "Գաղտնաբառը չպետք է պարունարկի միայն թվ�
 
 msgid "No, take me back"
 msgstr "Ոչ, վերադառնալ"
+
+msgid "Banner"
+msgstr "Գլխանկարները"
+
+msgid "Banner Images"
+msgstr "Գլխանկարներ"
+
+msgid "was changed successfully."
+msgstr "Հաջողությամբ փոփոխվեց"

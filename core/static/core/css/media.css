@@ -4,6 +4,11 @@
 .programmcol {
     margin-bottom: 20px;
 }
+@media screen and (min-width:1380px){
+    .beckIcon{
+        left: 190px !important;
+    }
+}
 @media screen and (max-width: 430px) {
     .fbpages {
         width: 80%;
@@ -158,6 +163,15 @@
     #menu_1 {
         display: none;
     }
+    #article_h2{
+        margin-top: 70px;
+    }
+    .close{
+        top: 170px;
+    }
+    .hidemobilemenu{
+        display: block;
+    }
     .anounceinfosmalltext > div {
         display: flex;
         flex-direction: column;
@@ -189,12 +203,14 @@
         margin-top: 10px;
     }
     #modal_content_h2 {
-
         margin-top: 100px !important;
-        margin-bottom: 10px !important;
+        margin-bottom: 200px !important;
     }
     .gradient_count {
         margin-top: 0 !important;
+    }
+    .anouncefooter {
+        margin-top: 17px;
     }
     .test_mes {
         left: 0 !important;
@@ -266,6 +282,8 @@
 
         object-fit: contain;
     }
+
+
 }
 
 @media screen and (max-width: 1295px) {
@@ -295,7 +313,7 @@
         margin-top: 600px;
     }
     .ourimages {
-        margin-left: 40px;
+        margin-left: -75px;
     }
     .gallery-item img {
         width: 220px !important;
@@ -337,6 +355,9 @@
         font-size: 18px;
         line-height: 34.22px;
     }
+    .ourimages {
+        margin-left: -55px;
+    }
     .ouradress li {
         color: rgba(102, 102, 102, 1);
         font-size: 18px;
@@ -351,7 +372,9 @@
     .smallabouttext p {
         width: 85%;
     }
-
+    .ourimages {
+        margin-left: -25px;
+    }
     .programmcol p,
     .programmcoltwo p {
         font-size: 14px;
@@ -440,7 +463,9 @@
     #modalfiles {
         margin: -10px 0 0 -30px;
     }
-
+    .ourimages {
+        margin-left: -15px;
+    }
     .advantages {
         margin-top: 10px;
     }
@@ -667,6 +692,9 @@
         height: 220px;
         font-size: 20px;
     }
+    body .beckIcon{
+        left: 120px;
+    }
     .countcol p,
     .countcol span {
         font-size: 14px;
@@ -703,7 +731,7 @@
 
     .sp-container h2 {
         position: absolute;
-        top: 30%;
+        top: 20%;
 }
 
     .fbpages li a {
@@ -789,6 +817,9 @@
         justify-content: center;
         grid-gap: 10px;
         margin-left: 10px;
+    }
+    body .beckIcon{
+        left: 100px;
     }
     .smallabouttext {
         margin-top: 470px;
@@ -1233,7 +1264,7 @@
         grid-row-gap: 2px;
     }
     .ourimages {
-        margin-left: -20px;
+        margin-left: -10px;
     }
     .modal-content>div{
         width: 532px;
@@ -1245,12 +1276,15 @@
         height: 220px;
         font-size: 20px;
     }
+    body .beckIcon{
+        left: 90px;
+    }
    body .card_title {
         font-size: 20px !important;
     }
     .sp-container h2 {
         position: absolute;
-        top: 18%;
+        top: 30%;
     }
     .abouttext>div{
         margin-left: 20px;
@@ -1293,7 +1327,7 @@
         margin-top: -75px;
     }
     .ourimages {
-        margin-left: -50px;
+        margin-left: -20px;
     }
     .gallery-item img {
         width: 240px !important;
@@ -1450,7 +1484,7 @@
     }
     #modal_content_h2 {
         margin-top: 70px !important;
-        margin-bottom: -40px !important;
+
     }
     html body .mod-content{
         margin-top: 100px !important;
@@ -1508,6 +1542,10 @@
         border-radius: 10px;
         margin-left: 40px;
     }
+    body .gradient {
+
+        background: linear-gradient(180deg, #ffffff 20.86%, rgba(253, 253, 253, 0) 87.06%);
+      }
     .cardprogramm .front img {
         width: 330px;
         height: 330px;
@@ -1625,12 +1663,16 @@
         font-size: 16px;
     }
     .sp-container {
-        height: 500px;
+        height: 300px;
     }
 
     .modal-content>div{
         width: 400px;
         height: 80px;
+    }
+    .sp-container h2.frame-5 {
+
+        margin-top: -70px;
     }
 }
 @media screen and (max-width: 505px) {
@@ -1658,7 +1700,7 @@
     }
     .sp-container h2 {
         font-size: 40px;
-        top: 20%;
+        top: 12%;
     }
 }
 @media screen and (max-width: 568px) {
@@ -1666,15 +1708,25 @@
         width: 200px;
         height: 200px;
     }
+    body .anounce {
+
+        width: 87% !important;}
     .programmcardrow{
         margin-top: 70px !important;
     }
+    .modal-content {
+
+        height: 55%;
+      }
+     body #send{
+        font-size: 14px !important;
+      }
 body #card_section{
     grid-template-columns: 1fr !important;
 }
     #modal_content_h2{
       font-size: 20px;
-      margin-bottom: 50px;
+      margin-bottom: 50px !important;
     }
     .smallabouttext p {
         width: 97%;
@@ -1708,9 +1760,7 @@ body #card_section{
     .smallabouttext {
         margin-top: 220px;
     }
-    .ourimages {
-        margin-left: -50px;
-    }
+
 
     .announcerow {
         display: flex;
@@ -1788,12 +1838,27 @@ body #card_section{
         width: 230px;
         height: 230px;
     }
+
+    .favicon{
+  width: 32px;
+  height: 32px;
+    }
 }
 @media screen and (max-width: 535px) {
     .countrowone {
         grid-column-gap: 30px;
     }
-    .ourimages {
+    body .beckIcon {
+        width: 30px;
+        height: 30px;
+
+        font-size: 18px;
+
+        left: 70px;
+    }
+    * {
+        margin: 0;
+        paddines {
         margin-left: -20px;
     }
     html body .mod-content{
@@ -1849,6 +1914,14 @@ body #card_section{
         width: 450px;
         margin: -400px 0 0 -25px;
     }
+
+}
+
+.ourimages {
+    margin-left: -2px;
+}
+
+
 }
 @media screen and (max-width: 500px) {
     .footerform form {
@@ -1899,7 +1972,7 @@ body #card_section{
         line-height: 20px;
     }
     .back p {
-        font-size: 11px;
+        font-size: 10px;
 
         line-height: 17px;
         text-align: center;
@@ -2049,7 +2122,8 @@ body #card_section{
     .icons {
         display: flex;
         width: 100%;
-        justify-content: space-between;
+        justify-content: space-evenly;
+        margin-left: -100px;
     }
     .liner {
         display: none;
@@ -2223,12 +2297,27 @@ body #card_section{
         height: 20px;
     }
 }
+
+@media screen and (max-width:450px){
+    .contact_flue_1, .contact_flue_2 {
+
+        margin-left: -15px;
+    }
+
+}
 @media screen and (max-width: 415px) {
     .contact li,
     .contact p,
     .fbpages li a {
         font-size: 20px;
         line-height: 36.22px;
+    }
+    .contact_flue_1, .contact_flue_2 {
+
+        margin-left: -15px;
+    }
+    body .beckIcon{
+        left: 60px;
     }
     .abouttext>div{
         margin-left: 20px;
@@ -2237,8 +2326,8 @@ body #card_section{
         margin-top: 20px;
     }
     .modal-content>div {
-        width: 330px;
-        height: 70px;
+        max-width: 330px;
+        max-height: 70px;
     }
     .search_section input::placeholder{
         font-size: 16px;
@@ -2248,8 +2337,18 @@ body #card_section{
 
     }
     .close {
-
+  top: 170px;
         right: 21px;
+    }
+}
+@media screen and (max-width:395px){
+    .sp-container h2 {
+
+        top: 17%;
+    }
+    .icons {
+
+        margin-left: -90px;
     }
 }
 @media screen and (max-width: 380px) {
@@ -2269,6 +2368,9 @@ body #card_section{
     #more {
         padding: 4px 18px;
         font-size: 16px;
+    }
+    .ourimages {
+        margin-left: -5px;
     }
 
     .contact li,
@@ -2328,6 +2430,10 @@ body #card_section{
     }
 .abouttext>div{
     margin-left: 7px;
+}
+.icons {
+
+    margin-left: -70px;
 }
     .contact li,
     .contact p,

@@ -30,12 +30,17 @@ from core.utils import (
     get_product_detail_dict,
     get_report_qs,
     get_report_dict,
-    send_email, filter_announcement_qs, filter_programs_qs
+    send_email, filter_announcement_qs, filter_programs_qs, get_banner_images
 )
 
 
 class Index(TemplateView):
     template_name = 'core/index.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['images'] = get_banner_images()
+        return context
 
 
 class About(TemplateView):
@@ -49,10 +54,6 @@ class Contact(TemplateView):
 class Announcements(TemplateView):
     template_name = 'core/announcement.html'
 
-
-# class Programs(TemplateView):
-#     template_name = 'core/programm.html'
-#
 
 def programs_view(request):
     return render(request, 'core/programm.html')
@@ -85,6 +86,7 @@ def program_detail(request, program_id, lang):
     program = get_object_or_404(Program, id=program_id)
     program_dict = get_program_detail_dict(program, lang)
     return render(request, 'core/programm1.html', context={'program': program_dict})
+
 
 class ArchiveProgramDetail(TemplateView):
     template_name = 'core/anounce2.html'

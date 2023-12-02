@@ -48,6 +48,11 @@ window.addEventListener("load", async function () {
     });
 
     lightBoxContainer.classList.add("lightbox");
+    const closeButton = document.createElement('span')
+    closeButton.innerText = 'X';
+    closeButton.classList.add('lightbox-close-btn');
+    closeButton.addEventListener('click', closeLightBox)
+    lightBoxContent.appendChild(closeButton)
     lightBoxContent.classList.add("lightbox-content");
     lightBoxPrev.classList.add("fa", "fa-angle-left", "lightbox-prev");
     lightBoxNext.classList.add("fa", "fa-angle-right", "lightbox-next");

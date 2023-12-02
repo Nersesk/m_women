@@ -1,27 +1,26 @@
 import os
 from pathlib import Path
-from dotenv import load_dotenv
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
+import environ
 BASE_DIR = Path(__file__).resolve().parent.parent
-load_dotenv()
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-__d&oskfb55nbztu_@k=@df)vo(^mtx(jt)fahw%d4q(2pt409'
+env = environ.Env()
+environ.Env.read_env()
 
-# SECURITY WARNING: don't run with debug turned on in production!
+
+SECRET_KEY = os.environ.get('SECRET_KEY')
+
 DEBUG = True
 
-ALLOWED_HOSTS = ["xn--29ae4dgic.xn--y9a3aq", "127.0.0.1"]
+ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=['localhost', '127.0.0.1'])
 
-CSRF_TRUSTED_ORIGINS = ['https://xn--29ae4dgic.xn--y9a3aq/', ]
+CSRF_TRUSTED_ORIGINS = env.list('CSRF_TRUSTED_ORIGINS', default=['localhost', '127.0.0.1'])
 
-SMTP_SERVER = os.environ.get('SMTP_SERVER')
-SMTP_PORT = os.environ.get('SMTP_PORT')
-SMTP_USERNAME = os.environ.get('SMTP_USERNAME')
-SMTP_PASSWORD = os.environ.get('SMTP_PASSWORD')
-MAIL_FROM = os.environ.get('MAIL_FROM_ADDRESS')
-MAIL_TO = os.environ.get('MAIL_TO')
-# Application definition
+SMTP_SERVER = env.str('SMTP_SERVER', default='')
+SMTP_PORT = env.str('SMTP_PORT', default='')
+SMTP_USERNAME = env.str('SMTP_USERNAME', default='')
+SMTP_PASSWORD = env.str('SMTP_PASSWORD', default='')
+MAIL_FROM = env.str('MAIL_FROM_ADDRESS', default='')
+MAIL_TO = env.str('MAIL_TO', default='')
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -33,7 +32,8 @@ INSTALLED_APPS = [
     'core.apps.CoreConfig',
     'ckeditor',
     'image_uploader_widget',
-    'corsheaders'
+    'corsheaders',
+    'solo'
 
 ]
 
@@ -72,33 +72,28 @@ TEMPLATES = [
 WSGI_APPLICATION = 'app.wsgi.application'
 
 
-# DATABASES = {
-#
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': os.environ.get('DB_NAME'),
-#         'USER': os.environ.get('DB_USERNAME'),
-#         'PASSWORD': os.environ.get('DB_PASSWORD'),
-#         'HOST': os.environ.get('DB_HOST'),
-#         'PORT': os.environ.get('DB_PORT'),
-#
-#     }
-#
-# }
-
-# local set
 DATABASES = {
+
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': env.str('DB_ENGINE', default='django.db.backends.postgresql'),
+        'NAME':  env.str('DB_NAME', default=''),
+        'USER':  env.str('DB_USERNAME', default=''),
+        'PASSWORD':  env.str('DB_PASSWORD', default=''),
+        'HOST':  env.str('DB_HOST', default=''),
+        'PORT':  env.str('DB_PORT', default=''),
+
     }
+
 }
 
-
-
-# Password validation
-# https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
-
+# # local set
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+#
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -114,10 +109,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
-# Internationalization
-# https://docs.djangoproject.com/en/4.2/topics/i18n/
-
 LANGUAGE_CODE = 'en'
 
 
@@ -132,21 +123,11 @@ USE_I18N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/4.2/howto/static-files/
+STATIC_URL = env.str('STATIC_URL', default='static/')
+MEDIA_URL = env.str('MEDIA_URL', default='/media/')
+STATIC_ROOT = env.str('STATIC_ROOT', default=os.path.join(BASE_DIR, 'static'))
+MEDIA_ROOT = env.str('MEDIA_ROOT', default=os.path.join(BASE_DIR, 'media'))
 
-STATIC_URL = 'static/'
-STATIC_ROOT=os.path.join(BASE_DIR, 'static')
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
-# prod
-# STATIC_ROOT='home5/knersesk/public_html/static'
-# MEDIA_ROOT = 'home5/knersesk/public_html/media'
-
-MEDIA_URL = '/media/'
-
-# Default primary key field type
-# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 CKEDITOR_CONFIGS = {
     'default': {
@@ -186,8 +167,7 @@ CKEDITOR_UPLOAD_PATH = 'content/ckeditor/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-
 #translations path
 LOCALE_PATHS = [
-    os.path.join(BASE_DIR, 'core', 'locale'),  # Adjust the path based on your app structure
+    os.path.join(BASE_DIR, 'core', 'locale'),
 ]

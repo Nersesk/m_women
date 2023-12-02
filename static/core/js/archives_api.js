@@ -8,7 +8,7 @@ const lenguage = {
   },
 };
 const leng = this.localStorage.getItem("leng");
-
+let clickCount = 0;
 window.addEventListener("load", async function () {
   const { pages_count } = await getPageCount();
   await pagination(pages_count, 1);
@@ -147,10 +147,30 @@ function throwPrograms(programs) {
 
     cardprogramm.appendChild(card_container);
     cardprogramm.appendChild(backgroundtext);
-    cardprogramm.addEventListener("click", () => {
+    const userAgent = navigator.userAgent;
+    const handler = () => {
       localStorage.setItem("archivesUrl", program.url);
       window.location.href = `${server_url}archive_program/${program.id}`;
-    });
+    }
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile|CriOS/i.test(userAgent)) {
+      cardprogramm.addEventListener("click", onDblClick);
+    } else {
+      cardprogramm.addEventListener("click", handler)
+    }
+
+    function onDblClick(e) {
+            let singleClickTimer = null
+            singleClickTimer = setTimeout(function () {
+                    clickCount = 0;
+                }, 2000);
+            clickCount++;
+            if (clickCount === 2) {
+                clearTimeout(singleClickTimer);
+                clickCount = 0;
+                handler()
+            }
+        }
+
     programmcardrow.appendChild(cardprogramm);
   });
 }

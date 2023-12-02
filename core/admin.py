@@ -1,3 +1,5 @@
+from django.core.exceptions import ValidationError
+from django.forms import BaseInlineFormSet
 from django.utils.safestring import mark_safe
 from django.utils.translation import gettext_lazy as _
 from .models import (Staff,
@@ -12,11 +14,14 @@ from .models import (Staff,
                      Report,
                      ProductVideos,
                      ProductImages,
-                     ArchiveProgram
+                     ArchiveProgram,
+                     Banner, BannerImages
                      )
 from django.contrib import admin
+from django.contrib.auth.models import Group, User
+
 from image_uploader_widget.admin import ImageUploaderInline
-from django.contrib.auth.models import Group
+from solo.admin import SingletonModelAdmin
 
 admin.site.site_title = _("Martuni Women's Community Council Administration")
 admin.site.index_title = _("Martuni Women's Community Council Administration")
@@ -382,6 +387,26 @@ class ArchiveProgramAdmin(ProgramModelAdmin):
     """Archive Programs"""
 
 
+class CustomInlineFormSet(BaseInlineFormSet):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for form in self.forms:
+            form.empty_permitted = False
+
+
+class BannerImagesInline(ImageUploaderInline):
+    model = BannerImages
+    add_image_text = _("add_image_text")
+    max_num = 3
+    formset = CustomInlineFormSet
+
+    def has_delete_permission(self, request, obj=None):
+        return False
+
+class BannerAdmin(SingletonModelAdmin):
+    inlines = [BannerImagesInline, ]
+
+
 admin.site.register(Product, ProductModelAdmin)
 admin.site.register(Program, ProgramModelAdmin)
 admin.site.register(OpenCompetition, OpenCompetitionAdmin)
@@ -390,5 +415,6 @@ admin.site.register(BusinessPartners, BusinessPartnersAdmin)
 admin.site.register(Staff, StaffAdmin)
 admin.site.register(Report, ReportAdmin)
 admin.site.register(ArchiveProgram, ArchiveProgramAdmin)
+admin.site.register(Banner, BannerAdmin)
 admin.site.unregister(Group)
-# admin.site.register(User, UserAdmin)
+admin.site.unregister(User)

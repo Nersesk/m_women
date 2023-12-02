@@ -7,6 +7,12 @@
   {% block title %}
       <title id="title_header"></title>
   {% endblock %}
+     <link rel="apple-touch-icon" sizes="180x180" href="{% static 'core/images/logo.svg' %}">
+      <link rel="icon" type="image/png" href="{%  static 'core/images/logo.svg' %}" sizes="32x32">
+      <link rel="shortcut icon" href="{%  static 'core/images/logo.svg' %}">
+      <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+      <meta name="msapplication-TileColor" content="#00aba9">
+
       {% block styles %}
     <link rel="stylesheet" href="{%  static 'core/css/style.css' %}" />
     <link rel="stylesheet" href="{%  static 'core/css/media.css' %}" />
@@ -53,20 +59,30 @@
         </div>
       </div>
     </header>
+    <section class="hidemobilemenu">
+      <div class="hidemenu1">
+        <div class="hidelogo"><a href="{% url 'home' %}"><img src="{% static  'core/images/logo.svg' %}" alt=""></a></div>
+           <div class="b_languages hideflags languages">
+          <a id="leng_Arm">հայ</a>
+          <a id="leng_Eng">ENG</a>
+        </div>
+      </div>
+    </section>
 {% block main %}
     <main>
 <div class="home-slider">
         <ul class="rslides" id="slider1">
+            {% for image in images %}
+                <li><img src="{{   image.image.url }}" alt="slide" /></li>
 
-          <li><img src="{%  static 'core/images/banner.png' %}" alt="slide3" /></li>
-          <li><img src="{%  static 'core/images/banner2.png' %}" /></li>
-          <li><img src="{%  static 'core/images/banner3.png' %}" alt="slide3" /></li>
+            {% endfor %}
+
         </ul>
 </div>
       <section class="smallabouttext">
         <h1 class="gradient-text" id="title_1"></h1>
         <p id="descriptio"></p>
-        <a class="more moreindex"  href="{% url 'about' %}"><button id="more"></button></a>
+        <a class="more moreindex"  href="{% url 'about' %}" id="more"> </a>
       </section>
 
       <section class="advantages">
@@ -168,10 +184,6 @@
             <div class="activCir start-home activ"></div>
           </ul>
 
-          <div class="b_languages">
-            <a id="leng_Arm">հայ</a>
-            <a id="leng_Eng">ENG</a>
-          </div>
         </div>
       </div>
       <div class="mobile-menu-navBar">
@@ -185,7 +197,7 @@
     <script type="text/javascript">
       (function () {
         var options = {
-          facebook: "1789699921392411", // Facebook page ID
+          facebook: "178969992139241", // Facebook page ID
           facebook_color: "#666666", // Facebook button color
           whatsapp: "+37493939465", // WhatsApp number
           button_color: "rgba(108, 150, 94, 1)", // Color of button
@@ -207,8 +219,11 @@
         x.parentNode.insertBefore(s, x);
       })();
       (()=>{setTimeout(()=>{
-        document.querySelector('.dmopMx').style.display='None';
-           },1000)})();
+          if(document.querySelector('.dmopMx')){
+              document.querySelector('.dmopMx').style.display='None';
+          }
+
+           },1500)})();
       function main_url(){
           return '{% url 'home' %}'
       }

@@ -1,5 +1,6 @@
 const dataa = {
   arm: {
+
     title_header5 :"Կապ",
     title_1: "Կապ մեզ հետ",
     p_1: "Ընդհանուր հարցերի համար`",
@@ -15,8 +16,8 @@ const dataa = {
     p_11: "Կրթական բաժին`",
     p_12: "Հասցե`",
     p_13: "Կամոյի 17, ք․ Մարտունի, Գեղարքունիքի մարզ, ՀՀ, 1402",
-    p_14: "Մարտունու կանանց համայնքային",
-    p_15: "խորհուրդ",
+    p_14: "Մարտունու կանանց համայնքային խորհուրդ",
+    p_15: "",
     p_16: "Կրթապնակ",
     p_17: "Մարտունի Ինֆոտուն",
     p_18: "Կանանց աջակցման կենտրոն Գեղարքունիքի մարզում",
@@ -27,6 +28,7 @@ const dataa = {
     textarea: "Ողջույն!...",
   },
   eng: {
+
     title_header5 :"Contact",
     title_1: "Contact us",
     p_1: "For general questions",
@@ -34,7 +36,7 @@ const dataa = {
     p_3: "Social department",
     p_4: "Communications and Publications",
     p_5: "Hot line",
-    p_6: "Purchasing Department",
+    p_6: "Purchasing department",
     p_7: "Financial department",
     p_8: "Other platforms",
     p_9: "Email",
@@ -42,16 +44,16 @@ const dataa = {
     p_11: "Educational department",
     p_12: "Address",
     p_13: "Kamoi 17, c. Martuni, Gegharkunik region, RA, 1402",
-    p_14: "Martuni women's community",
-    p_15: "MWCC NGO",
+    p_14: "Martuni women's community MWCC NGO",
+    p_15: "",
     p_16: "EduPalette",
     p_17: "Martuni Infotun",
     p_18: "Women's support center in Gegharkunik region",
+    connect:"FEEDBACK",
     email: "Email",
     tel: "Phone Number",
     send: "Send",
     textarea: "Hello!...",
-    connect:"FEEDBACK",
   },
 };
 const server_url = main_url()
