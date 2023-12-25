@@ -1,6 +1,6 @@
 import smtplib
 from itertools import chain
-from typing import Dict, Union, Iterator
+from typing import Dict, Union, Iterator, Any
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
@@ -28,7 +28,7 @@ def get_job_announcement_qs() -> QuerySet[JobAnnouncement]:
 
 
 def get_open_competition_detail_dict(open_competition: OpenCompetition, lang: str
-                                     ) -> Dict[str, Union[int, str, list[dict[str, str]]]]:
+                                     ) -> dict[str, Any]:
     required_files = []
     if lang == 'arm':
         title, description, requirements, article = (
