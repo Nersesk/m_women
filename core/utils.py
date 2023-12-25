@@ -20,7 +20,8 @@ def get_announcements_qs() -> list:
 
 
 def get_banner_images():
-    return Banner.objects.get().banner_images.all()
+    banner = Banner.objects.get()
+    return banner.banner_images.all() if banner else []
 
 
 def get_job_announcement_qs() -> QuerySet[JobAnnouncement]:

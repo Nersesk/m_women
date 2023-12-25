@@ -39,7 +39,7 @@ class Index(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['images'] = get_banner_images() or []
+        context['images'] = get_banner_images()
         return context
 
 
