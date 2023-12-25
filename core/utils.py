@@ -20,7 +20,7 @@ def get_announcements_qs() -> list:
 
 
 def get_banner_images():
-    return Banner.objects.get().banner_images.all()
+    return Banner.objects.first().banner_images.all()
 
 
 def get_job_announcement_qs() -> QuerySet[JobAnnouncement]:
