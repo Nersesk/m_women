@@ -27,8 +27,7 @@ def get_job_announcement_qs() -> QuerySet[JobAnnouncement]:
     return JobAnnouncement.objects.order_by('-created')
 
 
-def get_open_competition_detail_dict(open_competition: OpenCompetition, lang: str
-                                     ) -> dict[str, Any]:
+def get_open_competition_detail_dict(open_competition, lang) :
     required_files = []
     if lang == 'arm':
         title, description, requirements, article = (
