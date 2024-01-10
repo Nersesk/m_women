@@ -15,6 +15,7 @@ from .models import (Staff,
                      ProductVideos,
                      ProductImages,
                      ArchiveProgram,
+                     ArchiveProgramPhoto,
                      Banner, BannerImages
                      )
 from django.contrib import admin
@@ -203,6 +204,11 @@ class PhotoInline(ImageUploaderInline):
     add_image_text = _("add_image_text")
 
 
+class ArchivePhotoInline(ImageUploaderInline):
+    model = ArchiveProgramPhoto
+    add_image_text = _("add_image_text")
+
+
 class FileInline(admin.TabularInline):
     model = OpenCompetitionFiles
     max_num = 10
@@ -383,8 +389,42 @@ class ReportAdmin(admin.ModelAdmin):
     ]
 
 
-class ArchiveProgramAdmin(ProgramModelAdmin):
-    """Archive Programs"""
+class ArchiveProgramAdmin(admin.ModelAdmin):
+    get_list_display = custom_list_display
+    get_list_display_links = custom_list_display_links
+
+    admin_image = admin_image
+    admin_image.short_description = _('Image')
+    search_fields = ('title_eng', 'title_arm', 'name_eng', 'name_arm')
+    view_on_site = True
+    inlines = [ArchivePhotoInline]
+    readonly_fields = ('created', 'updated')
+    fieldsets = [
+
+        (
+            _('Fields in English'),
+            {
+                "fields": ["title_eng", "name_eng", "article_eng"],
+                "classes": ["wide", "extrapretty"],
+            },
+        ),
+        (
+            _("Fields in Armenian"),
+            {
+                "fields": ["name_arm", "title_arm", "article_arm"],
+                "classes": ["wide", "extrapretty"],
+            },
+        ),
+        (
+            _('General Fields'),
+            {
+                "fields": ["image", 'created', 'updated'],
+                "classes": ["wide", "extrapretty"],
+            }
+
+        ),
+
+    ]
 
 
 class CustomInlineFormSet(BaseInlineFormSet):
@@ -402,6 +442,7 @@ class BannerImagesInline(ImageUploaderInline):
 
     def has_delete_permission(self, request, obj=None):
         return False
+
 
 class BannerAdmin(SingletonModelAdmin):
     inlines = [BannerImagesInline, ]

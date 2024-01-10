@@ -220,7 +220,7 @@ class OpenCompetition(models.Model):
         verbose_name_plural = _('Open Competitions')
 
 
-class Program(models.Model):
+class ProgramAbstract(models.Model):
     name_eng = models.CharField(max_length=255, null=False, blank=False, verbose_name=_('Name (English)'))
     name_arm = models.CharField(max_length=255, null=False, blank=False, verbose_name=_('Name (Armenian)'))
     title_eng = models.CharField(max_length=255, null=False, blank=False, verbose_name=_('Title (English)'))
@@ -232,6 +232,11 @@ class Program(models.Model):
     updated = models.DateTimeField(auto_now_add=True, verbose_name=_('Updated'))
 
     class Meta:
+        abstract = True
+
+
+class Program(ProgramAbstract):
+    class Meta:
         verbose_name = _('Program')
         verbose_name_plural = _('Programs')
 
@@ -239,10 +244,13 @@ class Program(models.Model):
         return f'{self.name_eng}'
 
 
-class ArchiveProgram(Program):
+class ArchiveProgram(ProgramAbstract):
     class Meta:
         verbose_name = _('Archive Program')
         verbose_name_plural = _('Archive Programs')
+
+    def __str__(self):
+        return f'{self.name_eng}'
 
 
 class Report(models.Model):
@@ -263,6 +271,18 @@ class Report(models.Model):
 
 class ProgramsPhoto(models.Model):
     main_model = models.ForeignKey(Program, on_delete=models.CASCADE, related_name='program_images')
+    image = models.ImageField(upload_to=generate_program_photos, verbose_name=_('Image'))
+
+    def __str__(self):
+        return f"Photo {self.id}"
+
+    class Meta:
+        verbose_name = _('Programs Photo')
+        verbose_name_plural = _('Programs Photos')
+
+
+class ArchiveProgramPhoto(models.Model):
+    main_model = models.ForeignKey(ArchiveProgram, on_delete=models.CASCADE, related_name='program_images')
     image = models.ImageField(upload_to=generate_program_photos, verbose_name=_('Image'))
 
     def __str__(self):
