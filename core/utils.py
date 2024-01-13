@@ -298,9 +298,7 @@ def get_report_dict(report: Report, lang: str) -> Dict[str, Union[int, str]]:
 
 
 def get_mail_client() -> smtplib.SMTP:
-    mail_server = smtplib.SMTP(settings.SMTP_SERVER, settings.SMTP_PORT)
-    mail_server.ehlo()
-    mail_server.starttls()
+    mail_server = smtplib.SMTP_SSL(settings.SMTP_SERVER, settings.SMTP_PORT)
     mail_server.ehlo()
     mail_server.login(settings.SMTP_USERNAME, settings.SMTP_PASSWORD)
 
