@@ -389,42 +389,10 @@ class ReportAdmin(admin.ModelAdmin):
     ]
 
 
-class ArchiveProgramAdmin(admin.ModelAdmin):
-    get_list_display = custom_list_display
-    get_list_display_links = custom_list_display_links
+class ArchiveProgramAdmin(ProgramModelAdmin):
 
-    admin_image = admin_image
-    admin_image.short_description = _('Image')
-    search_fields = ('title_eng', 'title_arm', 'name_eng', 'name_arm')
-    view_on_site = True
     inlines = [ArchivePhotoInline]
-    readonly_fields = ('created', 'updated')
-    fieldsets = [
 
-        (
-            _('Fields in English'),
-            {
-                "fields": ["title_eng", "name_eng", "article_eng"],
-                "classes": ["wide", "extrapretty"],
-            },
-        ),
-        (
-            _("Fields in Armenian"),
-            {
-                "fields": ["name_arm", "title_arm", "article_arm"],
-                "classes": ["wide", "extrapretty"],
-            },
-        ),
-        (
-            _('General Fields'),
-            {
-                "fields": ["image", 'created', 'updated'],
-                "classes": ["wide", "extrapretty"],
-            }
-
-        ),
-
-    ]
 
 
 class CustomInlineFormSet(BaseInlineFormSet):
