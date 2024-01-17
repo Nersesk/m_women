@@ -170,7 +170,7 @@ def get_dict_for_partners(
 
 
 def get_program_qs() -> QuerySet[Program]:
-    return Program.objects.order_by('-id')
+    return Program.objects.order_by('-created')
 
 
 def get_program_list_dict(program: Program, lang: str, url_arg) -> Dict[str, Union[int, str]]:
