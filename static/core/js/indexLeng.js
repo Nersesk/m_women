@@ -41,18 +41,18 @@ const data_index = {
     title_2: "Our advantages",
     read_more_button: "Read more",
     title_3: "Announcements",
-    advantages_1_p: "INDIVIDUAL",
-    advantages_1_span: "APPROACH",
-    advantages_2_p: "PRESS",
-    advantages_2_span: "DEADLINES",
-    advantages_3_p: "PROFESSIONAL",
-    advantages_3_span: "TEAM",
-    advantages_4_p: "PERMANENTLY",
-    advantages_4_span: "GROWTH  ",
-    advantages_5_p: "FAST",
-    advantages_5_span: "ECHO",
-    advantages_6_p: "AFFORDABLE",
-    advantages_6_span: "PRICE",
+    // advantages_1_p: "INDIVIDUAL",
+    // advantages_1_span: "APPROACH",
+    // advantages_2_p: "PRESS",
+    // advantages_2_span: "DEADLINES",
+    // advantages_3_p: "PROFESSIONAL",
+    // advantages_3_span: "TEAM",
+    // advantages_4_p: "PERMANENTLY",
+    // advantages_4_span: "GROWTH  ",
+    // advantages_5_p: "FAST",
+    // advantages_5_span: "ECHO",
+    // advantages_6_p: "AFFORDABLE",
+    // advantages_6_span: "PRICE",
     home: "Home",
     about: "About us",
     organization: "Organization",
@@ -87,14 +87,14 @@ window.addEventListener("load", async function (event) {
   const title_1 = this.document.getElementById("title_1");
   const descriptio = this.document.getElementById("descriptio");
   const more = this.document.getElementById("more");
-  const title_2 = this.document.getElementById("title_2");
+  // const title_2 = this.document.getElementById("title_2");
   const title_3 = this.document.getElementById("title_3");
-  const advantages_1_p = this.document.getElementById("advantages_1_p");
-  const advantages_2_p = this.document.getElementById("advantages_2_p");
-  const advantages_3_p = this.document.getElementById("advantages_3_p");
-  const advantages_4_p = this.document.getElementById("advantages_4_p");
-  const advantages_5_p = this.document.getElementById("advantages_5_p");
-  const advantages_6_p = this.document.getElementById("advantages_6_p");
+  // const advantages_1_p = this.document.getElementById("advantages_1_p");
+  // const advantages_2_p = this.document.getElementById("advantages_2_p");
+  // const advantages_3_p = this.document.getElementById("advantages_3_p");
+  // const advantages_4_p = this.document.getElementById("advantages_4_p");
+  // const advantages_5_p = this.document.getElementById("advantages_5_p");
+  // const advantages_6_p = this.document.getElementById("advantages_6_p");
 
   const home = this.document.getElementById("home");
   const home_m = this.document.getElementById("home_m");
@@ -167,30 +167,30 @@ window.addEventListener("load", async function (event) {
   title_1.innerText = data_index[`${leng}`].title_1;
   descriptio.innerText = data_index[`${leng}`].descriptio;
   more.innerText = data_index[`${leng}`].read_more_button;
-  title_2.innerText = data_index[`${leng}`].title_2;
-  advantages_1_p.innerText = data_index[`${leng}`].advantages_1_p;
-  advantages_1_p.innerHTML += `<span id="advantages_1_span" class="smallp2">${
-    data_index[`${leng}`].advantages_1_span
-  }</span>`;
-  advantages_2_p.innerText = data_index[`${leng}`].advantages_2_p;
-  advantages_2_p.innerHTML += `<span id="advantages_2_span" class="smallp2">${
-    data_index[`${leng}`].advantages_2_span
-  }</span>`;
-  advantages_3_p.innerText = data_index[`${leng}`].advantages_3_p;
-  advantages_3_p.innerHTML += `<span id="advantages_3_span" class="smallp2">${
-    data_index[`${leng}`].advantages_3_span
-  }</span>`;
-  advantages_4_p.innerText = data_index[`${leng}`].advantages_4_p;
-  advantages_4_p.innerHTML += `<span id="advantages_4_span" class="smallp2">${
-    data_index[`${leng}`].advantages_4_span
-  }</span>`;
-  advantages_5_p.innerText = data_index[`${leng}`].advantages_5_p;
-  advantages_5_p.innerHTML += `<span id="advantages_5_span" class="smallp2">${
-    data_index[`${leng}`].advantages_5_span
-  }</span>`;
-  advantages_6_p.innerText = data_index[`${leng}`].advantages_6_p;
-  advantages_6_p.innerHTML += `<span id="advantages_6_span" class="smallp2">${
-    data_index[`${leng}`].advantages_6_span
-  }</span>`;
+  // title_2.innerText = data_index[`${leng}`].title_2;
+  // advantages_1_p.innerText = data_index[`${leng}`].advantages_1_p;
+  // advantages_1_p.innerHTML += `<span id="advantages_1_span" class="smallp2">${
+  //   data_index[`${leng}`].advantages_1_span
+  // }</span>`;
+  // advantages_2_p.innerText = data_index[`${leng}`].advantages_2_p;
+  // advantages_2_p.innerHTML += `<span id="advantages_2_span" class="smallp2">${
+  //   data_index[`${leng}`].advantages_2_span
+  // }</span>`;
+  // advantages_3_p.innerText = data_index[`${leng}`].advantages_3_p;
+  // advantages_3_p.innerHTML += `<span id="advantages_3_span" class="smallp2">${
+  //   data_index[`${leng}`].advantages_3_span
+  // }</span>`;
+  // advantages_4_p.innerText = data_index[`${leng}`].advantages_4_p;
+  // advantages_4_p.innerHTML += `<span id="advantages_4_span" class="smallp2">${
+  //   data_index[`${leng}`].advantages_4_span
+  // }</span>`;
+  // advantages_5_p.innerText = data_index[`${leng}`].advantages_5_p;
+  // advantages_5_p.innerHTML += `<span id="advantages_5_span" class="smallp2">${
+  //   data_index[`${leng}`].advantages_5_span
+  // }</span>`;
+  // advantages_6_p.innerText = data_index[`${leng}`].advantages_6_p;
+  // advantages_6_p.innerHTML += `<span id="advantages_6_span" class="smallp2">${
+  //   data_index[`${leng}`].advantages_6_span
+  // }</span>`;
   title_3.innerText = data_index[`${leng}`].title_3;
 });
