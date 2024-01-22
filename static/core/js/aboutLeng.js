@@ -19,43 +19,33 @@ const data = {
     frame_3: "համայնքային",
     frame_4: "խորհուրդ",
     title_1: "Մեր մասին",
-    desc_1: `Մեր կազմակերպությունը Գեղարքունիքի մարզի առաջատար հասարակական կազմակերպություններից է։ Հիմնադրվելով 2000 թ–ին՝ այն գործունեություն է իրականացնում առողջապահության, բնապահպանության, սոցիալական և համայնքային զարգացման ոլորտներում՝ կարևորելով բնակչության անմիջական ներգրավվածությունը տարբեր խնդիրների լուծման գործընթացում: Մեր խորհրդի ջանքերով Գեղարքունիքի մարզում վերակառուցվել են բուժկետեր,կառուցվել նախակրթարաններ, հիմնվել է սոցիալական ձեռնարկություն, որտեղ աշխատում են բացառապես հաշմանդամություն ունեցող անձիք: Փորձում ենք նպաստել համայնքում ապահով և պաշտպանված քաղաքացու ձևավորմանը։`,
-    desc_2:
-      "Մեր առաքելությունն է նպաստել համայնքների զարգացման գործումբնակչության մասնակցային վարքի ձևավորմանը և այդ միջոցով համայնքների տնտեսական, սոցիալական, մշակութային խնդիրների արդյունավետ լուծմանը`հատուկ ուշադրություն դարձնելով խոցելի խմբերին:",
-    desc_3: "Ինչ ենք անում՝",
+    desc_2: `«Մարտունու կանանց համայնքային խորհուրդ» ՀԿ-ն, հիմնադրվելով 2000 թվականին գործունեություն է իրականացնում սոցիալական, առողջապահության, բնապահպանության, և համայնքային զարգացման ոլորտներում՝ կարևորելով բնակչության անմիջական ներգրավվածությունը տարբեր խնդիրների լուծման գործընթացում: Մեր խորհրդի ջանքերով Գեղարքունիքի մարզում վերակառուցվել են բուժկետեր, կառուցվել նախակրթարաններ, հիմնվել է սոցիալական ձեռնարկություն, որտեղ աշխատում են բացառապես հաշմանդամություն ունեցող անձիք: Փորձում ենք նպաստել համայնքում ապահով և պաշտպանված քաղաքացու ձևավորմանը։ \nԿազմակերպությունն արտակարգ իրավիճակներում իրականացնում է հումանիտար աջակցություն, աշխատելով տեղահանվածների, միայնակ ծերերի, բռնության ենթարկված կանանց և այլ խոցելի խմբերի հետ։`,
+    desc_1:
+      "«Մարտունու կանանց համայնքային խորհուրդ» ՀԿ-ի առաքելությունն է նպաստել համայնքների զարգացման գործում բնակչության մասնակցային վարքի ձևավորմանը և այդ միջոցով համայնքների տնտեսական, սոցիալական, մշակութային խնդիրների արդյունավետ լուծմանը` հատուկ ուշադրություն դարձնելով խոցելի խմբերին: Կազմակերպությունն արտակարգ իրավիճակներում իրականացնում է հումանիտար աջակցություն, աշխատելով տեղահանվածների, միայնակ ծերերի, բռնության ենթարկված կանանց և այլ խոցելի խմբերի հետ։",
+    desc_3: "ՀԿ-ի ծրագրային ուղղություններն են՝",
     desc_4:
-      " Համագործակցում ենք ՏԻՄ–երի հետ, մշակում ենք համայնքային ռազմավարական ծրագրեր, կատարում ենք համայնքային կարիքի գնահատում,իրականացնում ենք սոցիալական ծրագրեր։՝",
+      " Խոցելի խմբերի հետ աշխատանք",
     desc_5:
-      " Մշակում ենք ՏԻՄ–երի նոր ռազմավարություն, առաջարկում ենք ռազմավարական պլանի փոփոխություններ։",
+      " Հումանիտար աջակցություն արտակարգ իրավիճակներում",
     desc_6:
-      "Տեղեկատվություն ենք տարածում, տրամադրում ենք նյութատեխնիկական ռեսուրսներ, կատարում ենք մեդիա տեխնոլոգիաների ուսուցում։",
-    desc_7: "Մասնակցում ենք ընտրական գործընթացներին։",
+      "Մեծահասակների կրթություն",
+    desc_7: "Քաղաքացիական հասարակության գիտակցության բարձրացում ու կարողությունների զարգացում",
     desc_8:
-      "Համայնքային խնդիրներ լուծելու նպատակով համայնքային մոբիլիզացիա ենք անում։",
+      "Մարդու իրավունքներ և ժողովրդավարություն",
     desc_9:
-      "Ստեղծում ենք աշխատատեղեր, խոցելի խմբերին ապահովում ենք զբաղվածությամբ։",
+      "Մեդիագրագիտություն և երիտասարդության ակտիվացում",
     desc_10:
-      "Հետազատություններ ենք անում բնապահպանական, առողջապահական և այլ որոտների հիմնախնդիրների վերաբերյալ:",
-    desc_11: "Իրականացնում ենք կազմակերպությունների ինստիտուցիոնալ զարգացում։",
-    desc_12: "Ուզում ենք հասնել՝",
-    desc_13:
-      "Համայնքի զարգացման գործում բնակչության մասնակցային վարքի ձևավորմանը, բնակչության համախմբմանը, իրազեկվածության բարձրացմանը, համայնքի նկատմամբ սեփականության գիտակցության ձևավորմանը, խնդիրների լուծմանը՝ հասարակության մասնակցության ապահովման միջոցով։",
-    desc_14:
-      "Համայնքի տնտեսական, սոցիալական, մշակութային խնդիրների արդյունավետ լուծմանը, մարդկանց գիտակցության բարձրացմանը, տարբեր գործընթացներում նրանց ներգրավմանը, անմիջական մասնակցությանը՝ համագործակցության և ներդրումների խրախուսման միջոցով։",
-    desc_15: "Մեր ծրագրային ուղղություններն են՝",
-    desc_16:
-      "Քաղաքացիական հասարակության գիտակցության բարձրացում ու կարողությունների զարգացում",
-    desc_17: "Մարդու իրավունքներ և ժողովրդավարություն՝",
-    desc_18: "Մեդիագրագիտություն և երիտասարդության ակտիվացում",
-    desc_19: "Կոռուպցիայի դեմ պայքար և շահերի բախում",
-    desc_20: "Պայքար խտրականության դեմ",
+      "Կոռուպցիայի դեմ պայքար և շահերի բախում",
+    desc_11: "Պայքար խտրականության դեմ",
+    desc_12: "2020 թվականի 44-օրյա պատերազմից ի վեր «Մարտունու կանանց համայնքային խորհուրդ» ՀԿ-ն իրականացրել է տարբեր ծրագրեր՝ ուղղված տեղահանված ընտանիքների ինտեգրմանն ու բնականոն կյանքի ապահովմանը։ Իրականացրած ծրագրերի շրջանակներում տեղահանված անձանց համար կազմակերպվել են իրազեկման և կարողությունների զարգացման դասընթացներ։ Յուրաքանչյուր դասընթացի համար մշակվել է կրթական ծրագիր և հարմարեցվել է մասնակիցների կրթական կարիքներին։",
     desc_21: "Մարտունի քաղաքում ստեղծել ենք՝",
-    desc_22: "«Մարտունի ԻնֆոՏուն»",
-    desc_23: "«Իղձ» սոցիալական ձեռնարկություն",
-    desc_24: "«Ռադիո Մարտունի» առցանց ռադիո",
-    desc_25: "Մարտունի երիտասարդական բանկ",
-    desc_26: "Համայնքային ռեսուրս կենտրոն",
-    desc_27: "Կենցաղային զոհերի համար ժամանակավոր կացարան",
+    desc_13: "Բռնության ենթարկված կանանց աջակցման կենտրոն",
+    desc_22: "«Կրթապնակ» մեծահասակների կրթության կենտրոն",
+    desc_23: "«Մարտունի ԻնֆոՏուն»",
+    desc_24: "«Թագանի» սոցիալական ձեռնարկություն",
+    desc_25: "«Ռադիո Մարտունի» առցանց ռադիո",
+    desc_26: "Մարտունի երիտասարդական բանկ",
+    desc_27: "Համայնքային ռեսուրս կենտրոն",
     title_2: "Անձնակազմ",
     title_3: "Գոր<span class='ts_tar'>ծ</span>ընկերներ",
   },
@@ -79,40 +69,30 @@ const data = {
     frame_3: "Community",
     frame_4: "Council",
     title_1: "About us",
-    desc_1: `Our organization is a leading non-governmental organization of Gegharkunik region is one of the organizations. Established in 2000, it is an activity implements healthcare, environmental protection, social and in the areas of community development, emphasizing the immediate population involvement in the process of solving various problems. Our with the efforts of the council, aid stations were rebuilt in Gegharkunik marz,preschools were built, a social enterprise was established, where only persons with disabilities work. We are trying contribute to the formation of a safe and protected citizen in the community.`,
-    desc_2:
-      "Our mission is to contribute to the development of communities to the formation of participatory behavior of the population and thereby communities to the effective solution of economic, social, cultural problems paying special attention to vulnerable groups.",
-    desc_3: "What we do",
-    desc_4:
-      "We cooperate with local governments, develop community strategic plans, we carry out community needs assessment,we implement social programs.",
+    desc_2: `Established in 2000, the NGO operates across various sectors, including social services, healthcare, environmental conservation, and community development, with a strong emphasis on encouraging direct community participation in problem-solving. Through our efforts, we have successfully reconstructed medical centers, constructed preschools, and established a social enterprise. Our aim is to contribute to the creation of a secure and protected citizenry within the community. Additionally, the organization extends humanitarian aid during emergency situations, offering support to displaced individuals, isolated elderly citizens, abused women, and other vulnerable groups.`,
+    desc_1:
+    "The mission of the «Martuni Women’s Community Council» NGO is to foster community engagement among the population, promoting their active involvement in addressing economic, social, and cultural challenges within communities. This emphasis includes a special focus on vulnerable groups.",
+    desc_3: "The NGO’s program directions encompass the following:",
+    desc_4: "Assistance for vulnerable groups",
     desc_5:
-      "We are developing a new strategy of local governments, we propose changes to the strategic plan.",
+      "Humanitarian aid during emergencies",
     desc_6:
-      "We spread information, provide logistics resources, we do media technology training.",
-    desc_7: "We participate in election processes.",
-    desc_8: "We are community mobilization to solve community problems does.",
-    desc_9: "We create jobs, support vulnerable groups with employment.",
+      "Adult education",
+    desc_7: "Raising awareness and enhancing the capacity of civil society",
+    desc_8: "Promoting human rights and democracy",
+    desc_9: "Media literacy and engaging youth",
     desc_10:
-      "We do research on environmental, health and other thunderstorm issues.",
-    desc_11: "We implement institutional development of organizations.",
-    desc_12: "We want to achieve:",
-    desc_13:
-      "In the development of the community, the formation of the participatory behavior of the population, the consolidation of the population, raising awareness, the formation of the consciousness of ownership towards the community, solving problems by ensuring the participation of the society.",
-    desc_14:
-      "To the effective solution of the economic, social and cultural problems of the community, raising people's consciousness, their involvement in various processes, direct participation through cooperation and encouraging investments.",
-    desc_15: "Our program directions are",
-    desc_16: "Raising awareness of civil society and capacity building",
-    desc_17: "Human rights and democracy:",
-    desc_18: "Media literacy and youth activation",
-    desc_19: "Anti-corruption and conflict of interest",
-    desc_20: "Fight against discrimination",
-    desc_21: "We created in the city of Martuni:",
-    desc_22: "«Martuni Info House»",
-    desc_23: "«Desire» social enterprise",
-    desc_24: "«Radio Martuni» online radio",
-    desc_25: "Martuni Youth Bank",
-    desc_26: "Community Resource Center",
-    desc_27: "Temporary housing for domestic victims",
+      "Combating corruption and conflicts of interest",
+    desc_11: "Fighting against discrimination",
+    desc_12: "Our organization collaborates with both local and international partners. Since the 44-day war of 2020, the «Martuni Women’s Community Council» NGO has undertaken various programs aimed at integrating displaced families and ensuring their return to a normal life. These programs have included organizing awareness campaigns and capacity-building courses specifically tailored to the educational needs of displaced individuals.",
+    desc_21: "In the city of Martuni, we have established the following initiatives",
+    desc_22: "A support center for victims of domestic violence",
+    desc_23: "The «EduPalette» adult education center",
+    desc_24: "«Martuni InfoHouse»",
+    desc_25: "«Tagani» social enterprise",
+    desc_26: "«Radio Martuni» online radio",
+    desc_27: "Martuni Youth Bank",
+    desc_13: "A Community Resource Center",
     title_2: "Personnel",
     title_3: "co-workers",
   },
@@ -247,20 +227,6 @@ window.addEventListener("load", async function (event) {
   desc_12.innerText = data[`${leng}`].desc_12;
   const desc_13 = this.document.getElementById("desc_13");
   desc_13.innerText = data[`${leng}`].desc_13;
-  const desc_14 = this.document.getElementById("desc_14");
-  desc_14.innerText = data[`${leng}`].desc_14;
-  const desc_15 = this.document.getElementById("desc_15");
-  desc_15.innerText = data[`${leng}`].desc_15;
-  const desc_16 = this.document.getElementById("desc_16");
-  desc_16.innerText = data[`${leng}`].desc_16;
-  const desc_17 = this.document.getElementById("desc_17");
-  desc_17.innerText = data[`${leng}`].desc_17;
-  const desc_18 = this.document.getElementById("desc_18");
-  desc_18.innerText = data[`${leng}`].desc_18;
-  const desc_19 = this.document.getElementById("desc_19");
-  desc_19.innerText = data[`${leng}`].desc_19;
-  const desc_20 = this.document.getElementById("desc_20");
-  desc_20.innerText = data[`${leng}`].desc_20;
   const desc_21 = this.document.getElementById("desc_21");
   desc_21.innerText = data[`${leng}`].desc_21;
   const desc_22 = this.document.getElementById("desc_22");

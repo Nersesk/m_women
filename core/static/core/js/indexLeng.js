@@ -2,8 +2,7 @@ const data_index = {
   arm: {
     title_header:"Մարտունու կանանց համայնքային խորհուրդ",
     title_1: "Մարտունու կանանց համայնքային խորհուրդ",
-    descriptio:
-      "Մեր կազմակերպությունը Գեղարքունիքի մարզի առաջատար հասարակական կազմակերպություններից է։ Հիմնադրվելով 2000 թ–ին՝ այն գործունեություն է իրականացնում առողջապահության, բնապահպանության, սոցիալական և համայնքային զարգացման ոլորտներում՝ կարևորելով բնակչության անմիջական ներգրավվածությունը տարբեր խնդիրների լուծման գործընթացում: Մեր խորհրդի ջանքերով Գեղարքունիքի մարզում վերակառուցվել են բուժկետեր, կառուցվել նախակրթարաններ, հիմնվել է սոցիալական ձեռնարկություն, որտեղ աշխատում են բացառապես հաշմանդամություն ունեցող անձիք: Փորձում ենք նպաստել համայնքում ապահով և պաշտպանված քաղաքացու ձևավորմանը։",
+    descriptio: "«Մարտունու կանանց համայնքային խորհուրդ» ՀԿ-ն, հիմնադրվելով 2000 թվականին գործունեություն է իրականացնում սոցիալական, առողջապահության, բնապահպանության, և համայնքային զարգացման ոլորտներում՝ կարևորելով բնակչության անմիջական ներգրավվածությունը տարբեր խնդիրների լուծման գործընթացում: Մեր խորհրդի ջանքերով Գեղարքունիքի մարզում վերակառուցվել են բուժկետեր, կառուցվել նախակրթարաններ, հիմնվել է սոցիալական ձեռնարկություն, որտեղ աշխատում են բացառապես հաշմանդամություն ունեցող անձիք: Փորձում ենք նպաստել համայնքում ապահով և պաշտպանված քաղաքացու ձևավորմանը։",
     title_2: "Մեր առավելությունները",
     read_more_button: "Կարդալ ավելին",
     title_3: "Հայտարարություններ",
@@ -37,7 +36,7 @@ const data_index = {
     title_header:"Martuni Women's Community Council",
     title_1: "Martuni Women's Community Council",
     descriptio:
-      "Our organization is one of the leading non-governmental organizations of Gegharkunik region. Founded in 2000, it carries out activities in the fields of healthcare, environmental protection, social and community development, emphasizing the direct involvement of the population in the process of solving various problems. With the efforts of our council, medical centers were rebuilt in Gegharkunik region, preschools were built, and a social enterprise was established, where only people with disabilities work. We try to contribute to the formation of a safe and protected citizen in the community.",
+    "Established in 2000, the NGO operates across various sectors, including social services, healthcare, environmental conservation, and community development, with a strong emphasis on encouraging direct community participation in problem-solving. Through our efforts, we have successfully reconstructed medical centers, constructed preschools, and established a social enterprise. Our aim is to contribute to the creation of a secure and protected citizenry within the community.",
     title_2: "Our advantages",
     read_more_button: "Read more",
     title_3: "Announcements",
